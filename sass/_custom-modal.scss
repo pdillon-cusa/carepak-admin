@@ -74,7 +74,7 @@ form .error + .error {
   display: block;
   width: 100%;
   padding: .65rem;
-  background-color: lighten($success, 35%);
+  background-color: mix(white, $success, 75%);
   border: 1px solid $success;
   color: $success;
   font-weight: bold;
@@ -83,7 +83,7 @@ form .error + .error {
   display: block;
   width: 100%;
   padding: .65rem;
-  background-color: lighten($primary, 50%);
+  background-color: mix(white, $primary, 75%);
   border: 1px solid $primary;
   color: $primary;
   font-weight: bold;

@@ -394,12 +394,13 @@
                 else {
                     $('#sendEmailModal').show();
                     $(".overlay").css('display', 'block');
+                    // For prototype only!
                     setTimeout(function() {
                         $('#resultText').text('Email(s) sent sucessfully');
                         $('#resultText').removeClass('waiting-ct');
                         $('#resultText').addClass('response-success');
                         $('span.waiting').removeClass('waiting');
-                    }, 4250);
+                    }, 4000);
                     setTimeout(function() {
                         $('#sendEmailModal').fadeOut(200);
                         $(".overlay").fadeOut(200);
