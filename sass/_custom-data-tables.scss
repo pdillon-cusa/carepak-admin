@@ -1,0 +1,76 @@
+// ------------------------------------
+// Data Tables Customized
+
+.dataTables_wrapper  {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+table.dataTable thead .sorting, 
+table.dataTable thead .sorting_asc, 
+table.dataTable thead .sorting_desc, 
+table.dataTable thead .sorting_asc_disabled, 
+table.dataTable thead .sorting_desc_disabled {
+    background-color: $gray-lt;
+    font-weight: normal;
+}
+table.dataTable, table.dataTable th {
+    padding-top: 10px;
+}
+table.dataTable.stripe tbody tr.odd, 
+table.dataTable.display tbody tr.odd,
+table.dataTable.stripe tbody tr.even, 
+table.dataTable.display tbody tr.even {
+    font-size: 12px;
+}
+table.dataTable.stripe tbody tr.even {
+    background-color: darken(#f9f9f9, 8%) !important;
+}
+table.dataTable.no-footer {
+    margin-bottom: 1rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #fff !important;
+}
+
+table.dataTable thead th, 
+table.dataTable thead td {
+    padding: 3px 5px;
+}
+
+table.dataTable thead th.no-sort {
+    background-color:  $gray-lt;
+    font-weight: normal;
+}
+
+table.dataTable.row-border tbody th, 
+table.dataTable.row-border tbody td, 
+table.dataTable.display tbody th, 
+table.dataTable.display tbody td {
+  width: 6rem;
+  overflow:hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="search"] {
+    -webkit-appearance: button;
+    font-size: 13px;
+}
+select{
+    padding: .2rem .3rem;
+    font-size: 13px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    visibility: hidden;
+}

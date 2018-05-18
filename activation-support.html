@@ -1,0 +1,470 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/canon-assets/jquery-ui.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/canon-assets/bootstrap.css">
+        <link rel="stylesheet" href="css/canon-assets/canon-styles.css">
+        <link rel="stylesheet" href="css/canon-assets/new_web_custom.css">
+        <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
+        <link rel="stylesheet" href="css/canon-assets/jquery.raty.css">
+
+        <!-- CarePak Custom -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <header>
+            <a href="index.html">
+                <div class="logo"><h1>Canon CarePak SKU Maintenance</h1></div>
+            </a>
+            <div class="app-name">Activation Support</div>
+        </header>
+
+        <div class="custom-container">
+
+            <div class="section-head">
+                <div class="section-head__title">
+                    <h3>Lookup CarePAK</h3>
+                </div>
+                <div class="section-head__actions">
+                    &nbsp;
+                </div>
+            </div>
+
+            <div class="search-filters clearfix">
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">First Name</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Last Name</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">Email</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Phone #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="tel" class="form-control" name="phone" id="phone" />
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">Serial #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+
+                    <div class="search-filters__label">
+                        <label for="temp">Receipt #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">Registration #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Sell to Code</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="clearfix">
+                        <div class="search-filters__label"> Order Received Date</div>
+                        <div class="search-filters__input">
+                            <div class="search-filters__sub-item">
+                                <!-- <label for="temp">From</label> -->
+                                <input type="text" class="form-control" placeholder="From" id="date-from">
+                            </div>
+                            <div class="search-filters__sub-item">
+                                <!-- <label for="temp">To</label> -->
+                                <input type="text" class="form-control" placeholder="To" id="date-to">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-section">
+                        <button class="button alert">Clear All</button>
+                        <button class="button">Search</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <table id="example" class="display stripe" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Sell To</th>
+                        <th>Hardware SKU</th>
+                        <th>Serial#</th>
+                        <th>Receipt#</th>
+                        <th>Purchase Date</th>
+                        <th>CarePAK SKU</th>
+                        <th>Terms</th>
+                        <th>CarePAK</th>
+                        <th>Activation Code</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th class="no-sort">Receipt</th>
+                        <th class="no-sort">Send Email</th>
+                        <th class="no-sort">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PR25</td>
+                        <td>342342DAR</td>
+                        <td>632905</td>
+                        <td>632905</td>
+                        <td>1/1/2018</td>
+                        <td>96574839482</td>
+                        <td>13</td>
+                        <td>2/25/2021</td>
+                        <td>ESPA8P5NF</td>
+                        <td>Megan</td>
+                        <td>Weaver</td>
+                        <td>m.weaver@yahoo.com</td>
+                        <td>123-456-7890</td>
+                        <td><i class="icon-receipt"></i></td>
+                        <td><input type="checkbox" class="send-email" checked></td>
+                        <td class="editInfo"><a href="#">EDIT</a></td>
+                    </tr>
+                    <tr>
+                        <td>PR35</td>
+                        <td>36842</td>
+                        <td>6767905</td>
+                        <td>634305</td>
+                        <td>12/21/2017</td>
+                        <td>1234654DARL</td>
+                        <td>3</td>
+                        <td>6/20/2021</td>
+                        <td>~NONE~</td>
+                        <td>Heather</td>
+                        <td>Wilson</td>
+                        <td>h.wilson@yahoo.com</td>
+                        <td>123-456-7890</td>
+                        <td><i class="icon-receipt"></i></td>
+                        <td><input type="checkbox" class="send-email" disabled></td>
+                        <td class="editInfo"><a href="#">EDIT</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <div class="button-section pad-hrz-sm">
+                <input type="button" class="button warning" onclick="sendEmailDialog()" value="Send Email"></button>
+                <input type="button" class="button warning" onclick="failedEmailDialog()" value="Failed Email"></button>
+                <button class="button warning">Print</button>
+            </div>
+
+        </div> <!-- / container -->
+
+        <footer>
+            <div class="foot-content">
+                &copy; Canon 2018
+            </div>
+        </footer>
+
+        <!-- Dark Overlay -->
+        <div class="overlay"></div>
+
+        <!-- Send Email Successfully Modal -->
+        <div class="custom-modal" id="sendEmailModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Send Email</div>
+            <p id="resultText" class="waiting-ct">
+                <span class="waiting"> Sending...</span>
+            </p>
+            <p class="modal-hints">
+                If you close this window the messages will still be sent.
+                <br>This window will automatically close on sucessful sending. 
+            </p>
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+
+        <!-- Failed Email Modal -->
+        <div class="custom-modal" id="failedEmailModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Send Email</div>
+            <p class="waiting-ct">One or more emails failed due to a missing or incorrect email address.</p>
+                <p class="strong">Abby Smith: ESPADR32198764</p>
+                <p class="strong">John Jones: ESPAD09724424</p>
+                <p class="modal-hints">Please edit the email information and resend.</p>
+            <div class="button-section">
+                <button class="button" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    
+         <!-- Edit Info Modal -->
+        <div class="custom-modal" id="editInfoModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Edit Customer/Product Information</div>
+            <form id="editCustomerInfo" method="get" action="">
+
+                <div class="custom-modal__label">
+                    <label for="serialNumber">Serial Number</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="serialNumber" name="serialNumber" title="Serial must be between 6 and 50 characters.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="firstName" name="firstName" title="First name must be between 1 and 50 characters.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="lastName" name="lastName" title="Last name must be between 1 and 50 characters.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="emailAddress">Email Address</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="emailAddress" name="emailAddress" title="Please enter a valid email address.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="phone" name="phone" title="Please enter a valid phone number.">
+                </div>
+
+                <div class="button-section">
+                    <button class="button alert" onclick="closeModal()">Cancel</button>
+                    <input class="button" type="submit" value="Save">
+                </div>
+            </form>
+           
+        </div>
+        <!-- / Modal -->
+
+        <!-- Existing Canon Assets -->
+        <script src="js/canon-assets/jquery.include-min.js"></script>
+        <script src="js/canon-assets/jquery.ui-min.js"></script>
+        <script src="js/canon-assets/jquery.validate.min.js"></script>
+        <script src="js/canon-assets/confirmDialog.js"></script>
+        <script src="js/canon-assets/productFinder.js"></script>
+        <script src="js/canon-assets/serialFinder.js"></script>
+        <!-- <script src="js/canon-assets/validatorCustomMethods.js"></script>-->
+        <script src="js/canon-assets/jquery.raty-min.js"></script>
+        <script src="js/canon-assets/jquery.mask-min.js"></script>
+        <script src="js/canon-assets/paginationHelper.js"></script>
+        <script src="js/canon-assets/paginationWidget.js"></script>
+        <script src="js/canon-assets/coreMetricsWrapper.js"></script>
+        <script src="js/canon-assets/liveChat.js"></script>
+        <script src="js/canon-assets/jquery.history.js"></script>
+        <script src="js/canon-assets/custom.js"></script>
+        <script src="js/canon-assets/jReject-min.js"></script>
+        <script src="js/canon-assets/mustache.min.js"></script>
+        <script src="js/canon-assets/canon.js"></script>
+        
+        <script src="js/canon-assets/allegiance.js"></script>
+        <script src="js/canon-assets/canon.js"></script>
+        <!-- 
+        <script src="js/canon-assets/jquery.lazyloadxt.autoload.min.js"></script>
+        <script src="js/canon-assets/jquery.lazyloadxt.min.js"></script>
+        <script src="js/canon-assets/oo_engine.min.js"></script>
+        <script src="js/canon-assets/mcxSiteIntercept-1.5.2.js"></script>
+        <script src="js/canon-assets/oo_conf_inline_waypoint.js"></script>
+        <script src="js/canon-assets/validatorCustomMethods.js"></script>
+        -->  
+        <!-- CarePak Custom -->
+        <!-- <script src="js/vendor/jquery-3.3.1.js"></script> -->
+        <script src="js/vendor/jquery.dataTables.js"></script>
+        <!-- <script src="js/vendor/dataTables.responsive.js"></script> -->
+        <script src="js/vendor/jquery.maskedinput.js"></script>
+
+        <!-- Custom JS ~ TODO: Reorganize the architecture as more forms are added! -->
+        <script>
+
+            $("#edit-customer-info").validate();
+
+            $().ready(function() {
+                var validator = $("#editCustomerInfo").validate({
+                    debug: true,
+                    rules: {
+                        serialNumber: {
+                            required: true,
+                            minlength: 6,
+                            maxlength: 50
+                        },
+                        firstName: {
+                            required: true,
+                            minlength: 1,
+                            maxlength: 50
+                        },
+                        lastName: {
+                            required: true,
+                            minlength: 1,
+                            maxlength: 50
+                        },
+                        emailAddress: {
+                            required: true,
+                            email: true
+                        },
+                        phone: {
+                            required: true,
+                            minlength: 9,
+                            maxlength: 10
+                        }
+                    },
+                    submitHandler: function(form) {
+                        closeModal();
+                    }
+                });
+            });
+
+            //-------------- Date Picker -----------------------
+            $(function() {
+                $("#date-to, #date-from").datepicker();
+            });
+            
+            //-------------- Close Any Modal --------------------
+            function closeModal() {
+                $(".overlay").fadeOut(200);
+                $(".custom-modal").fadeOut(200);
+            }
+            $(document).keydown(function(e) {
+                if (e.keyCode == 27) { closeModal() }
+            });
+            $(".close-overlay").on("click", function () {
+                closeModal();
+            });
+
+            // ------------- Edit Info Dialog -------------------
+            $(".editInfo").on("click", function () {
+                showEditInfoModal();
+            });
+            function showEditInfoModal() {
+                $(".overlay").css('display', 'block');
+                $("#editInfoModal").css('display', 'block');
+            }
+
+            // ----------- Send Email Dialog --------------------
+            function sendEmailDialog() {
+                if ( $('input.send-email:checked').length == 0 ) {
+                    alert('Please select a CarePAK customer to email.')
+                }
+                else {
+                    $('#sendEmailModal').show();
+                    $(".overlay").css('display', 'block');
+                    setTimeout(function() {
+                        $('#resultText').text('Email(s) sent sucessfully');
+                        $('#resultText').removeClass('waiting-ct');
+                        $('#resultText').addClass('response-success');
+                        $('span.waiting').removeClass('waiting');
+                    }, 4250);
+                    setTimeout(function() {
+                        $('#sendEmailModal').fadeOut(200);
+                        $(".overlay").fadeOut(200);
+                    }, 6000);
+                }
+            }
+
+            // ----------- Failed Email Dialog --------------------
+            function failedEmailDialog() {
+                if ( $('input.send-email:checked').length == 0 ) {
+                    alert('Please select a CarePAK customer to email.')
+                }
+                else {
+                    $('#failedEmailModal').show();
+                    $(".overlay").css('display', 'block');
+                    // setTimeout(function() {
+                    //     $('#sendEmailModal').fadeOut(200);
+                    //     $(".overlay").fadeOut(200);
+                    // }, 3000);
+                }
+            }
+
+
+            
+
+            //----------------------------------
+            //------- DataTable Rules ----------
+            $.fn.dataTable.render.ellipsis = function () {
+                return function ( data, type, row ) {
+                    return type === 'display' && data.length > 10 ?
+                        data.substr( 0, 10 ) +'…' :
+                        data;
+                }
+            };
+            $(document).ready(function() {
+                $('#example').DataTable({
+                    //     responsive: {
+                    //     details: {
+                    //         type: 'column',
+                    //         target: 'tr'
+                    //     }
+                    // },
+                    lengthMenu: [ 10, 25 ],
+                    columnDefs: [ 
+                    {
+                        targets  : 'no-sort',
+                        orderable: false,
+                        order: []
+                    },
+                    {
+                        targets: 11,
+                        render: $.fn.dataTable.render.ellipsis() 
+                    },
+                    { 
+                        className: "dt-center", 
+                        targets: "_all"
+                    }
+                ]
+                });
+            });
+
+            //----------------------------------
+            //---- Phone number input mask -----
+             $("#phone").mask("(999) 999-9999");
+        </script>
+
+    </body>
+</html>

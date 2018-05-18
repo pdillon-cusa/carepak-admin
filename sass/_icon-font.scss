@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?39hqp9');
+  src:  url('../fonts/icomoon.eot?39hqp9#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?39hqp9') format('truetype'),
+    url('../fonts/icomoon.woff?39hqp9') format('woff'),
+    url('../fonts/icomoon.svg?39hqp9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change ../fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// For size in rows - may need to revisit if more icons are needed elsewhere:
+[class^="icon-"] {
+  font-size: 18px;
+}
+
+.icon-checkmark:before {
+  content: "\e900";
+}
+.icon-receipt:before {
+  content: "\e901";
+}
+.icon-receipt-1:before {
+  content: "\e926";
+}
+.icon-checkmark2:before {
+  content: "\ea11";
+}
+.icon-receipt-link:before {
+  content: "\eae3";
+}

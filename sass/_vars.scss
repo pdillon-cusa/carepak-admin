@@ -1,0 +1,41 @@
+
+// Basic Theme
+$wht: white;
+$blk: black;
+$body-bg: #efefef;
+
+$primary: #EE1B22;
+$primary-hover: mix(black, $primary, 15%);
+
+$success: #5cb85c;
+$success-hover: mix(black, $success, 15%);
+
+$warning: #E69500;
+$warning-hover: mix(black, $warning, 15%);
+
+$button-standard: #1779ba;
+$button-standard-hover: mix(black, $button-standard, 15%);
+
+$gray-dark: #444;
+$gray-med: #555;
+$gray-lt: #ccc;
+
+// Blocks
+$section-1: #726E68;
+$section-1A: #948D85;
+
+$section-2A: #87785C;
+$section-2: #4A4233;
+
+$section-3: #384C61;
+$section-3A: #536981;
+
+$section-4: #38393D;
+$section-4A: #27282B;
+
+
+@mixin ellipsis {
+    overflow:hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
