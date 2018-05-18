@@ -57,10 +57,10 @@ form .error + .error {
   display: block;
   width: 100%;
   padding: .2rem .7rem;
-  background-color: lighten($primary, 50%);
+  background-color: mix(white, $primary, 75%);
   margin-top: 2px;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 13px;
 }
 @keyframes blinkie {
   0% { opacity: 1; }
@@ -79,7 +79,7 @@ form .error + .error {
   color: $success;
   font-weight: bold;
 }
-.waiting-ct {
+.waiting-ct, .error-ct {
   display: block;
   width: 100%;
   padding: .65rem;
