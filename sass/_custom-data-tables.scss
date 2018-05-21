@@ -37,7 +37,8 @@ table.dataTable.no-footer {
 
 table.dataTable thead th, 
 table.dataTable thead td {
-    padding: 3px 5px;
+    padding: 7px 10px;
+    line-height: 1.4;
 }
 
 table.dataTable thead th.no-sort {
@@ -73,4 +74,8 @@ select{
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
     visibility: hidden;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-family: Arial, Helvetica, sans-serif !important;
 }

@@ -31,7 +31,8 @@ $section-3: #384C61;
 $section-3A: #536981;
 
 $section-4: #38393D;
-$section-4A: #27282B;
+
+$section-4A: mix(white,#27282B, 20%);
 
 
 @mixin ellipsis {

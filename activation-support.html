@@ -126,7 +126,7 @@
                 
             </div>
 
-            <table id="example" class="display stripe" style="width: 100%">
+            <table id="activationSupportData" class="display stripe" style="width: 100%">
                 <thead>
                     <tr>
                         <th>Sell To</th>
@@ -137,58 +137,22 @@
                         <th>CarePAK SKU</th>
                         <th>Terms</th>
                         <th>CarePAK</th>
-                        <th>Activation Code</th>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>CarePAK Exp Date</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th class="no-sort">Receipt</th>
-                        <th class="no-sort">Send Email</th>
                         <th class="no-sort">&nbsp;</th>
+                        <th class="no-sort">Send Email</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>PR25</td>
-                        <td>342342DAR</td>
-                        <td>632905</td>
-                        <td>632905</td>
-                        <td>1/1/2018</td>
-                        <td>96574839482</td>
-                        <td>13</td>
-                        <td>2/25/2021</td>
-                        <td>ESPA8P5NF</td>
-                        <td>Megan</td>
-                        <td>Weaver</td>
-                        <td>m.weaver@yahoo.com</td>
-                        <td>123-456-7890</td>
-                        <td><i class="icon-receipt"></i></td>
-                        <td><input type="checkbox" class="send-email" checked></td>
-                        <td class="editInfo"><a href="#">EDIT</a></td>
-                    </tr>
-                    <tr>
-                        <td>PR35</td>
-                        <td>36842</td>
-                        <td>6767905</td>
-                        <td>634305</td>
-                        <td>12/21/2017</td>
-                        <td>1234654DARL</td>
-                        <td>3</td>
-                        <td>6/20/2021</td>
-                        <td>~NONE~</td>
-                        <td>Heather</td>
-                        <td>Wilson</td>
-                        <td>h.wilson@yahoo.com</td>
-                        <td>123-456-7890</td>
-                        <td><i class="icon-receipt"></i></td>
-                        <td><input type="checkbox" class="send-email" disabled></td>
-                        <td class="editInfo"><a href="#">EDIT</a></td>
-                    </tr>
                 </tbody>
             </table>
 
 
-            <div class="button-section pad-hrz-sm">
+            <div class="button-section-foot pad-hrz-sm">
                 <input type="button" class="button warning" onclick="sendEmailDialog()" value="Send Email"></button>
                 <input type="button" class="button warning" onclick="failedEmailDialog()" value="Failed Email"></button>
                 <button class="button warning">Print</button>
@@ -210,7 +174,7 @@
             <div class="close-overlay">&times;</div>
             <div class="custom-modal__title">Send Email</div>
             <p id="resultText" class="waiting-ct">
-                <span class="waiting"> Sending...</span>
+                <span class="waiting">Sending...</span>
             </p>
             <p class="modal-hints">
                 If you close this window the messages will still be sent.
@@ -323,8 +287,6 @@
         <!-- Custom JS ~ TODO: Reorganize the architecture as more forms are added! -->
         <script>
 
-            $("#edit-customer-info").validate();
-
             $().ready(function() {
                 var validator = $("#editCustomerInfo").validate({
                     debug: true,
@@ -394,16 +356,20 @@
                 else {
                     $('#sendEmailModal').show();
                     $(".overlay").css('display', 'block');
-                    // For prototype only!
+                    // Bad ideas (like setTimeout) are for prototype usage only!
                     setTimeout(function() {
-                        $('#resultText').text('Email(s) sent sucessfully');
+                        $('#resultText span').text('Email(s) sent sucessfully');
                         $('#resultText').removeClass('waiting-ct');
                         $('#resultText').addClass('response-success');
-                        $('span.waiting').removeClass('waiting');
+                        $('#resultText span').removeClass('waiting');
                     }, 4000);
                     setTimeout(function() {
+                        $('#resultText span').text('Sending...');
                         $('#sendEmailModal').fadeOut(200);
                         $(".overlay").fadeOut(200);
+                        $('#resultText').addClass('waiting-ct');
+                        $('#resultText').removeClass('response-success');
+                        $('#resultText span').addClass('waiting');
                     }, 6000);
                 }
             }
@@ -424,10 +390,52 @@
             }
 
 
-            
 
             //----------------------------------
             //------- DataTable Rules ----------
+
+            $("#edit-customer-info").validate();
+
+            $(document).ready(function() {
+                $('#activationSupportData').DataTable( {
+                    "ajax": 'activationSupportData.json',
+                    columns: [
+                        { data: 'sellTo' },
+                        { data: 'hardwareSKU' },
+                        { data: 'serial' },
+                        { data: 'receipt' },
+                        { data: 'purchaseDate' },
+                        { data: 'carepakSKU' },
+                        { data: 'term' },
+                        { data: 'activationCode' },
+                        { data: 'firstName' },
+                        { data: 'lastName' },
+                        { data: 'expDate' },
+                        { data: 'email' },
+                        { data: 'phone' },
+                        { data: 'picture' },
+                        { data: 'edit' },
+                        { data: 'checked' }
+                    ],
+                    columnDefs: [{
+                        render: function (data, type, row) {
+                            return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
+                        },
+                        targets: 15
+                    },
+                    { lengthMenu: [ 10, 25 ] },
+                    {
+                        targets  : 'no-sort',
+                        orderable: false,
+                        order: []
+                    },
+                    { 
+                        className: "dt-center", 
+                        targets: [13, 14, 15]
+                    }]
+                });
+            });
+
             $.fn.dataTable.render.ellipsis = function () {
                 return function ( data, type, row ) {
                     return type === 'display' && data.length > 10 ?
@@ -435,32 +443,6 @@
                         data;
                 }
             };
-            $(document).ready(function() {
-                $('#example').DataTable({
-                    //     responsive: {
-                    //     details: {
-                    //         type: 'column',
-                    //         target: 'tr'
-                    //     }
-                    // },
-                    lengthMenu: [ 10, 25 ],
-                    columnDefs: [ 
-                    {
-                        targets  : 'no-sort',
-                        orderable: false,
-                        order: []
-                    },
-                    {
-                        targets: 11,
-                        render: $.fn.dataTable.render.ellipsis() 
-                    },
-                    { 
-                        className: "dt-center", 
-                        targets: "_all"
-                    }
-                ]
-                });
-            });
 
             //----------------------------------
             //---- Phone number input mask -----

@@ -63,12 +63,13 @@ form .error + .error {
   font-size: 13px;
 }
 @keyframes blinkie {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
 .waiting {
-  animation: blinkie 1s ease-in-out infinite;
+  opacity: 0;
+  animation: blinkie 1s ease-in-out infinite .2s;
 }
 .response-success {
   display: block;
@@ -90,8 +91,9 @@ form .error + .error {
 }
 .modal-hints {
   font-size: .8rem;
+  margin-top: 2rem;
 }
 p.strong {
-  font-weight: 700;
-  font-size: .95rem;
+  font-weight: 600;
+  font-size: .9rem;
 }

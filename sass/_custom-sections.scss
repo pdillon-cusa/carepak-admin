@@ -59,11 +59,14 @@
         
     }
 }
-.button-section {
+.button-section, .button-section-foot  {
     padding-top: .5rem;
     margin-top: 1.5rem;
     text-align: right;
     bottom: 0;
     right: 0;
     width: 100%;
+}
+.button-section-foot {
+    margin-top: 0;
 }
