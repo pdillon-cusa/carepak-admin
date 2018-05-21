@@ -1,8 +1,9 @@
 // ------------------------------------
 // Data Tables Customized
 
+table.dataTable *,
 .dataTables_wrapper  {
-    font-size: 11px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
 }
 table.dataTable thead .sorting, 
@@ -29,10 +30,17 @@ table.dataTable.no-footer {
     margin-bottom: 1rem;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper, .dataTables_wrapper span, .dataTables_wrapper a {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
     color: #fff !important;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 table.dataTable thead th, 
@@ -56,11 +64,6 @@ table.dataTable.display tbody td {
   text-overflow: ellipsis;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 input[type="search"] {
     -webkit-appearance: button;
     font-size: 13px;
@@ -76,6 +79,16 @@ select{
     visibility: hidden;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    font-family: Arial, Helvetica, sans-serif !important;
+tbody tr:hover { 
+    td, td.sorting_1 {  /* or th */
+        background-color: $primary-x-lt !important;
+    }
 }
+
+table.dataTable span.highlight,
+table.dataTable span.column_highlight {
+    background-color: #8ED6FB;
+    border-radius: 0.15rem;
+    padding: .2rem .1rem;
+    font-size: 13px;
+  }

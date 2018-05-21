@@ -31,13 +31,13 @@
         </header>
 
         <div class="custom-container">
-
+            <form>
             <div class="section-head">
                 <div class="section-head__title">
                     <h3>Lookup CarePAK</h3>
                 </div>
                 <div class="section-head__actions">
-                    &nbsp;
+                    General Search: <input type="text" id="searchbox">
                 </div>
             </div>
 
@@ -48,13 +48,13 @@
                         <label for="temp">First Name</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="text" class="form-control" id="temp">
+                        <input type="text" class="form-control" id="firstNameSearch">
                     </div>
                     <div class="search-filters__label">
                         <label for="temp">Last Name</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="text" class="form-control" id="temp">
+                        <input type="text" class="form-control" id="lastNameSearch">
                     </div>
                 </div>
 
@@ -63,13 +63,13 @@
                         <label for="temp">Email</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="text" class="form-control" id="temp">
+                        <input type="text" class="form-control" id="emailSearch">
                     </div>
                     <div class="search-filters__label">
                         <label for="temp">Phone #</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="tel" class="form-control" name="phone" id="phone" />
+                        <input type="tel" class="form-control" name="phone" id="phoneSearch" />
                     </div>
                 </div>
 
@@ -119,11 +119,11 @@
                         </div>
                     </div>
                     <div class="button-section">
-                        <button class="button alert">Clear All</button>
+                        <button class="button alert" id="clearAll">Clear All</button>
                         <button class="button">Search</button>
                     </div>
                 </div>
-                
+            </form>
             </div>
 
             <table id="activationSupportData" class="display stripe" style="width: 100%">
@@ -283,6 +283,9 @@
         <script src="js/vendor/jquery.dataTables.js"></script>
         <!-- <script src="js/vendor/dataTables.responsive.js"></script> -->
         <script src="js/vendor/jquery.maskedinput.js"></script>
+        <script src="js/vendor/dataTables.searchHighlight.min.js"></script>
+        <script src="js/vendor/jquery.highlight.js"></script>
+        
 
         <!-- Custom JS ~ TODO: Reorganize the architecture as more forms are added! -->
         <script>
@@ -382,18 +385,11 @@
                 else {
                     $('#failedEmailModal').show();
                     $(".overlay").css('display', 'block');
-                    // setTimeout(function() {
-                    //     $('#sendEmailModal').fadeOut(200);
-                    //     $(".overlay").fadeOut(200);
-                    // }, 3000);
                 }
             }
 
-
-
             //----------------------------------
             //------- DataTable Rules ----------
-
             $("#edit-customer-info").validate();
 
             $(document).ready(function() {
@@ -417,6 +413,8 @@
                         { data: 'edit' },
                         { data: 'checked' }
                     ],
+                    searchHighlight: true,
+                    dom: 't',
                     columnDefs: [{
                         render: function (data, type, row) {
                             return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
@@ -432,9 +430,51 @@
                     { 
                         className: "dt-center", 
                         targets: [13, 14, 15]
-                    }]
+                    },]
                 });
-            });
+
+                
+
+                //----------------------------------
+                //------ Single Column Search ------
+                var table = $('#activationSupportData').DataTable();
+                $("#clearAll").keyup(function() {
+                    table
+                        .search( '' )
+                        .columns().search( '' )
+                        .draw();
+                });
+
+                $("#searchbox").keyup(function() {
+                    table.search(this.value).draw();
+                });
+                $('#lastNameSearch').on('keyup', function() {
+                    table
+                        .columns(9)
+                        .search(this.value)
+                        .draw();
+                });
+                $('#firstNameSearch').on('keyup', function() {
+                    table
+                        .columns(8)
+                        .search(this.value)
+                        .draw();
+                });
+                $('#emailSearch').on('keyup', function() {
+                    table
+                        .columns(11)
+                        .search(this.value)
+                        .draw();
+                });
+                $('#phoneSearch').on('keyup', function() {
+                    table
+                        .columns(12)
+                        .search(this.value)
+                        .draw();
+                });
+
+            
+            });//--------- / doc-ready ----------------
 
             $.fn.dataTable.render.ellipsis = function () {
                 return function ( data, type, row ) {
@@ -443,10 +483,12 @@
                         data;
                 }
             };
+            
+            
 
             //----------------------------------
             //---- Phone number input mask -----
-             $("#phone").mask("(999) 999-9999");
+            // $("#phone").mask("(999) 999-9999");
         </script>
 
     </body>

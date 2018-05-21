@@ -25,15 +25,13 @@
 }
 
 // For size in rows - may need to revisit if more icons are needed elsewhere:
-[class^="icon-"] {
-  font-size: 18px;
-}
 
 .icon-checkmark:before {
   content: "\e900";
 }
 .icon-receipt:before {
   content: "\e901";
+  font-size: 18px;
 }
 .icon-receipt-1:before {
   content: "\e926";
