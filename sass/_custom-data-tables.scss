@@ -79,7 +79,7 @@ select{
     visibility: hidden;
 }
 
-tbody tr:hover { 
+table.dataTable.display tbody tr:hover { 
     td, td.sorting_1 {  /* or th */
         background-color: $primary-x-lt !important;
     }

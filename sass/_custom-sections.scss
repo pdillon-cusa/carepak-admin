@@ -45,6 +45,10 @@
             margin-bottom: 0;
             font-weight: 600;
         }
+        span.date-label {
+            color: $warning;
+            margin-left: 1rem;
+        }
     }
     &__sub-item {
         font-size: 11px;

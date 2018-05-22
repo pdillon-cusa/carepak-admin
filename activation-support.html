@@ -1,28 +1,17 @@
 <!doctype html>
 <html class="no-js" lang="">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link rel="stylesheet" href="css/canon-assets/jquery-ui.css">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="css/canon-assets/bootstrap.css">
-        <link rel="stylesheet" href="css/canon-assets/canon-styles.css">
-        <link rel="stylesheet" href="css/canon-assets/new_web_custom.css">
-        <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
-        <link rel="stylesheet" href="css/canon-assets/jquery.raty.css">
-
-        <!-- CarePak Custom -->
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="css/styles.css">
     </head>
-
     <body>
-
+        <!-- Overlay: Loading and Modals -->
+        <div class="loading"></div>
+        <div class="overlay"></div>
+    
         <header>
             <a href="index.html">
                 <div class="logo"><h1>Canon CarePak SKU Maintenance</h1></div>
@@ -37,7 +26,7 @@
                     <h3>Lookup CarePAK</h3>
                 </div>
                 <div class="section-head__actions">
-                    General Search: <input type="text" id="searchbox">
+                    &nbsp;
                 </div>
             </div>
 
@@ -106,15 +95,15 @@
 
                 <div class="col-3">
                     <div class="clearfix">
-                        <div class="search-filters__label"> Order Received Date</div>
+                        <div class="search-filters__label"> Order Received Date <span class="date-label">(From / To)</span></div>
                         <div class="search-filters__input">
                             <div class="search-filters__sub-item">
                                 <!-- <label for="temp">From</label> -->
-                                <input type="text" class="form-control" placeholder="From" id="date-from">
+                                <input type="text" class="form-control" placeholder="From" id="dateFrom">
                             </div>
                             <div class="search-filters__sub-item">
                                 <!-- <label for="temp">To</label> -->
-                                <input type="text" class="form-control" placeholder="To" id="date-to">
+                                <input type="text" class="form-control" placeholder="To" id="dateTo">
                             </div>
                         </div>
                     </div>
@@ -165,9 +154,6 @@
                 &copy; Canon 2018
             </div>
         </footer>
-
-        <!-- Dark Overlay -->
-        <div class="overlay"></div>
 
         <!-- Send Email Successfully Modal -->
         <div class="custom-modal" id="sendEmailModal">
@@ -257,8 +243,21 @@
                 <img src="img/receipt.png">
             </div>
         </div>
+        
+        <!-- Canon CSS Assets -->
+        <link rel="stylesheet" href="css/canon-assets/jquery-ui.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/canon-assets/bootstrap.css">
+        <link rel="stylesheet" href="css/canon-assets/canon-styles.css">
+        <link rel="stylesheet" href="css/canon-assets/new_web_custom.css">
+        <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
+        <link rel="stylesheet" href="css/canon-assets/jquery.raty.css">
 
-        <!-- Existing Canon Assets -->
+        <!-- CarePak Custom CSS Asset -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Existing Canon JS Assets -->
         <script src="js/canon-assets/jquery.include-min.js"></script>
         <script src="js/canon-assets/jquery.ui-min.js"></script>
         <script src="js/canon-assets/jquery.validate.min.js"></script>
@@ -295,6 +294,19 @@
         <script src="js/vendor/jquery.maskedinput.js"></script>
         <script src="js/vendor/dataTables.searchHighlight.min.js"></script>
         <script src="js/vendor/jquery.highlight.js"></script>
+
+        
+
+        <script>
+            $(".overlay").css('display', 'block');
+            $(".loading").css('display', 'block');
+            
+            function loaded() {
+                $(".overlay").fadeOut(200);
+                $(".loading").fadeOut(200);
+                $(".custom-container").css('visibility','visible').hide().fadeIn(200);
+            }
+        </script>
         
 
         <!-- Custom JS ~ TODO: Reorganize the architecture as more forms are added! -->
@@ -337,7 +349,18 @@
 
             //-------------- Date Picker -----------------------
             $(function() {
-                $("#date-to, #date-from").datepicker();
+                var today = new Date();
+                var currMonth = today.getMonth();
+                var currYear = today.getFullYear();
+                var currDay = today.getDay();
+                var startDate = new Date(currYear, currMonth - 2, currDay - 8);
+               // alert(startDate);
+                $("#dateFrom").datepicker().datepicker('setDate',startDate );
+                $("#dateTo").datepicker({
+                    maxDate: today,
+                    defaultDate: today,
+                    todayHighlight: true
+                }).datepicker('setDate',today );
             });
             
             //-------------- Close Any Modal --------------------
@@ -426,6 +449,10 @@
                         { data: 'edit' },
                         { data: 'checked' }
                     ],
+                    initComplete: function( settings, json ) {
+                       // $('div.loading').remove();
+                       loaded();
+                    },
                     searchHighlight: true,
                     columnDefs: [{
                         render: function (data, type, row) {
@@ -501,8 +528,9 @@
                         .draw();
                 });
             
-            });//--------- / doc-ready ----------------
+            }); //--------- / doc-ready ----------------
 
+            // ---------- Ellipsis Column -------------
             $.fn.dataTable.render.ellipsis = function () {
                 return function ( data, type, row ) {
                     return type === 'display' && data.length > 10 ?
@@ -510,7 +538,7 @@
                         data;
                 }
             };
-            
+
             //----------------------------------
             //---- Phone number input mask -----
             // $("#phone").mask("(999) 999-9999");
