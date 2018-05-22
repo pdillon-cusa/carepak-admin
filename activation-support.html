@@ -78,14 +78,14 @@
                         <label for="temp">Serial #</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="text" class="form-control" id="temp">
+                        <input type="text" class="form-control" id="serialSearch">
                     </div>
 
                     <div class="search-filters__label">
                         <label for="temp">Receipt #</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="text" class="form-control" id="temp">
+                        <input type="text" class="form-control" id="receiptSearch">
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@
                         <label for="temp">Sell to Code</label>
                     </div>
                     <div class="search-filters__input">
-                        <input type="text" class="form-control" id="temp">
+                        <input type="text" class="form-control" id="sellToSearch">
                     </div>
                 </div>
 
@@ -131,8 +131,8 @@
                     <tr>
                         <th>Sell To</th>
                         <th>Hardware SKU</th>
-                        <th>Serial#</th>
-                        <th>Receipt#</th>
+                        <th>Serial #</th>
+                        <th>Receipt #</th>
                         <th>Purchase Date</th>
                         <th>CarePAK SKU</th>
                         <th>Terms</th>
@@ -198,7 +198,7 @@
             </div>
         </div>
     
-         <!-- Edit Info Modal -->
+        <!-- Edit Info Modal -->
         <div class="custom-modal" id="editInfoModal">
             <div class="close-overlay">&times;</div>
             <div class="custom-modal__title">Edit Customer/Product Information</div>
@@ -247,6 +247,16 @@
            
         </div>
         <!-- / Modal -->
+
+
+        <!-- Edit Info Modal -->
+        <div class="custom-modal" id="viewReceiptModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Customer Receipt</div>
+            <div class="receipt-image">
+                <img src="img/receipt.png">
+            </div>
+        </div>
 
         <!-- Existing Canon Assets -->
         <script src="js/canon-assets/jquery.include-min.js"></script>
@@ -343,12 +353,15 @@
             });
 
             // ------------- Edit Info Dialog -------------------
-            $(".editInfo").on("click", function () {
-                showEditInfoModal();
-            });
             function showEditInfoModal() {
                 $(".overlay").css('display', 'block');
                 $("#editInfoModal").css('display', 'block');
+            }
+            
+            // ------------- View Receipt Dialog ----------------
+            function showReceiptModal() {
+                $(".overlay").css('display', 'block');
+                $("#viewReceiptModal").css('display', 'block');
             }
 
             // ----------- Send Email Dialog --------------------
@@ -414,7 +427,6 @@
                         { data: 'checked' }
                     ],
                     searchHighlight: true,
-                    dom: 't',
                     columnDefs: [{
                         render: function (data, type, row) {
                             return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
@@ -432,8 +444,6 @@
                         targets: [13, 14, 15]
                     },]
                 });
-
-                
 
                 //----------------------------------
                 //------ Single Column Search ------
@@ -472,7 +482,24 @@
                         .search(this.value)
                         .draw();
                 });
-
+                $('#serialSearch').on('keyup', function() {
+                    table
+                        .columns(2)
+                        .search(this.value)
+                        .draw();
+                });
+                $('#receiptSearch').on('keyup', function() {
+                    table
+                        .columns(3)
+                        .search(this.value)
+                        .draw();
+                });
+                $('#sellToSearch').on('keyup', function() {
+                    table
+                        .columns(0)
+                        .search(this.value)
+                        .draw();
+                });
             
             });//--------- / doc-ready ----------------
 
@@ -484,8 +511,6 @@
                 }
             };
             
-            
-
             //----------------------------------
             //---- Phone number input mask -----
             // $("#phone").mask("(999) 999-9999");
