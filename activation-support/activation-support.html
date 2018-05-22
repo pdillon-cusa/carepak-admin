@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Overlay: Loading and Modals -->
+        <div class="loading"></div>
+        <div class="overlay"></div>
+    
+        <header>
+            <a href="index.html">
+                <div class="logo"><h1>Canon CarePak SKU Maintenance</h1></div>
+            </a>
+            <div class="app-name">Activation Support</div>
+        </header>
+
+        <div class="custom-container">
+            <form>
+            <div class="section-head">
+                <div class="section-head__title">
+                    <h3>Lookup CarePAK</h3>
+                </div>
+                <div class="section-head__actions">
+                    &nbsp;
+                </div>
+            </div>
+
+            <div class="search-filters clearfix">
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">First Name</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="firstNameSearch">
+                    </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Last Name</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="lastNameSearch">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">Email</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="emailSearch">
+                    </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Phone #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="tel" class="form-control" name="phone" id="phoneSearch" />
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">Serial #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="serialSearch">
+                    </div>
+
+                    <div class="search-filters__label">
+                        <label for="temp">Receipt #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="receiptSearch">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="search-filters__label">
+                        <label for="temp">Registration #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="temp">
+                    </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Sell to Code</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="sellToSearch">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="clearfix">
+                        <div class="search-filters__label"> Order Received Date <span class="date-label">(From / To)</span></div>
+                        <div class="search-filters__input">
+                            <div class="search-filters__sub-item">
+                                <!-- <label for="temp">From</label> -->
+                                <input type="text" class="form-control" placeholder="From" id="dateFrom">
+                            </div>
+                            <div class="search-filters__sub-item">
+                                <!-- <label for="temp">To</label> -->
+                                <input type="text" class="form-control" placeholder="To" id="dateTo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-section">
+                        <button class="button alert" id="clearAll">Clear All</button>
+                        <button class="button">Search</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+
+            <table id="activationSupportData" class="display stripe" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Sell To</th>
+                        <th>Hardware SKU</th>
+                        <th>Serial #</th>
+                        <th>Receipt #</th>
+                        <th>Purchase Date</th>
+                        <th>CarePAK SKU</th>
+                        <th>Terms</th>
+                        <th>CarePAK</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>CarePAK Exp Date</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th class="no-sort">Receipt</th>
+                        <th class="no-sort">&nbsp;</th>
+                        <th class="no-sort">Send Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+
+            <div class="button-section-foot pad-hrz-sm">
+                <input type="button" class="button warning" onclick="sendEmailDialog()" value="Send Email"></button>
+                <input type="button" class="button warning" onclick="failedEmailDialog()" value="Failed Email"></button>
+                <button class="button warning">Print</button>
+            </div>
+
+        </div> <!-- / container -->
+
+        <footer>
+            <div class="foot-content">
+                &copy; Canon 2018
+            </div>
+        </footer>
+
+        <!-- Send Email Successfully Modal -->
+        <div class="custom-modal" id="sendEmailModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Send Email</div>
+            <p id="resultText" class="waiting-ct">
+                <span class="waiting">Sending...</span>
+            </p>
+            <p class="modal-hints">
+                If you close this window the messages will still be sent.
+                <br>This window automatically closes on a sucessful send. 
+            </p>
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+
+        <!-- Failed Email Modal -->
+        <div class="custom-modal" id="failedEmailModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Send Email</div>
+            <p class="waiting-ct">One or more emails failed due to a missing or incorrect email address.</p>
+                <p class="strong">Abby Smith: ESPADR32198764</p>
+                <p class="strong">John Jones: ESPAD09724424</p>
+                <p class="strong">Harvey Wilson: ESPAD097862654</p>
+                <p class="strong">Georgette Nathan: ESPAD8764</p>
+                <p class="modal-hints">Please edit the email information and resend.</p>
+            <div class="button-section">
+                <button class="button" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    
+        <!-- Edit Info Modal -->
+        <div class="custom-modal" id="editInfoModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Edit Customer/Product Information</div>
+            <form id="editCustomerInfo" method="get" action="">
+
+                <div class="custom-modal__label">
+                    <label for="serialNumber">Serial Number</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="serialNumber" name="serialNumber" title="Serial must be between 6 and 50 characters.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="firstName" name="firstName" title="First name must be between 1 and 50 characters.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="lastName" name="lastName" title="Last name must be between 1 and 50 characters.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="emailAddress">Email Address</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="emailAddress" name="emailAddress" title="Please enter a valid email address.">
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="phone" name="phone" title="Please enter a valid phone number.">
+                </div>
+
+                <div class="button-section">
+                    <button class="button alert" onclick="closeModal()">Cancel</button>
+                    <input class="button" type="submit" value="Save">
+                </div>
+            </form>
+           
+        </div>
+        <!-- / Modal -->
+
+
+        <!-- Edit Info Modal -->
+        <div class="custom-modal" id="viewReceiptModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Customer Receipt</div>
+            <div class="receipt-image">
+                <img src="img/receipt.png">
+            </div>
+        </div>
+        
+        <!-- Canon CSS Assets -->
+        <link rel="stylesheet" href="../css/canon-assets/jquery-ui.css">
+        <link rel="stylesheet" href="../css/vendor-assets/jquery-ui.css">
+        <link rel="stylesheet" href="../css/canon-assets/bootstrap.css">
+        <link rel="stylesheet" href="../css/canon-assets/canon-styles.css">
+        <link rel="stylesheet" href="../css/canon-assets/new_web_custom.css">
+        <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
+        <link rel="stylesheet" href="../css/canon-assets/jquery.raty.css">
+
+        <!-- CarePak Custom CSS Asset -->
+        <link rel="stylesheet" href="../css/vendor-assets/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <!-- Existing Canon JS Assets -->
+        <script src="../js/canon-assets/jquery.include-min.js"></script>
+        <script src="../js/canon-assets/jquery.ui-min.js"></script>
+        <script src="../js/canon-assets/jquery.validate.min.js"></script>
+        <script src="../js/canon-assets/confirmDialog.js"></script>
+        <script src="../js/canon-assets/productFinder.js"></script>
+        <script src="../js/canon-assets/serialFinder.js"></script>
+        <!-- <script src="../js/canon-assets/validatorCustomMethods.js"></script>-->
+        <script src="../js/canon-assets/jquery.raty-min.js"></script>
+        <script src="../js/canon-assets/jquery.mask-min.js"></script>
+        <script src="../js/canon-assets/paginationHelper.js"></script>
+        <script src="../js/canon-assets/paginationWidget.js"></script>
+        <script src="../js/canon-assets/coreMetricsWrapper.js"></script>
+        <script src="../js/canon-assets/liveChat.js"></script>
+        <script src="../js/canon-assets/jquery.history.js"></script>
+        <script src="../js/canon-assets/custom.js"></script>
+        <script src="../js/canon-assets/jReject-min.js"></script>
+        <script src="../js/canon-assets/mustache.min.js"></script>
+        <script src="../js/canon-assets/canon.js"></script>
+        
+        <script src="../js/canon-assets/allegiance.js"></script>
+        <script src="../js/canon-assets/canon.js"></script>
+        <!-- 
+        <script src="../js/canon-assets/jquery.lazyloadxt.autoload.min.js"></script>
+        <script src="../js/canon-assets/jquery.lazyloadxt.min.js"></script>
+        <script src="../js/canon-assets/oo_engine.min.js"></script>
+        <script src="../js/canon-assets/mcxSiteIntercept-1.5.2.js"></script>
+        <script src="../js/canon-assets/oo_conf_inline_waypoint.js"></script>
+        <script src="../js/canon-assets/validatorCustomMethods.js"></script>
+        -->
+
+        <!-- CarePak Custom JS -->
+        <!-- <script src="../js/vendor/jquery-3.3.1.js"></script> -->
+        <script src="../js/vendor/jquery.dataTables.js"></script>
+        <script src="../js/vendor/jquery.maskedinput.js"></script>
+        <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
+        <script src="../js/vendor/jquery.highlight.js"></script>
+
+        <script src="js/activation-support.js"></script>
+    </body>
+</html>
