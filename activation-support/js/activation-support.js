@@ -1,15 +1,4 @@
-
-
-//--------------- Page Loading Items --------------
-$(".overlay").css('display', 'block');
-$(".loading").css('display', 'block');
-
-function loaded() {
-    $(".overlay").fadeOut(200);
-    $(".loading").fadeOut(200);
-    $(".custom-container").css('visibility','visible').hide().fadeIn(200);
-}
-
+//-------------------------------------------------
 //---------------- Form Validation ----------------
 $().ready(function() {
     var validator = $("#editCustomerInfo").validate({
@@ -149,7 +138,6 @@ $(document).ready(function() {
             { data: 'checked' }
         ],
         initComplete: function( settings, json ) {
-            // $('div.loading').remove();
             loaded();
         },
         searchHighlight: true,
