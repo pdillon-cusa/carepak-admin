@@ -1,22 +1,31 @@
-// $(document).ready(function() {
-//     $('#example').DataTable({
-//         lengthMenu: [ 10, 25 ],
-//         columnDefs: [{
-//             targets  : 'no-sort',
-//             orderable: false,
-//             order: []
-//     }],
-//     initComplete: function( settings, json ) {
-//             loaded();
-//         }
-//     });
-// });
 
+
+//-------------------------------------------------
+//---------------- Form Validation ----------------
+$().ready(function() {
+    var validator = $("#editSkuInfo").validate({
+        debug: true,
+        rules: {
+            cpType: {
+                required: true,
+                minlength: 6,
+                maxlength: 50
+            }
+        },
+        submitHandler: function(form) {
+            closeModal();
+        }
+    });
+});
+
+//-------------------------------------------------
+//---------------- DataTable Rules ----------------
 $(document).ready(function() {
     $('#skuMaintenanceData').DataTable({
         "ajax": '../sku-maintenance/js/skuMaintenanceData.json',
         columns: [
-            { data: 'sku' },
+            { data: 'carePakType' },
+            { data: 'carePakSku' },
             { data: 'carePakSkuName' },
             { data: 'company' },
             { data: 'productGroup' },
@@ -25,19 +34,14 @@ $(document).ready(function() {
             { data: 'dataRecovery' },
             { data: 'prefix' },
             { data: 'term' },
-            { data: 'checked'}
+            { data: 'edit' },
         ],
         initComplete: function( settings, json ) {
             loaded();
         },
         searchHighlight: true,
-        columnDefs: [{
-            render: function (data, type, row) {
-                return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
-            },
-            targets: 9
-        },
-        { lengthMenu: [ 10, 25 ] },
+        lengthMenu: [ 10, 25 ],
+        columnDefs: [
         {
             targets  : 'no-sort',
             orderable: false,
@@ -49,3 +53,11 @@ $(document).ready(function() {
         },]
     });
 });
+
+
+// ------------- Edit SKU Dialog -------------------
+function showEditSkuModal(sku) {
+    $("#cpSku").val(sku);
+    $(".overlay").css('display', 'block');
+    $("#editInfoModal").css('display', 'block');
+}

@@ -5,6 +5,10 @@ table.dataTable *,
 .dataTables_wrapper  {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+    select {
+        padding: .2rem .3rem;
+        font-size: 13px;
+    }
 }
 table.dataTable thead .sorting, 
 table.dataTable thead .sorting_asc, 
@@ -66,10 +70,6 @@ table.dataTable.display tbody td {
 
 input[type="search"] {
     -webkit-appearance: button;
-    font-size: 13px;
-}
-select{
-    padding: .2rem .3rem;
     font-size: 13px;
 }
 

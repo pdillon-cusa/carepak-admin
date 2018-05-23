@@ -41,14 +41,24 @@ p, p.lotusui30dojo {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    p.strong:nth-child(odd) {
-      background-color: $gray-x-lt;
+    .errant-email-list {
+      padding: .3rem;
+      border: 1px solid $primary;
+      background-color: $primary-x-lt;
+      p.list {
+        padding: .3rem;
+        margin: .2rem .5rem;
+        font-size: .9rem;
+        border-bottom: 1px solid $primary;
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
     }
-    p.strong {
-      font-weight: bold;
-      font-size: .9rem;
-      padding: .3rem .5rem;
-      letter-spacing: -1px;
+    select {
+        width: 100%;
+        padding: .4rem;
+        font-size: 14px;
     }
     &__title {
       text-transform: uppercase;
@@ -96,7 +106,7 @@ form .error + .error {
 }
 .waiting {
   opacity: 0;
-  animation: blinkie 1s ease-in-out infinite .2s;
+  animation: blinkie .8s ease-in-out infinite;
 }
 .response-success {
   display: block;

@@ -6,7 +6,6 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
     </head>
     <body>
         <!-- Overlay: Loading and Modals -->
@@ -137,10 +136,8 @@
                         <th class="no-sort">Send Email</th>
                     </tr>
                 </thead>
-                <tbody>
-                </tbody>
+                <tbody></tbody>
             </table>
-
 
             <div class="button-section-foot pad-hrz-sm">
                 <input type="button" class="button warning" onclick="sendEmailDialog()" value="Send Email"></button>
@@ -171,21 +168,25 @@
                 <button class="button alert" onclick="closeModal()">Close</button>
             </div>
         </div>
+        <!-- / Send Email Successfully Modal -->
 
         <!-- Failed Email Modal -->
         <div class="custom-modal" id="failedEmailModal">
             <div class="close-overlay">&times;</div>
             <div class="custom-modal__title">Send Email</div>
             <p class="waiting-ct">One or more emails failed due to a missing or incorrect email address.</p>
-                <p class="strong">Abby Smith: ESPADR32198764</p>
-                <p class="strong">John Jones: ESPAD09724424</p>
-                <p class="strong">Harvey Wilson: ESPAD097862654</p>
-                <p class="strong">Georgette Nathan: ESPAD8764</p>
-                <p class="modal-hints">Please edit the email information and resend.</p>
+            <div class="errant-email-list">
+                <p class="list">Abby Smith: ESPADR32198764</p>
+                <p class="list">John Jones: ESPAD09724424</p>
+                <p class="list">Harvey Wilson: ESPAD097862654</p>
+                <p class="list">Georgette Nathan: ESPAD8764</p>
+            </div>
+            <p class="modal-hints">Please edit the email information and resend.</p>
             <div class="button-section">
                 <button class="button" onclick="closeModal()">Close</button>
             </div>
         </div>
+        <!-- / Failed Email Modal -->
     
         <!-- Edit Info Modal -->
         <div class="custom-modal" id="editInfoModal">
@@ -235,8 +236,7 @@
             </form>
            
         </div>
-        <!-- / Modal -->
-
+        <!-- / Edit Info Modal -->
 
         <!-- Edit Info Modal -->
         <div class="custom-modal" id="viewReceiptModal">
@@ -297,7 +297,7 @@
         <script src="../js/vendor/jquery.maskedinput.js"></script>
         <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
         <script src="../js/vendor/jquery.highlight.js"></script>
-        <script src="../js/page-loading.js"></script>
+        <script src="../js/carepak-global.js"></script>
         <script src="js/activation-support.js"></script>
     </body>
 </html>

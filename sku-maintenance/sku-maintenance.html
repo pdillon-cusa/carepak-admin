@@ -7,10 +7,6 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <base href="/">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/vendor-assets/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -20,7 +16,7 @@
     <div class="overlay"></div>
 
   <header>
-    <a href="index.html">
+    <a href="../">
         <div class="logo"><h1>Canon CarePak SKU Maintenance</h1></div>
     </a>
     <div class="app-name">CarePak Administration</div>
@@ -33,29 +29,29 @@
             <h3>SKU Maintenance</h3>
         </div>
         <div class="section-head__actions">
+            <button class="button warning" onclick="showEditSkuModal()">Add SKU</button>
             <button class="button">Export</button>
-            <button class="button">Add SKU</button>
         </div>
     </div>  
 
-
-        <table id="skuMaintenanceData" class="display stripe" style="width: 100%">
-                <thead>
-                    <tr>
-                        <th>sellTo</th>
-                        <th>carePakSkuName</th>
-                        <th>company</th>
-                        <th>productGroup</th>
-                        <th>productCode</th>
-                        <th>level2Code</th>
-                        <th>dataRecovery</th>
-                        <th>prefix</th>
-                        <th>term</th>
-                        <th class="no-sort">&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+    <table id="skuMaintenanceData" class="display stripe" style="width: 100%">
+        <thead>
+            <tr>
+                <th>carePakType</th>
+                <th>carePakSku</th>
+                <th>carePakSkuName</th>
+                <th>company</th>
+                <th>productGroup</th>
+                <th>productCode</th>
+                <th>level2Code</th>
+                <th>dataRecovery</th>
+                <th>prefix</th>
+                <th>term</th>
+                <th class="no-sort"></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
   </div> <!-- / container -->
 
@@ -64,6 +60,122 @@
       &copy; Canon 2018
     </div>
   </footer>
+
+
+  
+    <!-- Edit SKU Modal -->
+    <div class="custom-modal" id="editInfoModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title">Edit SKU Information</div>
+            <form id="editSkuInfo" method="get" action="">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="custom-modal__label">
+                            <label for="carePakType">CarePAK Type</label>
+                        </div>
+                        <div class="format-data">
+                            <select id="carePakType" name="carePakType">
+                                <option>CarePAK Type</option>
+                            <select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="custom-modal__label">
+                            <label for="cpSku">CarePAK SKU</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="cpSku" name="cpSku" title="Error">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="cpSkuName">CarePAK SKU Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="cpSkuName" name="cpSkuName" disabled>
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="productCode">Product Group</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="productGroup" name="productCode" disabled>
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="productCode">Product Code</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="productCode" name="productCode" disabled>
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="level2Code">Level 2 Code</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="level2Code" name="level2Code" disabled>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="custom-modal__label">
+                            <label for="dataRecovery">Data Recovery</label>
+                        </div>
+                        <div class="format-data">
+                            <select id="dataRecovery" name="dataRecovery">
+                                <option>Yes</option>
+                                <option>No</option>
+                            <select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="custom-modal__label">
+                            <label for="term">Term (Months)</label>
+                        </div>
+                        <div class="format-data">
+                            <select id="term" name="term">
+                                <option>13</option>
+                                <option>24</option>
+                                <option>36</option>
+                                <option>37</option>
+                                <option>48</option>
+                                <option>49</option>
+                                <option>60</option>
+                            <select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="custom-modal__label">
+                            <label for="startDate">Start Date</label>
+                        </div>
+                        <div class="format-data">
+                            <input type="text" name="startDate" class="form-control" placeholder="Start Date" id="startDate">
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="custom-modal__label">
+                    <label for="prefix">Prefix</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" placeholder="E.g.: ESPA or ESPADR" id="prefix" name="prefix" title="Error">
+                </div>
+
+
+                <div class="button-section">
+                    <button class="button alert" onclick="closeModal()">Cancel</button>
+                    <input class="button" type="submit" value="Save">
+                </div>
+            </form>
+            
+        </div>
+        <!-- / Edit SKU Modal -->
+
+
 
   <!-- Canon CSS Assets -->
   <link rel="stylesheet" href="../css/canon-assets/jquery-ui.css">
@@ -115,7 +227,7 @@
   <script src="../js/vendor/jquery.maskedinput.js"></script>
   <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
   <script src="../js/vendor/jquery.highlight.js"></script>
-  <script src="../js/page-loading.js"></script>
+  <script src="../js/carepak-global.js"></script>
   <script src="../sku-maintenance/js/sku-maintenance.js"></script>
 
 </body>

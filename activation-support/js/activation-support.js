@@ -51,18 +51,6 @@ $(function() {
     }).datepicker('setDate',today );
 });
 
-//-------------- Close Any Modal --------------------
-function closeModal() {
-    $(".overlay").fadeOut(200);
-    $(".custom-modal").fadeOut(200);
-}
-$(document).keydown(function(e) {
-    if (e.keyCode == 27) { closeModal() }
-});
-$(".close-overlay").on("click", function () {
-    closeModal();
-});
-
 // ------------- Edit Info Dialog -------------------
 function showEditInfoModal() {
     $(".overlay").css('display', 'block');
@@ -118,7 +106,7 @@ $("#edit-customer-info").validate();
 
 $(document).ready(function() {
     $('#activationSupportData').DataTable( {
-        "ajax": 'activationSupportData.json',
+        "ajax": '../activation-support/js/activationSupportData.json',
         columns: [
             { data: 'sellTo' },
             { data: 'hardwareSKU' },
@@ -141,13 +129,13 @@ $(document).ready(function() {
             loaded();
         },
         searchHighlight: true,
+        lengthMenu: [ 10, 25 ],
         columnDefs: [{
             render: function (data, type, row) {
                 return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
             },
             targets: 15
         },
-        { lengthMenu: [ 10, 25 ] },
         {
             targets  : 'no-sort',
             orderable: false,
