@@ -56,8 +56,17 @@ $(document).ready(function() {
 
 
 // ------------- Edit SKU Dialog -------------------
-function showEditSkuModal(sku) {
+function showEditSkuModal(sku, skuName, productGroup) {
     $("#cpSku").val(sku);
+    $("#cpSkuName").val(skuName);
+    $("#productGroup").val(productGroup);
+
+    $(".overlay").css('display', 'block');
+    $("#editInfoModal").css('display', 'block');
+}
+
+// ------------- Add SKU Dialog -------------------
+function showAddSkuModal() {
     $(".overlay").css('display', 'block');
     $("#editInfoModal").css('display', 'block');
 }
