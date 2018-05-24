@@ -97,8 +97,9 @@ section {
   font-size: 2rem;
   line-height: 1;
   font-weight: 900;
+  transition: transform .2s ease;
   &:hover {
-      transform: scale(1.2);
+      transform: perspective(500px) translateZ(8px);
   }
   & .sect-icon {
       padding-top: .5rem;

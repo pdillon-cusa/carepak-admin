@@ -42,7 +42,7 @@ $(document).ready(function() {
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         buttons: ['excel'],
-        dom: 'Bfrtip',
+        dom: 'lBfrtip',
         columnDefs: [
         {
             targets  : 'no-sort',
@@ -56,6 +56,18 @@ $(document).ready(function() {
     });
 });
 
+    // --- Add class to Export Excel Button ----
+    $(document).ready(function() {
+        var dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
+        console.log(dtButton);
+        if(dtButton) {
+            var buttonDiv = $(".section-head").find($(".section-head__actions"));
+            dtButton.addClass('button');
+            dtButton.text('Export Excel');
+            dtButton.removeClass('dt-button buttons-excel buttons-html5');
+            dtButton.appendTo(buttonDiv);
+        }
+    });
 
 // ------------- Edit SKU Dialog -------------------
 function showEditSkuModal(sku, skuName, productGroup, productCode, level2Code, dataRecovery, term, prefix) {
@@ -76,11 +88,12 @@ function showEditSkuModal(sku, skuName, productGroup, productCode, level2Code, d
 
     // Show the overlay
     $(".overlay").css('display', 'block');
-    $("#editInfoModal").css('display', 'block');
+    $("#editSkuModal").css('display', 'block');
 }
 
 // ------------- Add SKU Dialog -------------------
 function showAddSkuModal() {
+    $('#editSkuInfo')[0].reset();
     $(".overlay").css('display', 'block');
-    $("#editInfoModal").css('display', 'block');
+    $("#editSkuModal").css('display', 'block');
 }

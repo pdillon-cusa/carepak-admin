@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <!-- Overlay: Loading and Modals -->
     <div class="loading"></div>
     <div class="overlay"></div>
@@ -30,23 +29,22 @@
         </div>
         <div class="section-head__actions">
             <button class="button warning" onclick="showAddSkuModal()">Add SKU</button>
-            <button class="button">Export</button>
         </div>
     </div>  
 
     <table id="skuMaintenanceData" class="display stripe" style="width: 100%">
         <thead>
             <tr>
-                <th>carePakType</th>
-                <th>carePakSku</th>
-                <th>carePakSkuName</th>
-                <th>company</th>
-                <th>productGroup</th>
-                <th>productCode</th>
-                <th>level2Code</th>
-                <th>dataRecovery</th>
-                <th>prefix</th>
-                <th>term</th>
+                <th>CarePAK Type</th>
+                <th>CarePAK SKU</th>
+                <th>CarePak SKU Name</th>
+                <th>CarePak Desc.</th>
+                <th>Product Group</th>
+                <th>Product Code</th>
+                <th>Level 2 Code</th>
+                <th>Data Recovery</th>
+                <th>Prefix</th>
+                <th>Term</th>
                 <th class="no-sort"></th>
             </tr>
         </thead>
@@ -64,7 +62,7 @@
 
   
     <!-- Edit SKU Modal -->
-    <div class="custom-modal" id="editInfoModal">
+    <div class="custom-modal" id="editSkuModal">
             <div class="close-overlay">&times;</div>
             <div class="custom-modal__title">Edit SKU Information</div>
             <form id="editSkuInfo" method="get" action="">
@@ -177,61 +175,64 @@
 
 
 
-  <!-- Canon CSS Assets -->
-  <link rel="stylesheet" href="../css/canon-assets/jquery-ui.css">
-  <link rel="stylesheet" href="../css/vendor-assets/jquery-ui.css">
-  <link rel="stylesheet" href="../css/canon-assets/bootstrap.css">
-  <link rel="stylesheet" href="../css/vendor-assets/buttons.dataTables.min.css">
-  <link rel="stylesheet" href="../css/canon-assets/canon-styles.css">
-  <link rel="stylesheet" href="../css/canon-assets/new_web_custom.css">
-  <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
-  <link rel="stylesheet" href="../css/canon-assets/jquery.raty.css">
+    <!-- Canon CSS Assets -->
+    <link rel="stylesheet" href="../css/canon-assets/jquery-ui.css">
+    <link rel="stylesheet" href="../css/vendor-assets/jquery-ui.css">
+    <link rel="stylesheet" href="../css/canon-assets/bootstrap.css">
+    <link rel="stylesheet" href="../css/vendor-assets/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="../css/canon-assets/canon-styles.css">
+    <link rel="stylesheet" href="../css/canon-assets/new_web_custom.css">
+    <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
+    <link rel="stylesheet" href="../css/canon-assets/jquery.raty.css">
 
-  <!-- CarePak Custom CSS Asset -->
-  <link rel="stylesheet" href="../css/vendor-assets/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
+    <!-- CarePak Custom CSS Asset -->
+    <link rel="stylesheet" href="../css/vendor-assets/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
-  <!-- Existing Canon JS Assets -->
-  <script src="../js/canon-assets/jquery.include-min.js"></script>
-  <script src="../js/canon-assets/jquery.ui-min.js"></script>
-  <script src="../js/canon-assets/jquery.validate.min.js"></script>
-  <script src="../js/canon-assets/confirmDialog.js"></script>
-  <script src="../js/canon-assets/productFinder.js"></script>
-  <script src="../js/canon-assets/serialFinder.js"></script>
-  <!-- <script src="../js/canon-assets/validatorCustomMethods.js"></script>-->
-  <script src="../js/canon-assets/jquery.raty-min.js"></script>
-  <script src="../js/canon-assets/jquery.mask-min.js"></script>
-  <script src="../js/canon-assets/paginationHelper.js"></script>
-  <script src="../js/canon-assets/paginationWidget.js"></script>
-  <script src="../js/canon-assets/coreMetricsWrapper.js"></script>
-  <script src="../js/canon-assets/liveChat.js"></script>
-  <script src="../js/canon-assets/jquery.history.js"></script>
-  <script src="../js/canon-assets/custom.js"></script>
-  <script src="../js/canon-assets/jReject-min.js"></script>
-  <script src="../js/canon-assets/mustache.min.js"></script>
-  <script src="../js/canon-assets/canon.js"></script>
-  
-  <script src="../js/canon-assets/allegiance.js"></script>
-  <script src="../js/canon-assets/canon.js"></script>
-  <!-- 
-  <script src="../js/canon-assets/jquery.lazyloadxt.autoload.min.js"></script>
-  <script src="../js/canon-assets/jquery.lazyloadxt.min.js"></script>
-  <script src="../js/canon-assets/oo_engine.min.js"></script>
-  <script src="../js/canon-assets/mcxSiteIntercept-1.5.2.js"></script>
-  <script src="../js/canon-assets/oo_conf_inline_waypoint.js"></script>
-  <script src="../js/canon-assets/validatorCustomMethods.js"></script>
-  -->
+    <!-- Existing Canon JS Assets -->
+    <script src="../js/canon-assets/jquery.include-min.js"></script>
+    <script src="../js/canon-assets/jquery.ui-min.js"></script>
+    <script src="../js/canon-assets/jquery.validate.min.js"></script>
+    <script src="../js/canon-assets/confirmDialog.js"></script>
+    <script src="../js/canon-assets/productFinder.js"></script>
+    <script src="../js/canon-assets/serialFinder.js"></script>
+    <!-- <script src="../js/canon-assets/validatorCustomMethods.js"></script>-->
+    <script src="../js/canon-assets/jquery.raty-min.js"></script>
+    <script src="../js/canon-assets/jquery.mask-min.js"></script>
+    <script src="../js/canon-assets/paginationHelper.js"></script>
+    <script src="../js/canon-assets/paginationWidget.js"></script>
+    <script src="../js/canon-assets/coreMetricsWrapper.js"></script>
+    <script src="../js/canon-assets/liveChat.js"></script>
+    <script src="../js/canon-assets/jquery.history.js"></script>
+    <script src="../js/canon-assets/custom.js"></script>
+    <script src="../js/canon-assets/jReject-min.js"></script>
+    <script src="../js/canon-assets/mustache.min.js"></script>
+    <script src="../js/canon-assets/canon.js"></script>
 
-  <!-- CarePak Custom JS -->
-  <!-- <script src="../js/vendor/jquery-3.3.1.js"></script> -->
-  <script src="../js/vendor/jquery.dataTables.js"></script>
-  <script src="../js/vendor/jquery.maskedinput.js"></script>
-  <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
-  <script src="../js/vendor/dataTables.buttons.min.js"></script>
-  <script src="../js/vendor/buttons.html5.min.js"></script>
-  <script src="../js/vendor/jquery.highlight.js"></script>
-  <script src="../js/carepak-global.js"></script>
-  <script src="../sku-maintenance/js/sku-maintenance.js"></script>
+    <script src="../js/canon-assets/allegiance.js"></script>
+    <script src="../js/canon-assets/canon.js"></script>
+    <!-- 
+    <script src="../js/canon-assets/jquery.lazyloadxt.autoload.min.js"></script>
+    <script src="../js/canon-assets/jquery.lazyloadxt.min.js"></script>
+    <script src="../js/canon-assets/oo_engine.min.js"></script>
+    <script src="../js/canon-assets/mcxSiteIntercept-1.5.2.js"></script>
+    <script src="../js/canon-assets/oo_conf_inline_waypoint.js"></script>
+    <script src="../js/canon-assets/validatorCustomMethods.js"></script>
+    -->
+    <!-- CarePak Custom JS -->
+    <!-- <script src="../js/vendor/jquery-3.3.1.js"></script> -->
+    <script src="../js/vendor/jquery.dataTables.js"></script>
+    <script src="../js/vendor/jquery.maskedinput.js"></script>
+    <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
+    <script src="../js/vendor/dataTables.buttons.min.js"></script>
+    <script src="../js/vendor/jszip.min.js"></script>
+    <script src="../js/vendor/pdfmake.min.js"></script>
+    <script src="../js/vendor/vfs_fonts.js"></script>
+    <script src="../js/vendor/buttons.print.min.js"></script>
+    <script src="../js/vendor/buttons.html5.min.js"></script>
+    <script src="../js/vendor/jquery.highlight.js"></script>
+    <script src="../js/carepak-global.js"></script>
+    <script src="../sku-maintenance/js/sku-maintenance.js"></script>
 
 </body>
 </html>
