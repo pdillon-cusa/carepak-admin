@@ -41,6 +41,8 @@ $(document).ready(function() {
         },
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
+        buttons: ['excel'],
+        dom: 'Bfrtip',
         columnDefs: [
         {
             targets  : 'no-sort',
@@ -56,11 +58,23 @@ $(document).ready(function() {
 
 
 // ------------- Edit SKU Dialog -------------------
-function showEditSkuModal(sku, skuName, productGroup) {
+function showEditSkuModal(sku, skuName, productGroup, productCode, level2Code, dataRecovery, term, prefix) {
+
+    // Assign the json values to the fields
     $("#cpSku").val(sku);
     $("#cpSkuName").val(skuName);
     $("#productGroup").val(productGroup);
+    $("#productCode").val(productCode);
+    $("#level2Code").val(level2Code);
+    if(dataRecovery) {
+        $("#dataRecovery").val("Yes");
+    } else {
+        $("#dataRecovery").val("No");
+    }
+    $("#term").val(term);
+    $("#prefix").val(prefix);
 
+    // Show the overlay
     $(".overlay").css('display', 'block');
     $("#editInfoModal").css('display', 'block');
 }
