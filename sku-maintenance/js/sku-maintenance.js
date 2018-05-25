@@ -19,6 +19,8 @@ $().ready(function() {
 //-------------------------------------------------
 //---------------- DataTable Rules ----------------
 $(document).ready(function() {
+    let d = new Date();
+    let strDate = 'CarePAK SKU Data ' + (d.getMonth()+1) + "-" + d.getDate()  + "-" + d.getFullYear();
     $('#skuMaintenanceData').DataTable({
         "ajax": '../sku-maintenance/js/skuMaintenanceData.json',
         columns: [
@@ -41,6 +43,12 @@ $(document).ready(function() {
         lengthMenu: [ 10, 25 ],
         buttons: ['excel'],
         dom: 'lBfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: strDate
+            }
+        ],
         columnDefs: [
         {
             targets  : 'no-sort',
@@ -57,7 +65,7 @@ $(document).ready(function() {
 //-------------------------------------------------
 // ------- Move Initial Export Excel Button -------
 $(document).ready(function() {
-    var dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
+    let dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
     if(dtButton) {
         var buttonDiv = $(".section-head").find($(".section-head__actions"));
         dtButton.addClass('button');

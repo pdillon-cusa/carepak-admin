@@ -100,7 +100,7 @@ section {
   font-weight: 900;
   transition: transform .2s ease;
   &:hover {
-         transform: perspective(500px) translateZ(8px);
+         transform:  translateY(-3px);
   }
   & .sect-icon {
       padding-top: .5rem;
