@@ -76,7 +76,8 @@ p, p.lotusui30dojo {
     width: 2.5rem;
     border-radius: 50%;
     background-color: whitesmoke;
-    border: 3px solid #444;
+    border: 3px solid $gray-x-dark;
+    color: $gray-x-dark;
     z-index: 15;
     &:hover {
       border: 3px solid $primary;

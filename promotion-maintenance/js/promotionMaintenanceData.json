@@ -1,0 +1,70 @@
+{
+    "data": [
+      {
+        "productSku": 1599243225,
+        "productName": "consequat nostrud dolore",
+        "productModel": 42324,
+        "carePakSku": 69922638,
+        "carePakType": "CarePAK Plus",
+        "carePakPeriod": 13,
+        "startDate": "03/03/1983",
+        "endDate": "06/18/2010",
+        "registrationPeriod": 62,
+        "company": "SNIPS",
+        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal('consequat nostrud dolore', 1599243225, 42324, 69922638, 'CarePAK Plus', 13, 03/03/1983, 06/18/2010, 62)\">EDIT</a>"
+      },
+      {
+        "productSku": 7659153857,
+        "productName": "nisi cillum irure",
+        "productModel": 39417,
+        "carePakSku": 3795545584,
+        "carePakType": "CarePAK Plus",
+        "carePakPeriod": 37,
+        "startDate": "09/04/2006",
+        "endDate": "10/30/1970",
+        "registrationPeriod": 75,
+        "company": "XEREX",
+        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal('nisi cillum irure', 7659153857, 39417, 3795545584, 'CarePAK Plus', 37, 09/04/2006, 10/30/1970, 75)\">EDIT</a>"
+      },
+      {
+        "productSku": 515740259,
+        "productName": "consequat est aute",
+        "productModel": 83808,
+        "carePakSku": 2361680866,
+        "carePakType": "CarePAK Plus",
+        "carePakPeriod": 49,
+        "startDate": "01/06/2007",
+        "endDate": "11/25/1991",
+        "registrationPeriod": 39,
+        "company": "CUBICIDE",
+        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal('consequat est aute', 515740259, 83808, 2361680866, 'CarePAK Plus', 49, 01/06/2007, 11/25/1991, 39)\">EDIT</a>"
+      },
+      {
+        "productSku": 3203333364,
+        "productName": "sunt qui ea",
+        "productModel": 74754,
+        "carePakSku": 2234992647,
+        "carePakType": "CarePAK Plus",
+        "carePakPeriod": 49,
+        "startDate": "03/08/2011",
+        "endDate": "07/28/1985",
+        "registrationPeriod": 38,
+        "company": "PHARMEX",
+        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal('sunt qui ea', 3203333364, 74754, 2234992647, 'CarePAK Plus', 49, 03/08/2011, 07/28/1985, 38)\">EDIT</a>"
+      },
+      {
+        "productSku": 2253679191,
+        "productName": "velit elit consequat",
+        "productModel": 17642,
+        "carePakSku": 9088658853,
+        "carePakType": "CarePAK Plus",
+        "carePakPeriod": 24,
+        "startDate": "03/02/1971",
+        "endDate": "12/12/1997",
+        "registrationPeriod": 31,
+        "company": "FRANSCENE",
+        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal('velit elit consequat', 2253679191, 17642, 9088658853, 'CarePAK Plus', 24, 03/02/1971, 12/12/1997, 31)\">EDIT</a>"
+      }
+    ]
+}
+

@@ -22,18 +22,17 @@ $(document).ready(function() {
     let d = new Date();
     let strDate = 'CarePAK SKU Data ' + (d.getMonth()+1) + "-" + d.getDate()  + "-" + d.getFullYear();
     $('#skuMaintenanceData').DataTable({
-        "ajax": '../sku-maintenance/js/skuMaintenanceData.json',
+        "ajax": '../promotion-maintenance/js/promotionMaintenanceData.json',
         columns: [
-            { data: 'carePakType' },
+            { data: 'productSku' },
+            { data: 'productName' },
+            { data: 'productModel' },
             { data: 'carePakSku' },
-            { data: 'carePakSkuName' },
-            { data: 'company' },
-            { data: 'productGroup' },
-            { data: 'productCode' },
-            { data: 'level2Code' },
-            { data: 'dataRecovery' },
-            { data: 'prefix' },
-            { data: 'term' },
+            { data: 'carePakType' },
+            { data: 'carePakPeriod' },
+            { data: 'startDate' },
+            { data: 'endDate' },
+            { data: 'registrationPeriod' },
             { data: 'edit' },
         ],
         initComplete: function( settings, json ) {
@@ -77,33 +76,29 @@ $(document).ready(function() {
 
 //-------------------------------------------------
 // ------------- Edit SKU Dialog ------------------
-function showEditSkuModal(carePakType, sku, skuName, productGroup, productCode, level2Code, dataRecovery, term, prefix) {
+function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod) {
     $('.custom-modal__title').text('Edit SKU Information');
     // Assign the json values to the fields
+    $("#productSku").val(productSku);
+    $("#productName").val(productName);
+    $("#productModel").val(productModel);
+    $("#carePakSku").val(carePakSku);
     $("#carePakType").val(carePakType);
-    $("#cpSku").val(sku);
-    $("#cpSkuName").val(skuName);
-    $("#productGroup").val(productGroup);
-    $("#productCode").val(productCode);
-    $("#level2Code").val(level2Code);
-    if(dataRecovery) {
-        $("#dataRecovery").val("Yes");
-    } else {
-        $("#dataRecovery").val("No");
-    }
-    $("#term").val(term);
-    $("#prefix").val(prefix);
+    $("#carePakPeriod").val(carePakPeriod);
+    $("#startDate").val(startDate);
+    $("#endDate").val(endDate);
+    $("#registrationPeriod").val(registrationPeriod);
 
     // Show the overlay
     $(".overlay").css('display', 'block');
-    $("#editSkuModal").css('display', 'block');
-    $("#editSkuInfo").data('validator').resetForm();
+    $("#editPromotionModal").css('display', 'block');
+    $("#editPromotionInfo").data('validator').resetForm();
 }
 
 //-------------------------------------------------
 // ------------- Add SKU Dialog -------------------
 // ------- (Same HTML Not populated) --------------
-function showAddSkuModal() {
+function showAddPromotionModal() {
     $("#carePakType").val('CarePAK Plus');
     $('.custom-modal__title').text('Add SKU Information');
     $(".overlay").css('display', 'block');

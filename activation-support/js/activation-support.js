@@ -55,6 +55,7 @@ $(function() {
 function showEditInfoModal() {
     $(".overlay").css('display', 'block');
     $("#editInfoModal").css('display', 'block');
+    $("#editCustomerInfo").data('validator').resetForm();
 }
 
 // ------------- View Receipt Dialog ----------------
