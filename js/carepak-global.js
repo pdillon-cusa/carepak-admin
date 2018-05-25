@@ -21,3 +21,5 @@ $(document).keydown(function(e) {
 $(".close-overlay").on("click", function () {
     closeModal();
 });
+
+

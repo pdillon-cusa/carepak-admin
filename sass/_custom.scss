@@ -1,6 +1,7 @@
+
 body {
   background: $body-bg;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 4rem 0;
 }
 a:link, a:visited, a:hover, a:active {
@@ -8,7 +9,7 @@ a:link, a:visited, a:hover, a:active {
     color: #1779ba;
     text-decoration: none;
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     &:hover {
         color: $primary;
     }
@@ -93,13 +94,13 @@ section {
   margin: 1rem;
   float: left;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   font-size: 2rem;
   line-height: 1;
   font-weight: 900;
   transition: transform .2s ease;
   &:hover {
-      transform: perspective(500px) translateZ(8px);
+         transform: perspective(500px) translateZ(8px);
   }
   & .sect-icon {
       padding-top: .5rem;

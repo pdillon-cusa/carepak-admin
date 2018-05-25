@@ -24,9 +24,12 @@
     padding-bottom: 1rem;
 
     &__title {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         text-align: center;
         font-size: 19px;
+        border-bottom: 1px solid $primary;
+        padding-bottom: .5rem;
+        color: $primary;
     }
     
     .col-3 {

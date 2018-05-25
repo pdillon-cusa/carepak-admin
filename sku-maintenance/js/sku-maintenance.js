@@ -3,13 +3,11 @@
 //-------------------------------------------------
 //---------------- Form Validation ----------------
 $().ready(function() {
-    var validator = $("#editSkuInfo").validate({
+    var validator = $("#editSkuInfo, #addSkuModal").validate({
         debug: true,
         rules: {
-            cpType: {
-                required: true,
-                minlength: 6,
-                maxlength: 50
+            carePakType: {
+                required: true
             }
         },
         submitHandler: function(form) {
@@ -56,23 +54,25 @@ $(document).ready(function() {
     });
 });
 
-    // --- Add class to Export Excel Button ----
-    $(document).ready(function() {
-        var dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
-        console.log(dtButton);
-        if(dtButton) {
-            var buttonDiv = $(".section-head").find($(".section-head__actions"));
-            dtButton.addClass('button');
-            dtButton.text('Export Excel');
-            dtButton.removeClass('dt-button buttons-excel buttons-html5');
-            dtButton.appendTo(buttonDiv);
-        }
-    });
+//-------------------------------------------------
+// ------- Move Initial Export Excel Button -------
+$(document).ready(function() {
+    var dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
+    if(dtButton) {
+        var buttonDiv = $(".section-head").find($(".section-head__actions"));
+        dtButton.addClass('button');
+        dtButton.text('Export Excel');
+        dtButton.removeClass('dt-button buttons-excel buttons-html5');
+        dtButton.appendTo(buttonDiv);
+    }
+});
 
-// ------------- Edit SKU Dialog -------------------
-function showEditSkuModal(sku, skuName, productGroup, productCode, level2Code, dataRecovery, term, prefix) {
-
+//-------------------------------------------------
+// ------------- Edit SKU Dialog ------------------
+function showEditSkuModal(carePakType, sku, skuName, productGroup, productCode, level2Code, dataRecovery, term, prefix) {
+    $('.custom-modal__title').text('Edit SKU Information');
     // Assign the json values to the fields
+    $("#carePakType").val(carePakType);
     $("#cpSku").val(sku);
     $("#cpSkuName").val(skuName);
     $("#productGroup").val(productGroup);
@@ -89,11 +89,15 @@ function showEditSkuModal(sku, skuName, productGroup, productCode, level2Code, d
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#editSkuModal").css('display', 'block');
+    $("#editSkuInfo").data('validator').resetForm();
 }
 
+//-------------------------------------------------
 // ------------- Add SKU Dialog -------------------
 function showAddSkuModal() {
-    $('#editSkuInfo')[0].reset();
+    $("#carePakType").val('CarePAK Plus');
+    $('.custom-modal__title').text('Add SKU Information');
     $(".overlay").css('display', 'block');
     $("#editSkuModal").css('display', 'block');
+    $("#editSkuInfo").data('validator').resetForm();
 }

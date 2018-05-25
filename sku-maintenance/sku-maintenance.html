@@ -7,6 +7,7 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
 </head>
 
 <body>
@@ -16,9 +17,9 @@
 
   <header>
     <a href="../">
-        <div class="logo"><h1>Canon CarePak SKU Maintenance</h1></div>
+        <div class="logo"><h1>Canon CarePAK</h1></div>
     </a>
-    <div class="app-name">CarePak Administration</div>
+    <div class="app-name">CarePAK Administration</div>
   </header>
 
   <div class="custom-container">
@@ -64,7 +65,7 @@
     <!-- Edit SKU Modal -->
     <div class="custom-modal" id="editSkuModal">
             <div class="close-overlay">&times;</div>
-            <div class="custom-modal__title">Edit SKU Information</div>
+            <div class="custom-modal__title"></div>
             <form id="editSkuInfo" method="get" action="">
 
                 <div class="row">
@@ -74,7 +75,8 @@
                         </div>
                         <div class="format-data">
                             <select id="carePakType" name="carePakType">
-                                <option>CarePAK Type</option>
+                                <option value="CarePAK Plus">CarePAK Plus</option>
+                                <option value="">None</option>
                             <select>
                         </div>
                     </div>
@@ -224,13 +226,15 @@
     <script src="../js/vendor/jquery.dataTables.js"></script>
     <script src="../js/vendor/jquery.maskedinput.js"></script>
     <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
+    <script src="../js/vendor/jquery.highlight.js"></script>
+    <!-- Export Excel -->
     <script src="../js/vendor/dataTables.buttons.min.js"></script>
     <script src="../js/vendor/jszip.min.js"></script>
     <script src="../js/vendor/pdfmake.min.js"></script>
     <script src="../js/vendor/vfs_fonts.js"></script>
     <script src="../js/vendor/buttons.print.min.js"></script>
     <script src="../js/vendor/buttons.html5.min.js"></script>
-    <script src="../js/vendor/jquery.highlight.js"></script>
+    <!-- CarePak Custom JS -->
     <script src="../js/carepak-global.js"></script>
     <script src="../sku-maintenance/js/sku-maintenance.js"></script>
 
