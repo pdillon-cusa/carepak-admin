@@ -32,18 +32,18 @@
         </div>
     </div>  
 
-    <table id="skuMaintenanceData" class="display stripe" style="width: 100%">
+    <table id="promotionMaintenanceData" class="display stripe" style="width: 100%">
         <thead>
             <tr>
-                <th>productSku</th>
-                <th>productName</th>
-                <th>productModel</th>
-                <th>carePakSku</th>
-                <th>carePakType</th>
-                <th>carePakPeriod</th>
-                <th>startDate</th>
-                <th>endDate</th>
-                <th>registrationPeriod</th>
+                <th>Product SKU</th>
+                <th>Product Name</th>
+                <th>Product Model</th>
+                <th>CarePak SKU</th>
+                <th>CarePak Type</th>
+                <th>CarePak Period</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Registration Period</th>
                 <th class="no-sort"></th>
             </tr>
         </thead>
@@ -66,92 +66,93 @@
             <div class="custom-modal__title"></div>
             <form id="editPromotionInfo" method="get" action="">
 
+                <div class="custom-modal__label">
+                    <label for="productName">Product Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="productName" name="productName" title="Error">
+                </div>
+
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="custom-modal__label">
-                            <label for="productSku">productSku</label>
+                            <label for="productSku">Product SKU</label>
                         </div>
                         <div class="format-data">
-                                <input class="form-control" id="productSku" name="productSku" title="Error">
+                            <input class="form-control" id="productSku" name="productSku" title="Error">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="custom-modal__label">
-                            <label for="productName">productName</label>
+                            <label for="productModel">Product Model</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="productName" name="productName" title="Error">
+                            <input class="form-control" id="productModel" name="productModel" disabled>
                         </div>
                     </div>
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="productModel">productModel</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="productModel" name="productModel" disabled>
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="carePakSku">carePakSku</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="carePakSku" name="carePakSku" disabled>
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="carePakType">carePakType</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="carePakType" name="carePakType" disabled>
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="carePakPeriod">carePakPeriod</label>
-                </div>
-                <div class="format-data">
-                    <select id="carePakPeriod" name="carePakPeriod">
-                        <option>13</option>
-                        <option>24</option>
-                        <option>36</option>
-                        <option>37</option>
-                        <option>48</option>
-                        <option>49</option>
-                        <option>60</option>
-                    <select>
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <div class="custom-modal__label">
-                            <label for="startDate">startDate</label>
+                            <label for="carePakSku">CarePak SKU</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="startDate" name="startDate" disabled>
+                            <input class="form-control" id="carePakSku" name="carePakSku" disabled>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <div class="custom-modal__label">
-                            <label for="endDate">endDate</label>
+                            <label for="carePakType">CarePak Type</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="endDate" name="endDate" disabled>
+                            <input class="form-control" id="carePakType" name="carePakType" disabled>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="custom-modal__label">
-                            <label for="registrationPeriod">registrationPeriod</label>
+                            <label for="carePakPeriod">CarePak Period</label>
+                        </div>
+                        <div class="format-data">
+                            <select id="carePakPeriod" name="carePakPeriod">
+                                <option>13</option>
+                                <option>24</option>
+                                <option>36</option>
+                                <option>37</option>
+                                <option>48</option>
+                                <option>49</option>
+                                <option>60</option>
+                            <select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="registrationPeriod">Registration Period</label>
                         </div>
                         <div class="format-data">
                             <input class="form-control" id="registrationPeriod" name="registrationPeriod" disabled>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="custom-modal__label">
                             <label for="startDate">Start Date</label>
                         </div>
                         <div class="format-data">
-                            <input type="text" name="startDate" class="form-control" placeholder="Start Date" id="startDate">
+                            <input class="form-control" id="startDate" name="startDate" disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="endDate">End Date</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="endDate" name="endDate" disabled>
                         </div>
                     </div>
                 </div>

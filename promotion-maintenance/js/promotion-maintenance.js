@@ -3,7 +3,7 @@
 //-------------------------------------------------
 //---------------- Form Validation ----------------
 $().ready(function() {
-    var validator = $("#editSkuInfo, #addSkuModal").validate({
+    var validator = $("#editPromotionInfo").validate({
         debug: true,
         rules: {
             carePakType: {
@@ -19,9 +19,7 @@ $().ready(function() {
 //-------------------------------------------------
 //---------------- DataTable Rules ----------------
 $(document).ready(function() {
-    let d = new Date();
-    let strDate = 'CarePAK SKU Data ' + (d.getMonth()+1) + "-" + d.getDate()  + "-" + d.getFullYear();
-    $('#skuMaintenanceData').DataTable({
+    $('#promotionMaintenanceData').DataTable({
         "ajax": '../promotion-maintenance/js/promotionMaintenanceData.json',
         columns: [
             { data: 'productSku' },
@@ -40,14 +38,6 @@ $(document).ready(function() {
         },
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
-        buttons: ['excel'],
-        dom: 'lBfrtip',
-        buttons: [
-            {
-                extend: 'excelHtml5',
-                title: strDate
-            }
-        ],
         columnDefs: [
         {
             targets  : 'no-sort',
@@ -62,22 +52,9 @@ $(document).ready(function() {
 });
 
 //-------------------------------------------------
-// ------- Move Initial Export Excel Button -------
-$(document).ready(function() {
-    let dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
-    if(dtButton) {
-        var buttonDiv = $(".section-head").find($(".section-head__actions"));
-        dtButton.addClass('button');
-        dtButton.text('Export Excel');
-        dtButton.removeClass('dt-button buttons-excel buttons-html5');
-        dtButton.appendTo(buttonDiv);
-    }
-});
-
-//-------------------------------------------------
-// ------------- Edit SKU Dialog ------------------
+// --------- Edit Promotion Dialog ----------------
 function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod) {
-    $('.custom-modal__title').text('Edit SKU Information');
+    $('.custom-modal__title').text('Edit Promotion');
     // Assign the json values to the fields
     $("#productSku").val(productSku);
     $("#productName").val(productName);
@@ -97,11 +74,10 @@ function showEditPromotionModal(productSku, productName, productModel, carePakSk
 
 //-------------------------------------------------
 // ------------- Add SKU Dialog -------------------
-// ------- (Same HTML Not populated) --------------
 function showAddPromotionModal() {
-    $("#carePakType").val('CarePAK Plus');
-    $('.custom-modal__title').text('Add SKU Information');
+    $('.custom-modal__title').text('Add Promotion');
+    // Show the overlay
     $(".overlay").css('display', 'block');
-    $("#editSkuModal").css('display', 'block');
-    $("#editSkuInfo").data('validator').resetForm();
+    $("#editPromotionModal").css('display', 'block');
+    $("#editPromotionInfo").data('validator').resetForm();
 }

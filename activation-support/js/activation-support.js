@@ -52,7 +52,15 @@ $(function() {
 });
 
 // ------------- Edit Info Dialog -------------------
-function showEditInfoModal() {
+function showEditCustomerModal(serialNumber, firstName, lastName, emailAddress, editPhone) {
+
+    $("#serialNumber").val(serialNumber);
+    $("#firstName").val(firstName);
+    $("#lastName").val(lastName);
+    $("#emailAddress").val(emailAddress);
+    $("#editPhone").val(editPhone);
+
+
     $(".overlay").css('display', 'block');
     $("#editInfoModal").css('display', 'block');
     $("#editCustomerInfo").data('validator').resetForm();
@@ -144,7 +152,7 @@ $(document).ready(function() {
         },
         { 
             className: "dt-center", 
-            targets: [13, 14, 15]
+            targets: [6, 13, 14, 15]
         },]
     });
 
