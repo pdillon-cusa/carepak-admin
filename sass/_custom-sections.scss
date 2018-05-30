@@ -50,6 +50,9 @@
             color: $warning;
             margin-left: 1rem;
         }
+        i {
+            font-size: 20px;
+        }
     }
     &__sub-item {
         font-size: 11px;
@@ -75,3 +78,65 @@
 .button-section-foot {
     margin-top: 0;
 }
+
+// Tooltip
+
+.maxCoverageTooltip {
+    display: none;
+    padding: 0.75rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) -2px 2px 12px;
+    background-color: $section-3B;
+    border: 2px solid $section-3;
+    color: $section-3C;
+    width: 12rem;
+    animation: move .4s ease 1;
+    transform: translate(16px, -103px);
+    position: absolute;
+    z-index: 5;
+    p {
+      font: 13px Arial;
+      line-height: 18px;
+      margin: 0;
+    }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -15px;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent $section-3;
+    display: block;
+    width: 0;
+    z-index: 1;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 33px;
+    right: -12px;
+    border-style: solid;
+    border-width: 12px 0 12px 12px;
+    border-color: transparent $section-3B;
+    display: block;
+    width: 0;
+    z-index: 1;
+  }
+}
+.close-tooltip {
+    font-size: 20px;
+    font-weight: bold;
+    clear: both;
+    cursor: pointer;
+    float: right;
+    margin: -5px -3px 0 0;
+    color: $section-3A;
+    &:hover {
+        color: $section-3C;
+    }
+}
+  @keyframes move {
+      0% { transform: translate(5px, -103px); }
+     100% { transform: translate(16px, -103px) }
+  }

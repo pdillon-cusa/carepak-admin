@@ -14,6 +14,7 @@ function loaded() {
 function closeModal() {
     $(".overlay").fadeOut(200);
     $(".custom-modal").fadeOut(200);
+    $("#maxTooltip").fadeOut(200);
 }
 $(document).keydown(function(e) {
     if (e.keyCode == 27) { closeModal() }
