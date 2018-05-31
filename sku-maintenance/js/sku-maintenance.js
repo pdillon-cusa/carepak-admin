@@ -132,7 +132,7 @@ $(document).ready(function() {
 
 
     //-------------------------------------------------
-    // ----------- Move Export Excel Button -----------
+    // --------- Move 'Export Excel' Button -----------
     let dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
     if(dtButton) {
         var buttonDiv = $(".section-head").find($(".section-head__actions"));
@@ -145,7 +145,9 @@ $(document).ready(function() {
     //-------------------------------------------------
     // --------------- Add SKU Row --------------------
     function addNewSkuRow() {
-        $('#skuMaintenanceData').DataTable().row.add({
+
+        var table = $('#skuMaintenanceData').DataTable();
+        var rowNode = table.row.add({
             "carePakType": newcpType.value,
             "carePakSku": newcpSku.value,
             "carePakSkuName": newcpSkuName.value,
@@ -158,14 +160,20 @@ $(document).ready(function() {
             "term": newTerm.value,
             "startDate": newStartDate.value,
             "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , ' + `${newPrefix.value}` + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
-        }).draw(false).order([3, 'asc']).draw();
+        }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
+        
+        // ------ Remove Class So Only New Row Animates ------------
+        var newRow = document.getElementsByClassName('activated')[0];
+        newRow.addEventListener("animationend", removeAnimation, false);
+        function removeAnimation() {
+            newRow.classList.remove('activated');
+          }
     }
 
     //-------------------------------------------------
     // ----------- Init Date Pickers ------------------
     $("#startDate").datepicker();
     $("#newStartDate").datepicker();
-
 
     //---------------------------------------------
 }); //  --------- / doc.ready ---------------------

@@ -21,12 +21,37 @@ table.dataTable thead .sorting_desc_disabled {
 table.dataTable, table.dataTable th {
     padding-top: 10px;
 }
+
+@keyframes newSkuEven {
+    0%   { background-color: #e5e5e5 !important; }
+    10%  { background-color: $new-sku; }
+    90%  { background-color: $new-sku; }
+    100% { background-color: #e5e5e5 !important; }
+}
+@keyframes newSkuOdd {
+    0%   { background-color: white; }
+    10%  { background-color: $new-sku; }
+    90%  { background-color: $new-sku; }
+    100% { background-color: white; }
+}
+
 table.dataTable.stripe tbody tr.odd, 
-table.dataTable.display tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+    font-size: 12px;
+    &.activated {
+        animation: newSkuOdd 4s ease-in-out !important;
+    }
+}
 table.dataTable.stripe tbody tr.even, 
 table.dataTable.display tbody tr.even {
     font-size: 12px;
+    &.activated {
+        animation: newSkuEven 4s ease-in-out !important;
+    }
 }
+
+
+
 table.dataTable.stripe tbody tr.even {
     background-color: darken(#f9f9f9, 8%) !important;
 }
