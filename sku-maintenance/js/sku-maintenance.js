@@ -63,7 +63,6 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
-        order: [ 3, "asc" ],
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         dom: 'lBfrtip',
@@ -111,7 +110,7 @@ $(document).ready(function() {
             "carePakType": newcpType.value,
             "carePakSku": newcpSku.value,
             "carePakSkuName": newcpSkuName.value,
-            "order": 0,
+            "order": -1,
             "productGroup": newProductGroup.value,
             "productCode": newProductCode.value,
             "level2Code": newLevel2Code.value,
@@ -120,7 +119,7 @@ $(document).ready(function() {
             "term": newTerm.value,
             "startDate": newStartDate.value,
             "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , ' + `${newPrefix.value}` + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
-        }).draw().order([3, 'asc']);
+        }).draw(false).order([3, 'asc']).draw();
     }
     //-------------------------------------------------
 
@@ -169,5 +168,4 @@ function showAddSkuModal() {
     $("#addSkuModal").css('display', 'block');
    // $("#addSkuModal").data('validateAddSku').resetForm();
 }
-
 
