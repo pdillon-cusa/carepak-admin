@@ -1,24 +1,47 @@
+$(document).ready(function() {
 
-
-//-------------------------------------------------
-//---------------- Form Validation ----------------
-$().ready(function() {
-    var validator = $("#editSkuInfo, #addSkuModal").validate({
+    //-------------------------------------------------
+    //---------------- Form Validation ----------------
+    var validateAddSku = $("#addSkuInfo").validate({
         debug: true,
         rules: {
-            carePakType: {
+            newcpType: {
+                required: true
+            },
+            newcpSku: {
+                required: true,
+                minlength: 6
+            },
+            newcpSkuName: {
+                required: true
+            },
+            newProductGroup: {
+                required: true
+            },
+            newProductCode: {
+                required: true
+            },
+            newLevel2Code: {
+                required: true
+            },
+            newDataRecovery: {
+                required: true
+            },
+            newPrefix: {
+                required: true
+            },
+            newTerm: {
                 required: true
             }
         },
         submitHandler: function(form) {
+            addNewSkuRow();
             closeModal();
         }
     });
-});
 
-//-------------------------------------------------
-//---------------- DataTable Rules ----------------
-$(document).ready(function() {
+    //-------------------------------------------------
+    //---------------- DataTable Rules ----------------
     let d = new Date();
     let strDate = 'CarePAK SKU Data ' + (d.getMonth()+1) + "-" + d.getDate()  + "-" + d.getFullYear();
     $('#skuMaintenanceData').DataTable({
@@ -27,21 +50,22 @@ $(document).ready(function() {
             { data: 'carePakType' },
             { data: 'carePakSku' },
             { data: 'carePakSkuName' },
-            { data: 'company' },
+            { data: 'order' },
             { data: 'productGroup' },
             { data: 'productCode' },
             { data: 'level2Code' },
             { data: 'dataRecovery' },
             { data: 'prefix' },
             { data: 'term' },
+            { data: 'startDate' },
             { data: 'edit' },
         ],
         initComplete: function( settings, json ) {
             loaded();
         },
+        order: [ 3, "asc" ],
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
-        buttons: ['excel'],
         dom: 'lBfrtip',
         buttons: [
             {
@@ -53,21 +77,24 @@ $(document).ready(function() {
             }
         ],
         columnDefs: [
-        {
-            targets  : 'no-sort',
-            orderable: false,
-            order: []
-        },
-        { 
-            className: "dt-center", 
-            targets: [4,5,6,8,9]
-        },]
+            {
+                targets : 'no-sort',
+                orderable: false,
+                order: []
+            },
+            {
+                targets: [3],
+                orderable: true,
+                visible: false
+            },
+            { 
+                className: "dt-center"
+            }
+        ]
     });
-});
 
-//-------------------------------------------------
-// ------- Move Initial Export Excel Button -------
-$(document).ready(function() {
+    //-------------------------------------------------
+    // ------- Move Initial Export Excel Button -------
     let dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
     if(dtButton) {
         var buttonDiv = $(".section-head").find($(".section-head__actions"));
@@ -76,16 +103,45 @@ $(document).ready(function() {
         dtButton.removeClass('dt-button buttons-excel buttons-html5');
         dtButton.appendTo(buttonDiv);
     }
-});
+
+    //-------------------------------------------------
+    // --------------- Add SKU Row --------------------
+    function addNewSkuRow() {
+        $('#skuMaintenanceData').DataTable().row.add({
+            "carePakType": newcpType.value,
+            "carePakSku": newcpSku.value,
+            "carePakSkuName": newcpSkuName.value,
+            "order": 0,
+            "productGroup": newProductGroup.value,
+            "productCode": newProductCode.value,
+            "level2Code": newLevel2Code.value,
+            "dataRecovery": newDataRecovery.value,
+            "prefix": newPrefix.value,
+            "term": newTerm.value,
+            "startDate": newStartDate.value,
+            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , ' + `${newPrefix.value}` + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
+        }).draw().order([3, 'asc']);
+    }
+    //-------------------------------------------------
+
+    $("#startDate").datepicker();
+    $("#newStartDate").datepicker();
+
+
+    //---------------------------------------------
+}); //  --------- / doc.ready ---------------------
+    //---------------------------------------------
+
 
 //-------------------------------------------------
 // ------------- Edit SKU Dialog ------------------
-function showEditSkuModal(carePakType, sku, skuName, productGroup, productCode, level2Code, dataRecovery, term, prefix) {
+function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCode, level2Code, dataRecovery, prefix, term, startDate) {
     $('.custom-modal__title').text('Edit SKU Information');
-    // Assign the json values to the fields
+
+    // Assign the json values to the fields -------------
     $("#carePakType").val(carePakType);
-    $("#cpSku").val(sku);
-    $("#cpSkuName").val(skuName);
+    $("#cpSku").val(cpSku);
+    $("#cpSkuName").val(cpSkuName);
     $("#productGroup").val(productGroup);
     $("#productCode").val(productCode);
     $("#level2Code").val(level2Code);
@@ -94,22 +150,24 @@ function showEditSkuModal(carePakType, sku, skuName, productGroup, productCode, 
     } else {
         $("#dataRecovery").val("No");
     }
-    $("#term").val(term);
     $("#prefix").val(prefix);
-
-    // Show the overlay
+    $("#term").val(term);
+    $("#startDate").val(startDate);
+    
+    // Show the overlay ---------------------------------
     $(".overlay").css('display', 'block');
     $("#editSkuModal").css('display', 'block');
-    $("#editSkuInfo").data('validator').resetForm();
+    // $("#editSkuInfo").data('').resetForm();
 }
+
 
 //-------------------------------------------------
 // ------------- Add SKU Dialog -------------------
 // ------- (Same HTML Not populated) --------------
 function showAddSkuModal() {
-    $("#carePakType").val('CarePAK Plus');
-    $('.custom-modal__title').text('Add SKU Information');
     $(".overlay").css('display', 'block');
-    $("#editSkuModal").css('display', 'block');
-    $("#editSkuInfo").data('validator').resetForm();
+    $("#addSkuModal").css('display', 'block');
+   // $("#addSkuModal").data('validateAddSku').resetForm();
 }
+
+
