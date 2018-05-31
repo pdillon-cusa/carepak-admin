@@ -1,7 +1,55 @@
 $(document).ready(function() {
 
     //-------------------------------------------------
-    //---------------- Form Validation ----------------
+    //---------------- DataTable Rules ----------------
+    let d = new Date();
+    let strDate = 'CarePAK SKU Data ' + (d.getMonth()+1) + "-" + d.getDate()  + "-" + d.getFullYear();
+    $('#skuMaintenanceData').DataTable({
+        "ajax": '../sku-maintenance/js/skuMaintenanceData.json',
+        columns: [
+            { data: 'carePakType' },
+            { data: 'carePakSku' },
+            { data: 'carePakSkuName' },
+            { data: 'order' },
+            { data: 'productGroup' },
+            { data: 'productCode' },
+            { data: 'level2Code' },
+            { data: 'dataRecovery' },
+            { data: 'prefix' },
+            { data: 'term' },
+            { data: 'startDate' },
+            { data: 'edit' },
+        ],
+        initComplete: function( settings, json ) {
+            loaded();
+        },
+        searchHighlight: true,
+        lengthMenu: [ 10, 25 ],
+        dom: 'lBfrtip',
+        buttons: [{
+            extend: 'excelHtml5',
+            title: strDate,
+            exportOptions: {
+                columns: [ 0,1,2,3,4,5,6,7,8,9 ]
+            }
+        }],
+        columnDefs: [{
+            targets : 'no-sort',
+            orderable: false,
+            order: []
+        },
+        {
+            targets: [3],
+            orderable: true,
+            visible: false
+        },
+        { 
+            className: "dt-center"
+        }]
+    });
+
+    //-------------------------------------------------
+    //-------------- Add SKU Validation ---------------
     var validateAddSku = $("#addSkuInfo").validate({
         debug: true,
         rules: {
@@ -41,59 +89,50 @@ $(document).ready(function() {
     });
 
     //-------------------------------------------------
-    //---------------- DataTable Rules ----------------
-    let d = new Date();
-    let strDate = 'CarePAK SKU Data ' + (d.getMonth()+1) + "-" + d.getDate()  + "-" + d.getFullYear();
-    $('#skuMaintenanceData').DataTable({
-        "ajax": '../sku-maintenance/js/skuMaintenanceData.json',
-        columns: [
-            { data: 'carePakType' },
-            { data: 'carePakSku' },
-            { data: 'carePakSkuName' },
-            { data: 'order' },
-            { data: 'productGroup' },
-            { data: 'productCode' },
-            { data: 'level2Code' },
-            { data: 'dataRecovery' },
-            { data: 'prefix' },
-            { data: 'term' },
-            { data: 'startDate' },
-            { data: 'edit' },
-        ],
-        initComplete: function( settings, json ) {
-            loaded();
+    //--------------- Edit SKU Validation ----------------
+    var validateEditSku = $("#editSkuInfo").validate({
+        debug: true,
+        rules: {
+            carePakType: {
+                required: true
+            },
+            cpSku: {
+                required: true,
+                minlength: 6
+            },
+            cpSkuName: {
+                required: true
+            },
+            productGroup: {
+                required: true
+            },
+            productCode: {
+                required: true
+            },
+            level2Code: {
+                required: true
+            },
+            dataRecovery: {
+                required: true
+            },
+            prefix: {
+                required: true
+            },
+            term: {
+                required: true
+            },
+            startDate: {
+                required: true
+            }
         },
-        searchHighlight: true,
-        lengthMenu: [ 10, 25 ],
-        dom: 'lBfrtip',
-        buttons: [
-            {
-                extend: 'excelHtml5',
-                title: strDate,
-                exportOptions: {
-                    columns: [ 0,1,2,3,4,5,6,7,8,9 ]
-                }
-            }
-        ],
-        columnDefs: [
-            {
-                targets : 'no-sort',
-                orderable: false,
-                order: []
-            },
-            {
-                targets: [3],
-                orderable: true,
-                visible: false
-            },
-            { 
-                className: "dt-center"
-            }
-        ]
+        submitHandler: function(form) {
+            closeModal();
+        }
     });
 
+
     //-------------------------------------------------
-    // ------- Move Initial Export Excel Button -------
+    // ----------- Move Export Excel Button -----------
     let dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
     if(dtButton) {
         var buttonDiv = $(".section-head").find($(".section-head__actions"));
@@ -121,8 +160,9 @@ $(document).ready(function() {
             "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , ' + `${newPrefix.value}` + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw();
     }
-    //-------------------------------------------------
 
+    //-------------------------------------------------
+    // ----------- Init Date Pickers ------------------
     $("#startDate").datepicker();
     $("#newStartDate").datepicker();
 
@@ -162,7 +202,6 @@ function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCo
 
 //-------------------------------------------------
 // ------------- Add SKU Dialog -------------------
-// ------- (Same HTML Not populated) --------------
 function showAddSkuModal() {
     $(".overlay").css('display', 'block');
     $("#addSkuModal").css('display', 'block');

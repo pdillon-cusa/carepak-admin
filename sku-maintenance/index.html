@@ -64,112 +64,112 @@
   
     <!-- Edit SKU Modal -->
     <div class="custom-modal" id="editSkuModal">
-            <div class="close-overlay">&times;</div>
-            <div class="custom-modal__title"></div>
-            <form id="editSkuInfo" method="get" action="">
+        <div class="close-overlay">&times;</div>
+        <div class="custom-modal__title"></div>
+        <form id="editSkuInfo" method="get" action="">
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="carePakType">CarePAK Type</label>
-                        </div>
-                        <div class="format-data">
-                            <select id="carePakType" name="carePakType" required>
-                                <option value="CarePAK Plus">CarePAK Plus</option>
-                                <option value="">None</option>
-                            <select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="cpSku">CarePAK SKU</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="cpSku" name="cpSku" title="Must be at lease six digits">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="cpSkuName">CarePAK SKU Name</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="cpSkuName" name="cpSkuName">
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="productGroup">Product Group</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="productGroup" name="productGroup">
-                </div>
-                <div class="custom-modal__label">
-                    <label for="productCode">Product Code</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="productCode" name="productCode">
-                </div>
-
-                <div class="custom-modal__label">
-                    <label for="level2Code">Level 2 Code</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="level2Code" name="level2Code">
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="custom-modal__label">
-                            <label for="dataRecovery">Data Recovery</label>
-                        </div>
-                        <div class="format-data">
-                            <select id="dataRecovery" name="dataRecovery">
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            <select>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="custom-modal__label">
-                            <label for="prefix">Prefix</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="prefix" name="prefix" title="Error">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="custom-modal__label">
-                            <label for="term">Term (Months)</label>
-                        </div>
-                        <div class="format-data">
-                            <select id="term" name="term">
-                                <option>13</option>
-                                <option>24</option>
-                                <option>36</option>
-                                <option>37</option>
-                                <option>48</option>
-                                <option>49</option>
-                                <option>60</option>
-                            <select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-modal__label">
-                        <label for="startDate">Start Date</label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="carePakType">CarePAK Type</label>
                     </div>
                     <div class="format-data">
-                        <input type="text" name="startDate" id="startDate" class="form-control" >
+                        <select id="carePakType" name="carePakType" required>
+                            <option value="CarePAK Plus">CarePAK Plus</option>
+                            <option value="">None</option>
+                        <select>
                     </div>
-
-                <div class="button-section">
-                    <button class="button alert" onclick="closeModal()">Cancel</button>
-                    <input class="button" type="submit" value="Save">
                 </div>
-            </form>
-            
-        </div>
-        <!-- / Edit SKU Modal -->
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="cpSku">CarePAK SKU</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="cpSku" name="cpSku" title="Must be at lease six digits">
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-modal__label">
+                <label for="cpSkuName">CarePAK SKU Name</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="cpSkuName" name="cpSkuName">
+            </div>
+
+            <div class="custom-modal__label">
+                <label for="productGroup">Product Group</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="productGroup" name="productGroup">
+            </div>
+            <div class="custom-modal__label">
+                <label for="productCode">Product Code</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="productCode" name="productCode">
+            </div>
+
+            <div class="custom-modal__label">
+                <label for="level2Code">Level 2 Code</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="level2Code" name="level2Code">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="dataRecovery">Data Recovery</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="dataRecovery" name="dataRecovery">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        <select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="prefix">Prefix</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="prefix" name="prefix" title="Error">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="term">Term (Months)</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="term" name="term">
+                            <option>13</option>
+                            <option>24</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>48</option>
+                            <option>49</option>
+                            <option>60</option>
+                        <select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-modal__label">
+                    <label for="startDate">Start Date</label>
+                </div>
+                <div class="format-data">
+                    <input type="text" name="startDate" id="startDate" class="form-control" >
+                </div>
+
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="button" id="editSku">Save</button>
+            </div>
+        </form>
+        
+    </div>
+    <!-- / Edit SKU Modal -->
 
         
     <!-- ADD SKU Modal -->
