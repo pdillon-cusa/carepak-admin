@@ -133,6 +133,8 @@ function showEditPromotionModal(productSku, productName, productModel, carePakSk
 function showAddPromotionModal() {
     // Rest form of previous values
     $("#addPromotionInfo")[0].reset();
+    $("#newStartDate").datepicker('setDate', new Date());
+    $("#newEndDate").datepicker('setDate', "+3m");
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#addPromotionModal").css('display', 'block');
