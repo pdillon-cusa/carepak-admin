@@ -61,17 +61,17 @@
 
 
   
-    <!-- Edit SKU Modal -->
+    <!-- Edit Promotion Modal -->
     <div class="custom-modal" id="editPromotionModal">
             <div class="close-overlay">&times;</div>
-            <div class="custom-modal__title"></div>
+            <div class="custom-modal__title">Edit Promotion</div>
             <form id="editPromotionInfo" method="get" action="">
 
                 <div class="custom-modal__label">
                     <label for="productName">Product Name</label>
                 </div>
                 <div class="format-data">
-                    <input class="form-control" id="productName" name="productName" title="Error">
+                    <input class="form-control" id="productName" name="productName">
                 </div>
 
                 <div class="row">
@@ -80,7 +80,7 @@
                             <label for="productSku">Product SKU</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="productSku" name="productSku" title="Error">
+                            <input class="form-control" id="productSku" name="productSku">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -88,7 +88,7 @@
                             <label for="productModel">Product Model</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="productModel" name="productModel" disabled>
+                            <input class="form-control" id="productModel" name="productModel">
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <label for="carePakSku">CarePak SKU</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="carePakSku" name="carePakSku" disabled>
+                            <input class="form-control" id="carePakSku" name="carePakSku">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -107,7 +107,7 @@
                             <label for="carePakType">CarePak Type</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="carePakType" name="carePakType" disabled>
+                            <input class="form-control" id="carePakType" name="carePakType">
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                             <label for="registrationPeriod">Registration Period</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="registrationPeriod" name="registrationPeriod" disabled>
+                            <input class="form-control" id="registrationPeriod" name="registrationPeriod">
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                             <label for="startDate">Start Date</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="startDate" name="startDate" disabled>
+                            <input class="form-control" id="startDate" name="startDate">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -153,7 +153,7 @@
                             <label for="endDate">End Date</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="endDate" name="endDate" disabled>
+                            <input class="form-control" id="endDate" name="endDate">
                         </div>
                     </div>
                 </div>
@@ -163,115 +163,115 @@
                 </div>
             </form>
             
-        </div>
-        <!-- / Edit SKU Modal -->
+    </div>
+    <!-- / Edit SKU Modal -->
 
 
 
-        <!--Add Promotion Modal -->
-        <div class="custom-modal" id="addPromotionModal">
-            <div class="close-overlay">&times;</div>
-            <div class="custom-modal__title"></div>
-            <form id="addPromotionInfo" method="get" action="">
+    <!--Add Promotion Modal -->
+    <div class="custom-modal" id="addPromotionModal">
+        <div class="close-overlay">&times;</div>
+        <div class="custom-modal__title">Add Promotion</div>
+        <form id="addPromotionInfo" method="get" action="">
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newProductSku">Product SKU</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="newProductSku" name="newProductSku" value="123456">
-                        </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newProductSku">Product SKU</label>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newProductModel">Product Model</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="newProductModel" name="newProductModel" value="Add Model">
-                        </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newProductSku" name="newProductSku" value="123456">
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newProductModel">Product Model</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newProductModel" name="newProductModel" value="New Model">
+                    </div>
+                </div>
+            </div>
 
-                <div class="custom-modal__label">
-                    <label for="newProductName">Product Name</label>
-                </div>
-                <div class="format-data">
-                    <input class="form-control" id="newProductName" name="newProductName" value="Add Product Name">
-                </div>
+            <div class="custom-modal__label">
+                <label for="newProductName">Product Name</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="newProductName" name="newProductName" value="New Product Name">
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newcpSku">CarePak SKU</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="newcpSku" name="newcpSku" value="Add CP SKU">
-                        </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newcpSku">CarePak SKU</label>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newcpType">CarePak Type</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="newcpType" name="newcpType" value="Add CP Type">
-                        </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newcpSku" name="newcpSku" value="New CP SKU">
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newcpType">CarePak Type</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newcpType" name="newcpType" value="New CP Type">
+                    </div>
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newcpPeriod">CarePak Period</label>
-                        </div>
-                        <div class="format-data">
-                            <select id="newcpPeriod" name="newcpPeriod">
-                                <option selected>13</option>
-                                <option>24</option>
-                                <option>36</option>
-                                <option>37</option>
-                                <option>48</option>
-                                <option>49</option>
-                                <option>60</option>
-                            <select>
-                        </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newcpPeriod">CarePak Period</label>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newRegistrationPeriod">Registration Period </label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" value="Reg Period" id="newRegistrationPeriod" name="newRegistrationPeriod" disabled>
-                        </div>
+                    <div class="format-data">
+                        <select id="newcpPeriod" name="newcpPeriod">
+                            <option selected>13</option>
+                            <option>24</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>48</option>
+                            <option>49</option>
+                            <option>60</option>
+                        <select>
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newRegistrationPeriod">Registration Period </label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" value="90" id="newRegistrationPeriod" name="newRegistrationPeriod">
+                    </div>
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newStartDate">Start Date</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="newStartDate" name="newStartDate" value="startDate">
-                        </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newStartDate">Start Date</label>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newEndDate">End Date</label>
-                        </div>
-                        <div class="format-data">
-                            <input class="form-control" id="newEndDate" name="newEndDate" value="endDate">
-                        </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newStartDate" name="newStartDate">
                     </div>
                 </div>
-                <div class="button-section">
-                    <button class="button alert" onclick="closeModal()">Cancel</button>
-                    <input class="button" type="submit" value="Save">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newEndDate">End Date</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newEndDate" name="newEndDate">
+                    </div>
                 </div>
-            </form>
-            
-        </div>
-        <!-- / Add Promotion Modal -->
+            </div>
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Cancel</button>
+                <input class="button" type="submit" value="Save">
+            </div>
+        </form>
+        
+    </div>
+    <!-- / Add Promotion Modal -->
 
 
     <!-- Canon CSS Assets -->

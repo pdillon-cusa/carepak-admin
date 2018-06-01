@@ -54,6 +54,19 @@ $(document).ready(function() {
             closeModal();
         }
     });
+    //-------------------------------------------------
+    //----------- Edit Promotion Validation -----------
+    var validateEditPromo = $("#editPromotionInfo").validate({
+        debug: true,
+        rules: {
+            carePakType: {
+                required: true
+            }
+        },
+        submitHandler: function(form) {
+            closeModal();
+        }
+    });
 
     //-------------------------------------------------
     // --------------- Add SKU Row --------------------
@@ -71,7 +84,7 @@ $(document).ready(function() {
             "startDate": newStartDate.value,
             "endDate": newEndDate.value,
             "registrationPeriod": newRegistrationPeriod.value,
-            "edit": '<a href="#" onclick="showAddPromotionModal(' + '\'' + `${newProductName.value}` + '\'' + ', ' + `${newProductSku.value}` + ', \'' + `${newProductModel.value}` + '\'' + ')">EDIT</a>',
+            "edit": '<a href="#" onclick="showEditPromotionModal(' + '\'' + `${newProductSku.value}` + '\'' + ', \'' + `${newProductName.value}` + '\' , \'' + `${newProductModel.value}` + '\'' + ', \'' + `${newcpSku.value}` + '\'' + ', \'' +  `${newcpType.value}` + '\''  + ', \'' + `${newcpPeriod.value}` + '\'' + ', ' + '\'' +  `${newStartDate.value}` + '\' , \'' + `${newEndDate.value}` + '\', \'' + `${newRegistrationPeriod.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
         // ------ Remove Class So Only New Row Animates ------------
@@ -97,7 +110,8 @@ $(document).ready(function() {
 //-------------------------------------------------
 // --------- Edit Promotion Dialog ----------------
 function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod) {
-    $('.custom-modal__title').text('Edit Promotion');
+    // Rest form of previous values
+    $("#editPromotionInfo")[0].reset();
     // Assign the json values to the fields
     $("#productSku").val(productSku);
     $("#productName").val(productName);
@@ -112,15 +126,14 @@ function showEditPromotionModal(productSku, productName, productModel, carePakSk
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#editPromotionModal").css('display', 'block');
-   // $("#editPromotionInfo").data('validator').resetForm();
 }
 
 //-------------------------------------------------
 // ------------- Add Promotion Dialog -------------------
 function showAddPromotionModal() {
-    $('.custom-modal__title').text('Add Promotion');
+    // Rest form of previous values
+    $("#addPromotionInfo")[0].reset();
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#addPromotionModal").css('display', 'block');
-   // $("#editPromotionInfo").data('validator').resetForm();
 }

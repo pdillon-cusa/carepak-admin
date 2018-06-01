@@ -22,16 +22,16 @@ table.dataTable, table.dataTable th {
     padding-top: 10px;
 }
 
-@keyframes newSkuEven {
+@keyframes newRowEven {
     0%   { background-color: #e5e5e5; }
-    10%  { background-color: $new-sku; color: white;}
-    90%  { background-color: $new-sku; color: white; }
+    10%  { background-color: $new-row; color: white;}
+    90%  { background-color: $new-row; color: white; }
     100% { background-color: #e5e5e5; }
 }
-@keyframes newSkuOdd {
+@keyframes newRowOdd {
     0%   { background-color: white; }
-    10%  { background-color: $new-sku; color: white; }
-    90%  { background-color: $new-sku; color: white; }
+    10%  { background-color: $new-row; color: white; }
+    90%  { background-color: $new-row; color: white; }
     100% { background-color: white; }
 }
 
@@ -39,14 +39,14 @@ table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
     font-size: 12px;
     &.activated {
-        animation: newSkuOdd 4s ease-in-out !important;
+        animation: newRowOdd 4s ease-in-out !important;
     }
 }
 table.dataTable.stripe tbody tr.even, 
 table.dataTable.display tbody tr.even {
     font-size: 12px;
     &.activated {
-        animation: newSkuEven 4s ease-in-out !important;
+        animation: newRowEven 4s ease-in-out !important;
     }
 }
 
@@ -104,11 +104,12 @@ input[type="search"] {
     visibility: hidden;
 }
 
-table.dataTable.display tbody tr:hover { 
-    td, td.sorting_1 {  /* or th */
-        background-color: $primary-x-lt !important;
-    }
-}
+// Row hover: Removed for aesthetics, but may use in future.
+// table.dataTable.display tbody tr:hover { 
+//     td, td.sorting_1 {  /* or th */
+//         background-color: $primary-x-lt !important;
+//     }
+// }
 
 table.dataTable span.highlight,
 table.dataTable span.column_highlight {

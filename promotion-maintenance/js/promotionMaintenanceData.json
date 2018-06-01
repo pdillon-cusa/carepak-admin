@@ -1,18 +1,17 @@
 {
     "data": [
       {
-        "productSku": 4504924732,
-        "productName": "EOS Rebel T6 Double Zoom Lens Kit",
-        "productModel": 34087,
+        "productSku": 2923229436,
+        "productName": "PowerShot G7 X Mark II",
+        "productModel": 60069,
         "order": 0,
-        "carePakSku": 2280320334,
+        "carePakSku": 416917633,
         "carePakType": "CarePAK Plus",
         "carePakPeriod": 24,
-        "startDate": "07/08/1984",
-        "endDate": "03/03/1992",
-        "registrationPeriod": 21,
-        "company": "MINGA",
-        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal(4504924732, 'EOS Rebel T6 Double Zoom Lens Kit', 34087, 2280320334, 'CarePAK Plus', 24, '07/08/1984', '03/03/1992', 21)\">EDIT</a>"
+        "startDate": "08/09/1983",
+        "endDate": "01/06/1979",
+        "registrationPeriod": 42,
+        "edit": "<a href=\"#\" onclick=\"showEditPromotionModal(2923229436, 'PowerShot G7 X Mark II', 60069, 416917633, 'CarePAK Plus', 24, '08/09/1983', '01/06/1979', 42)\">EDIT</a>"
       }
     ]
 }
