@@ -23,15 +23,15 @@ table.dataTable, table.dataTable th {
 }
 
 @keyframes newSkuEven {
-    0%   { background-color: #e5e5e5 !important; }
-    10%  { background-color: $new-sku; }
-    90%  { background-color: $new-sku; }
-    100% { background-color: #e5e5e5 !important; }
+    0%   { background-color: #e5e5e5; }
+    10%  { background-color: $new-sku; color: white;}
+    90%  { background-color: $new-sku; color: white; }
+    100% { background-color: #e5e5e5; }
 }
 @keyframes newSkuOdd {
     0%   { background-color: white; }
-    10%  { background-color: $new-sku; }
-    90%  { background-color: $new-sku; }
+    10%  { background-color: $new-sku; color: white; }
+    90%  { background-color: $new-sku; color: white; }
     100% { background-color: white; }
 }
 

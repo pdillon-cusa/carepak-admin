@@ -38,6 +38,7 @@
                 <th>Product SKU</th>
                 <th>Product Name</th>
                 <th>Product Model</th>
+                <th>Order</th>
                 <th>CarePak SKU</th>
                 <th>CarePak Type</th>
                 <th>CarePak Period</th>
@@ -165,6 +166,112 @@
         </div>
         <!-- / Edit SKU Modal -->
 
+
+
+        <!--Add Promotion Modal -->
+        <div class="custom-modal" id="addPromotionModal">
+            <div class="close-overlay">&times;</div>
+            <div class="custom-modal__title"></div>
+            <form id="addPromotionInfo" method="get" action="">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newProductSku">Product SKU</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="newProductSku" name="newProductSku" value="123456">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newProductModel">Product Model</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="newProductModel" name="newProductModel" value="Add Model">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-modal__label">
+                    <label for="newProductName">Product Name</label>
+                </div>
+                <div class="format-data">
+                    <input class="form-control" id="newProductName" name="newProductName" value="Add Product Name">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newcpSku">CarePak SKU</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="newcpSku" name="newcpSku" value="Add CP SKU">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newcpType">CarePak Type</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="newcpType" name="newcpType" value="Add CP Type">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newcpPeriod">CarePak Period</label>
+                        </div>
+                        <div class="format-data">
+                            <select id="newcpPeriod" name="newcpPeriod">
+                                <option selected>13</option>
+                                <option>24</option>
+                                <option>36</option>
+                                <option>37</option>
+                                <option>48</option>
+                                <option>49</option>
+                                <option>60</option>
+                            <select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newRegistrationPeriod">Registration Period </label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" value="Reg Period" id="newRegistrationPeriod" name="newRegistrationPeriod" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newStartDate">Start Date</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="newStartDate" name="newStartDate" value="startDate">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newEndDate">End Date</label>
+                        </div>
+                        <div class="format-data">
+                            <input class="form-control" id="newEndDate" name="newEndDate" value="endDate">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-section">
+                    <button class="button alert" onclick="closeModal()">Cancel</button>
+                    <input class="button" type="submit" value="Save">
+                </div>
+            </form>
+            
+        </div>
+        <!-- / Add Promotion Modal -->
 
 
     <!-- Canon CSS Assets -->
