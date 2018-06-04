@@ -24,13 +24,13 @@ table.dataTable, table.dataTable th {
 
 @keyframes newRowEven {
     0%   { background-color: #e5e5e5; }
-    10%  { background-color: $new-row; color: white;}
+    5%   { background-color: $new-row; color: white; }
     90%  { background-color: $new-row; color: white; }
     100% { background-color: #e5e5e5; }
 }
 @keyframes newRowOdd {
     0%   { background-color: white; }
-    10%  { background-color: $new-row; color: white; }
+    5%  { background-color: $new-row; color: white;}
     90%  { background-color: $new-row; color: white; }
     100% { background-color: white; }
 }
@@ -39,14 +39,14 @@ table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
     font-size: 12px;
     &.activated {
-        animation: newRowOdd 4s ease-in-out !important;
+        animation: newRowOdd 3s ease-in-out !important;
     }
 }
 table.dataTable.stripe tbody tr.even, 
 table.dataTable.display tbody tr.even {
     font-size: 12px;
     &.activated {
-        animation: newRowEven 4s ease-in-out !important;
+        animation: newRowEven 3s ease-in-out !important;
     }
 }
 

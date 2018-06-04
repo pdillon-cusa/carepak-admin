@@ -21,6 +21,7 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
+       // retrieve: true,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         columnDefs: [
@@ -68,10 +69,10 @@ $(document).ready(function() {
         }
     });
 
+
     //-------------------------------------------------
     // --------------- Add SKU Row --------------------
     function addNewPromotionRow() {
-
         var table = $('#promotionMaintenanceData').DataTable();
         var rowNode = table.row.add({
             "productName": newProductName.value,
@@ -87,12 +88,29 @@ $(document).ready(function() {
             "edit": '<a href="#" onclick="showEditPromotionModal(' + '\'' + `${newProductSku.value}` + '\'' + ', \'' + `${newProductName.value}` + '\' , \'' + `${newProductModel.value}` + '\'' + ', \'' + `${newcpSku.value}` + '\'' + ', \'' +  `${newcpType.value}` + '\''  + ', \'' + `${newcpPeriod.value}` + '\'' + ', ' + '\'' +  `${newStartDate.value}` + '\' , \'' + `${newEndDate.value}` + '\', \'' + `${newRegistrationPeriod.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
-        // ------ Remove Class So Only New Row Animates ------------
+        removeAnimationClass();
+    }
+
+    //-------------------------------------------------
+    // ------------ Edited Row Animation --------------
+    // function editedRow(productSku) {
+    //     var table = $('#promotionMaintenanceData').DataTable();
+    //     table.rows().every(function (rowIdx, tableLoop, rowLoop) {
+    //        // var data = this.data();
+    //         var node = this.node();
+    //         $(node).addClass('activated');
+    //     });
+    //     removeAnimationClass();
+    //  }
+
+    //-------------------------------------------------
+    // ---- Remove Class So Only New Row Animates -----
+    function removeAnimationClass() {
         var newRow = document.getElementsByClassName('activated')[0];
         newRow.addEventListener("animationend", removeAnimation, false);
         function removeAnimation() {
             newRow.classList.remove('activated');
-          }
+        }
     }
 
     //-------------------------------------------------
@@ -107,9 +125,11 @@ $(document).ready(function() {
     //---------------------------------------------
 
 
+
 //-------------------------------------------------
 // --------- Edit Promotion Dialog ----------------
-function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod) {
+
+function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod, rowIndex) {
     // Rest form of previous values
     $("#editPromotionInfo")[0].reset();
     // Assign the json values to the fields
