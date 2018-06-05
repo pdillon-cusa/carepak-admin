@@ -85,31 +85,19 @@ $(document).ready(function() {
             "startDate": newStartDate.value,
             "endDate": newEndDate.value,
             "registrationPeriod": newRegistrationPeriod.value,
-            "edit": '<a href="#" onclick="showEditPromotionModal(' + '\'' + `${newProductSku.value}` + '\'' + ', \'' + `${newProductName.value}` + '\' , \'' + `${newProductModel.value}` + '\'' + ', \'' + `${newcpSku.value}` + '\'' + ', \'' +  `${newcpType.value}` + '\''  + ', \'' + `${newcpPeriod.value}` + '\'' + ', ' + '\'' +  `${newStartDate.value}` + '\' , \'' + `${newEndDate.value}` + '\', \'' + `${newRegistrationPeriod.value}` + '\'' + ')">EDIT</a>',
+            "edit": '<a href="#"  onclick="showEditPromotionModal(' + '\'' + `${newProductSku.value}` + '\'' + ', \'' + `${newProductName.value}` + '\' , \'' + `${newProductModel.value}` + '\'' + ', \'' + `${newcpSku.value}` + '\'' + ', \'' +  `${newcpType.value}` + '\''  + ', \'' + `${newcpPeriod.value}` + '\'' + ', ' + '\'' +  `${newStartDate.value}` + '\' , \'' + `${newEndDate.value}` + '\', \'' + `${newRegistrationPeriod.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
         removeAnimationClass();
     }
 
     //-------------------------------------------------
-    // ------------ Edited Row Animation --------------
-    // function editedRow(productSku) {
-    //     var table = $('#promotionMaintenanceData').DataTable();
-    //     table.rows().every(function (rowIdx, tableLoop, rowLoop) {
-    //        // var data = this.data();
-    //         var node = this.node();
-    //         $(node).addClass('activated');
-    //     });
-    //     removeAnimationClass();
-    //  }
-
-    //-------------------------------------------------
     // ---- Remove Class So Only New Row Animates -----
     function removeAnimationClass() {
-        var newRow = document.getElementsByClassName('activated')[0];
-        newRow.addEventListener("animationend", removeAnimation, false);
+        var active = document.querySelector('.activated');
+        active.addEventListener("animationend", removeAnimation, false);
         function removeAnimation() {
-            newRow.classList.remove('activated');
+            $('.activated').removeClass('activated');
         }
     }
 
@@ -125,11 +113,10 @@ $(document).ready(function() {
     //---------------------------------------------
 
 
-
 //-------------------------------------------------
 // --------- Edit Promotion Dialog ----------------
 
-function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod, rowIndex) {
+function showEditPromotionModal(productSku, productName, productModel, carePakSku, carePakType, carePakPeriod, startDate, endDate, registrationPeriod) {
     // Rest form of previous values
     $("#editPromotionInfo")[0].reset();
     // Assign the json values to the fields
@@ -142,10 +129,16 @@ function showEditPromotionModal(productSku, productName, productModel, carePakSk
     $("#startDate").val(startDate);
     $("#endDate").val(endDate);
     $("#registrationPeriod").val(registrationPeriod);
-
+    $("#rowId").val(productSku);
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#editPromotionModal").css('display', 'block');
+}
+
+function saveChanges() {
+    // var data = table.row(row_id).data();
+        // data-row-id="' + '\'' + `${newProductSku.value}` + '\'' + '"
+
 }
 
 //-------------------------------------------------
