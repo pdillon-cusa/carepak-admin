@@ -31,6 +31,14 @@
     text-shadow: 1px 1px 0 $primary-hover;
 }
 //--------------
+.button.info {
+    background-color: $info;
+}
+.button.info:hover, .button.info:focus {
+    background-color: $info-hover;
+    text-shadow: 1px 1px 0 $info-hover;
+}
+//--------------
 .button.success {
     background-color: $success;
 }

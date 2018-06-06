@@ -113,7 +113,7 @@
                         <label for="carePakType">CarePAK Type</label>
                     </div>
                     <div class="format-data">
-                        <select id="carePakType" name="carePakType" required>
+                        <select id="carePakType" name="carePakType" disabled>
                             <option value="CarePAK Plus">CarePAK Plus</option>
                             <option value="">None</option>
                         <select>
@@ -124,40 +124,51 @@
                         <label for="cpSku">CarePAK SKU</label>
                     </div>
                     <div class="format-data">
-                        <input class="form-control" id="cpSku" name="cpSku" title="Must be at lease six digits">
+                        <input class="form-control" id="cpSku" name="cpSku" disabled>
                     </div>
                 </div>
             </div>
 
-            <div class="custom-modal__label">
-                <label for="cpSkuName">CarePAK SKU Name</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="cpSkuName" name="cpSkuName">
-            </div>
-
-            <div class="custom-modal__label">
-                <label for="productGroup">Product Group</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="productGroup" name="productGroup">
-            </div>
-            <div class="custom-modal__label">
-                <label for="productCode">Product Code</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="productCode" name="productCode">
-            </div>
-
-            <div class="custom-modal__label">
-                <label for="level2Code">Level 2 Code</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="level2Code" name="level2Code">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="cpSkuName">CarePAK SKU Name</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="cpSkuName" name="cpSkuName" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="productGroup">Product Group</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="productGroup" name="productGroup" disabled>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="level2Code">Level 2 Code</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="level2Code" name="level2Code" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="productCode">Product Code</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="productCode" name="productCode" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
                     <div class="custom-modal__label">
                         <label for="dataRecovery">Data Recovery</label>
                     </div>
@@ -168,7 +179,7 @@
                         <select>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="custom-modal__label">
                         <label for="prefix">Prefix</label>
                     </div>
@@ -176,7 +187,10 @@
                         <input class="form-control" id="prefix" name="prefix" title="Error">
                     </div>
                 </div>
-                <div class="col-sm-4">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
                     <div class="custom-modal__label">
                         <label for="term">Term (Months)</label>
                     </div>
@@ -192,14 +206,15 @@
                         <select>
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="startDate">Start Date</label>
+                    </div>
+                    <div class="format-data">
+                        <input type="text" name="startDate" id="startDate" class="form-control" >
+                    </div>
+                </div>
             </div>
-
-            <div class="custom-modal__label">
-                    <label for="startDate">Start Date</label>
-                </div>
-                <div class="format-data">
-                    <input type="text" name="startDate" id="startDate" class="form-control" >
-                </div>
 
             <div class="button-section">
                 <button class="button alert" onclick="closeModal()">Cancel</button>

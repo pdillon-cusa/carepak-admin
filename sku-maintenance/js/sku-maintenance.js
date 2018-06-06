@@ -137,7 +137,7 @@ $(document).ready(function() {
     let dtButton = $("#skuMaintenanceData_wrapper").find($(".dt-buttons button")).detach();
     if(dtButton) {
         var buttonDiv = $(".section-head").find($(".section-head__actions"));
-        dtButton.addClass('button');
+        dtButton.addClass('button info');
         dtButton.text('Export Excel');
         dtButton.removeClass('dt-button buttons-excel buttons-html5');
         dtButton.appendTo(buttonDiv);
@@ -171,10 +171,6 @@ $(document).ready(function() {
           }
     }
 
-    //-------------------------------------------------
-    // ----------- Init Date Pickers ------------------
-    $("#startDate").datepicker();
-    $("#newStartDate").datepicker();
 
     //---------------------------------------------
 }); //  --------- / doc.ready ---------------------

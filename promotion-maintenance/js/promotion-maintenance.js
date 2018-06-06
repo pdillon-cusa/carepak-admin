@@ -144,7 +144,7 @@ $(document).ready(function() {
             todayHighlight: true
         }).datepicker('setDate', setEndDate ); 
     });
-
+ 
     //---------------------------------------------
 }); //  --------- / doc.ready ---------------------
     //---------------------------------------------
