@@ -1,3 +1,3 @@
-INTRODUCTION
+RUN LOCAL SERVER:
 ------------
-Backup repo until I have access to dev.
+python -m http.server 8080
