@@ -137,8 +137,6 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
-        bFilter: false,
-        bInfo: false,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         columnDefs: [{
