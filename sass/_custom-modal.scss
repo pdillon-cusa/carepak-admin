@@ -90,6 +90,17 @@ p, p.lotusui30dojo {
   margin-bottom: .75rem;
 }
 
+.error-title {
+  color: $primary;
+  display: block;
+  width: 100%;
+  margin-bottom: .75rem;
+  padding: .5rem;
+  background-color: mix(white, $primary, 75%);
+  font-weight: normal;
+  font-size: 15px;
+}
+
 form .error + .error {
   color: $primary;
   display: block;

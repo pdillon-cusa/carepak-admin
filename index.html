@@ -37,49 +37,20 @@
 
   <div class="custom-container">
     <div class="centered">
-      <a href="sku-maintenance/">
-        <section class="sect-1">
-          <div class="sect-icon">
-            <i class="icon-add-check"></i>
-          </div>
-          <div class="sect-title">
-            SKU <br> Maintenance
-          </div>
-        </section>
-      </a>
-
-      <a href="promotion-maintenance/">
-        <section class="sect-2">
-            <div class="sect-icon">
-              <i class="icon-promotion"></i>
-            </div>
-            <div class="sect-title">
-                Promotion <br> Maintenance
-            </div>
-        </section>
-      </a>
-
-      <a href="#" onclick="showManageCarePakTypes()">
-        <section class="sect-3">
-            <div class="sect-icon">
-              <i class="icon-manage-types"></i>
-            </div>
-            <div class="sect-title">
-              Manage <br> CarePak Types 
-            </div>
-        </section>
-      </a>
-
-      <a href="activation-support/">
-        <section class="sect-4">
-            <div class="sect-icon">
-                <i class="icon-right-turn"></i>
-              </div>
-              <div class="sect-title">
-                  Activation <br> Support 
-              </div>
-        </section>
-      </a>
+        <div class="sign-in-container">
+            <h3 class="cf-canon-red text-center">SIGN IN</h3>
+            <h3 class="cf-canon-red dtime"></h3>
+           
+                <label for="partnerUserId">Username *</label>
+                <input id="partnerUserId" name="partnerUserId" type="text" class="form-control">
+                <br>
+                <label for="partnerPassword">Password *</label>
+                <input id="partnerPassword" name="partnerPassword" type="password" class="form-control">
+                <p class="text-right"><button id="formSubmit" class="cbtn cbtn-canon-red" onclick="dahsboard()">Sign In</button></p>
+                <p><a href="/PortalLogin/forgotPwd">Forgot password?</a></p>
+                <p><a href="/PortalLogin/needHelp">Need help signinging in?</a></p>
+           
+        </div>
     </div>
   </div> <!-- / container -->
 
@@ -89,113 +60,9 @@
     </div>
   </footer>
 
+  <!-- Delete me  -->
+  <script>function dahsboard() { window.location = 'dashboard.html'; }</script>
 
-
-     <!-- Manage CarePAK Modal -->
-     <div class="custom-modal" id="manageCarePaksModal">
-        <div class="close-overlay">&times;</div>
-        <div class="custom-modal__title">Manage CarePAK Types</div>
-        <form id="manageCarePaksInfo" method="get" action="">
-
-            <div class="custom-modal__label">
-                <label for="carePakType">CarePAK Type</label>
-            </div>
-            <div class="format-data">
-                <select id="carePakType" name="carePakType">
-                    <option>Plus</option>
-                <select>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="productSku">Starts</label>
-                    </div>
-                    <div class="format-data">
-                        <select id="carePakStarts" name="carePakStarts">
-                            <option>On HW purchase date</option>
-                            <option>After limited warranty</option>
-                        <select>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="maxCoverage">Max Coverage <i class="icon-tooltip-help" id="showTooltip"></i></label>
-                    </div>
-                    <div class="format-data">
-                        <select id="maxCoverage" name="maxCoverage">
-                            <option>3 years</option>
-                            <option>5 years</option>
-                            <option>6 years</option>
-                        <select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="maxCoverageTooltip" id="maxTooltip">
-                <span class="close-tooltip">
-                  <span>&times;</span>
-                </span>
-                <p>Beginning with hardware purchase date and inclusive of limited warranty and max possible renewals.</p>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="carePakPurchaseWindow">CarePAK Purchase Window</label>
-                    </div>
-                    <div class="format-data">
-                        <select id="carePakPurchaseWindow" name="carePakPurchaseWindow">
-                            <option>90 days from HW purchase date</option>
-                            <option>While HW is under warranty</option>
-                        <select>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="registrationWindow">Registration Window</label>
-                    </div>
-                    <div class="format-data">
-                        <select id="registrationWindow" name="registrationWindow">
-                            <option>Up to last day of coverage</option>
-                        <select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="renewable">Renewable</label>
-                    </div>
-                    <div class="format-data">
-                        <select id="renewable" name="renewable">
-                            <option>Yes</option>
-                            <option>No</option>
-                        <select>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="autoregister">Auto Register</label>
-                    </div>
-                    <div class="format-data">
-                        <select id="autoregister" name="autoregister">
-                            <option>Yes</option>
-                            <option>No</option>
-                        <select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="button-section">
-                <button class="button alert" onclick="closeModal()">Cancel</button>
-                <input class="button" type="submit" value="Save">
-            </div>
-        </form>
-        
-    </div>
-    <!-- / Manage CarePAK Modal -->
 
     <!-- Canon CSS Assets -->
     <script src="js/canon-assets/jquery.include-min.js"></script>

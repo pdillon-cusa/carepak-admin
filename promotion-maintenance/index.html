@@ -31,7 +31,7 @@
     <div class="overlay"></div>
 
   <header>
-    <a href="../">
+    <a href="../dashboard.html">
         <div class="logo"><h1>Canon CarePAK</h1></div>
     </a>
     <div class="app-name">CarePAK Administration</div>
@@ -45,6 +45,7 @@
         </div>
         <div class="section-head__actions">
             <button class="button warning" onclick="showAddPromotionModal()">Add Promotion</button>
+            <button class="button" onclick="showSearchModal()">Search</button>
         </div>
     </div>  
 
@@ -76,6 +77,34 @@
   </footer>
 
 
+
+    <!-- Search Modal -->
+    <div class="custom-modal" id="showSearchModal">
+        <div class="close-overlay">&times;</div>
+        <div class="custom-modal__title">Search</div>
+        <form id="" method="get" action="">
+            <div class="error-title">Error messsage text comes from requirements.</div>
+            <div class="custom-modal__label">
+                <label for="searchProductSku">Product SKU</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="searchProductSku" name="searchProductSku">
+            </div>
+            <div class="custom-modal__label">
+                <label for="searchCarePakSku">CarePak SKU</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="searchCarePakSku" name="searchCarePakSku">
+            </div>
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Cancel</button>
+                <input class="button" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <!-- / Search Modal -->
+
+
   
     <!-- Edit Promotion Modal -->
     <div class="custom-modal" id="editPromotionModal">
@@ -87,7 +116,7 @@
                     <label for="productName">Product Name</label>
                 </div>
                 <div class="format-data">
-                    <input class="form-control" id="productName" name="productName">
+                    <input class="form-control" id="productName" name="productName" disabled>
                 </div>
 
                 <div class="row">
@@ -96,7 +125,7 @@
                             <label for="productSku">Product SKU</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="productSku" name="productSku">
+                            <input class="form-control" id="productSku" name="productSku" disabled>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -104,7 +133,7 @@
                             <label for="productModel">Product Model</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="productModel" name="productModel">
+                            <input class="form-control" id="productModel" name="productModel" disabled>
                         </div>
                     </div>
                 </div>
@@ -123,7 +152,7 @@
                             <label for="carePakType">CarePak Type</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="carePakType" name="carePakType">
+                            <input class="form-control" id="carePakType" name="carePakType" disabled>
                         </div>
                     </div>
                 </div>
@@ -134,7 +163,7 @@
                             <label for="carePakPeriod">CarePak Period</label>
                         </div>
                         <div class="format-data">
-                            <select id="carePakPeriod" name="carePakPeriod">
+                            <select id="carePakPeriod" name="carePakPeriod" disabled>
                                 <option>13</option>
                                 <option>24</option>
                                 <option>36</option>
@@ -161,7 +190,7 @@
                             <label for="startDate">Start Date</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="startDate" name="startDate">
+                            <input class="form-control" id="startDate" name="startDate" autocomplete="off">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -169,7 +198,7 @@
                             <label for="endDate">End Date</label>
                         </div>
                         <div class="format-data">
-                            <input class="form-control" id="endDate" name="endDate">
+                            <input class="form-control" id="endDate" name="endDate" autocomplete="off">
                         </div>
                     </div>
                 </div>   
@@ -180,11 +209,11 @@
             </form>
             
     </div>
-    <!-- / Edit SKU Modal -->
+    <!-- / Edit Promotion Modal -->
 
 
 
-    <!--Add Promotion Modal -->
+    <!-- Add Promotion Modal -->
     <div class="custom-modal" id="addPromotionModal">
         <div class="close-overlay">&times;</div>
         <div class="custom-modal__title">Add Promotion</div>
@@ -268,7 +297,7 @@
                         <label for="newStartDate">Start Date</label>
                     </div>
                     <div class="format-data">
-                        <input class="form-control" id="newStartDate" name="newStartDate">
+                        <input class="form-control" id="newStartDate" name="newStartDate" autocomplete="off">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -276,7 +305,7 @@
                         <label for="newEndDate">End Date</label>
                     </div>
                     <div class="format-data">
-                        <input class="form-control" id="newEndDate" name="newEndDate">
+                        <input class="form-control" id="newEndDate" name="newEndDate" autocomplete="off">
                     </div>
                 </div>
             </div>

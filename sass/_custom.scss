@@ -6,7 +6,6 @@ body {
 }
 a:link, a:visited, a:hover, a:active {
     line-height: inherit;
-    color: #1779ba;
     text-decoration: none;
     cursor: pointer;
     font-family: 'Lato', Arial, sans-serif;
@@ -85,6 +84,13 @@ hr {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    .sign-in-container {
+        width: 25rem;
+        margin: 0 auto;
+        background-color: white;
+        padding: 2rem;
+        border: 1px solid #ccc;
+    }
 }
 section {
   padding: 2rem;

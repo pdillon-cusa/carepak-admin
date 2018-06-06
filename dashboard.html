@@ -1,0 +1,266 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CarePAK Administration Portal</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+
+<body onLoad="loaded();">
+<div class="loading"></div>
+<div class="overlay"></div>
+
+<header>
+    <a href="/">
+        <div class="logo"><h1>Canon CarePAK</h1></div>
+    </a>
+    <div class="app-name">CarePAK Administration</div>
+</header>
+
+  <div class="custom-container">
+    <div class="centered">
+      <a href="sku-maintenance/">
+        <section class="sect-1">
+          <div class="sect-icon">
+            <i class="icon-add-check"></i>
+          </div>
+          <div class="sect-title">
+            SKU <br> Maintenance
+          </div>
+        </section>
+      </a>
+
+      <a href="promotion-maintenance/">
+        <section class="sect-2">
+            <div class="sect-icon">
+              <i class="icon-promotion"></i>
+            </div>
+            <div class="sect-title">
+                Promotion <br> Maintenance
+            </div>
+        </section>
+      </a>
+
+      <a href="#" onclick="showManageCarePakTypes()">
+        <section class="sect-3">
+            <div class="sect-icon">
+              <i class="icon-manage-types"></i>
+            </div>
+            <div class="sect-title">
+              Manage <br> CarePak Types 
+            </div>
+        </section>
+      </a>
+
+      <a href="activation-support/">
+        <section class="sect-4">
+            <div class="sect-icon">
+                <i class="icon-right-turn"></i>
+              </div>
+              <div class="sect-title">
+                  Activation <br> Support 
+              </div>
+        </section>
+      </a>
+    </div>
+  </div> <!-- / container -->
+
+  <footer>
+    <div class="foot-content">
+      &copy; Canon 2018
+    </div>
+  </footer>
+
+
+
+     <!-- Manage CarePAK Modal -->
+     <div class="custom-modal" id="manageCarePaksModal">
+        <div class="close-overlay">&times;</div>
+        <div class="custom-modal__title">Manage CarePAK Types</div>
+        <form id="manageCarePaksInfo" method="get" action="">
+
+            <div class="custom-modal__label">
+                <label for="carePakType">CarePAK Type</label>
+            </div>
+            <div class="format-data">
+                <select id="carePakType" name="carePakType">
+                    <option>Plus</option>
+                <select>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="productSku">Starts</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="carePakStarts" name="carePakStarts">
+                            <option>On HW purchase date</option>
+                            <option>After limited warranty</option>
+                        <select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="maxCoverage">Max Coverage <i class="icon-tooltip-help" id="showTooltip"></i></label>
+                    </div>
+                    <div class="format-data">
+                        <select id="maxCoverage" name="maxCoverage">
+                            <option>3 years</option>
+                            <option>5 years</option>
+                            <option>6 years</option>
+                        <select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="maxCoverageTooltip" id="maxTooltip">
+                <span class="close-tooltip">
+                  <span>&times;</span>
+                </span>
+                <p>Beginning with hardware purchase date and inclusive of limited warranty and max possible renewals.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="carePakPurchaseWindow">CarePAK Purchase Window</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="carePakPurchaseWindow" name="carePakPurchaseWindow">
+                            <option>90 days from HW purchase date</option>
+                            <option>While HW is under warranty</option>
+                        <select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="registrationWindow">Registration Window</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="registrationWindow" name="registrationWindow">
+                            <option>Up to last day of coverage</option>
+                        <select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="renewable">Renewable</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="renewable" name="renewable">
+                            <option>Yes</option>
+                            <option>No</option>
+                        <select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="autoregister">Auto Register</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="autoregister" name="autoregister">
+                            <option>Yes</option>
+                            <option>No</option>
+                        <select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Cancel</button>
+                <input class="button" type="submit" value="Save">
+            </div>
+        </form>
+        
+    </div>
+    <!-- / Manage CarePAK Modal -->
+
+    <!-- Canon CSS Assets -->
+    <script src="js/canon-assets/jquery.include-min.js"></script>
+    <link rel="stylesheet" href="css/canon-assets/jquery-ui.css">
+    <link rel="stylesheet" href="css/vendor-assets/jquery-ui.css">
+    <link rel="stylesheet" href="css/canon-assets/bootstrap.css">
+    <link rel="stylesheet" href="css/vendor-assets/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="css/canon-assets/canon-styles.css">
+    <link rel="stylesheet" href="css/canon-assets/new_web_custom.css">
+    <!-- <link rel="stylesheet" href="css/canon-assets/print.css"> -->
+    <link rel="stylesheet" href="css/canon-assets/jquery.raty.css">
+
+    <!-- CarePak Custom CSS Asset -->
+    <link rel="stylesheet" href="css/vendor-assets/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Existing Canon JS Assets -->
+    <script src="js/canon-assets/jquery.include-min.js"></script>
+    <script src="js/canon-assets/jquery.ui-min.js"></script>
+    <script src="js/canon-assets/jquery.validate.min.js"></script>
+    <script src="js/canon-assets/confirmDialog.js"></script>
+    <script src="js/canon-assets/productFinder.js"></script>
+    <script src="js/canon-assets/serialFinder.js"></script>
+    <!-- <script src="js/canon-assets/validatorCustomMethods.js"></script>-->
+    <script src="js/canon-assets/jquery.raty-min.js"></script>
+    <script src="js/canon-assets/jquery.mask-min.js"></script>
+    <script src="js/canon-assets/paginationHelper.js"></script>
+    <script src="js/canon-assets/paginationWidget.js"></script>
+    <script src="js/canon-assets/coreMetricsWrapper.js"></script>
+    <script src="js/canon-assets/liveChat.js"></script>
+    <script src="js/canon-assets/jquery.history.js"></script>
+    <script src="js/canon-assets/custom.js"></script>
+    <script src="js/canon-assets/jReject-min.js"></script>
+    <script src="js/canon-assets/mustache.min.js"></script>
+    <script src="js/canon-assets/canon.js"></script>
+
+    <script src="js/canon-assets/allegiance.js"></script>
+    <script src="js/canon-assets/canon.js"></script>
+    <!-- 
+    <script src="js/canon-assets/jquery.lazyloadxt.autoload.min.js"></script>
+    <script src="js/canon-assets/jquery.lazyloadxt.min.js"></script>
+    <script src="js/canon-assets/oo_engine.min.js"></script>
+    <script src="js/canon-assets/mcxSiteIntercept-1.5.2.js"></script>
+    <script src="js/canon-assets/oo_conf_inline_waypoint.js"></script>
+    <script src="js/canon-assets/validatorCustomMethods.js"></script>
+    -->
+    <!-- CarePak Custom JS -->
+    <!-- <script src="js/vendor/jquery-3.3.1.js"></script> -->
+    <script src="js/vendor/jquery.dataTables.js"></script>
+    <script src="js/vendor/jquery.maskedinput.js"></script>
+    <script src="js/vendor/dataTables.searchHighlight.min.js"></script>
+    <script src="js/vendor/jquery.highlight.js"></script>
+    <!-- Export Excel -->
+    <script src="js/vendor/dataTables.buttons.min.js"></script>
+    <script src="js/vendor/jszip.min.js"></script>
+    <script src="js/vendor/pdfmake.min.js"></script>
+    <script src="js/vendor/vfs_fonts.js"></script>
+    <script src="js/vendor/buttons.print.min.js"></script>
+    <script src="js/vendor/buttons.html5.min.js"></script>
+    <!-- CarePak Custom JS -->
+    <script src="js/carepak-global.js"></script>
+    <script src="js/manageCarepak.js"></script>
+    <script src="promotion-maintenance/js/promotion-maintenance.js"></script>
+</body>
+
+</html>

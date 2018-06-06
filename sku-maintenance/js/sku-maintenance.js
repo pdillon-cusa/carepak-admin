@@ -23,6 +23,7 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
+        bInfo: false,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         dom: 'lBfrtip',
@@ -207,6 +208,13 @@ function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCo
     // $("#editSkuInfo").data('').resetForm();
 }
 
+//-------------------------------------------------
+// ------------- Search Modal -------------------
+function showSearchModalSku() {
+    // Show the overlay
+    $(".overlay").css('display', 'block');
+    $("#searchModalSku").css('display', 'block');
+}
 
 //-------------------------------------------------
 // ------------- Add SKU Dialog -------------------

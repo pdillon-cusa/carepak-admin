@@ -32,7 +32,7 @@
     <div class="overlay"></div>
 
   <header>
-    <a href="../">
+    <a href="../dashboard.html">
         <div class="logo"><h1>Canon CarePAK</h1></div>
     </a>
     <div class="app-name">CarePAK Administration</div>
@@ -45,6 +45,7 @@
             <h3>SKU Maintenance</h3>
         </div>
         <div class="section-head__actions">
+            <button class="button" onclick="showSearchModalSku()">Search</button>
             <button class="button warning" onclick="showAddSkuModal()">Add SKU</button>
         </div>
     </div>  
@@ -77,6 +78,27 @@
     </div>
   </footer>
 
+
+
+  <!-- Search Modal -->
+  <div class="custom-modal" id="searchModalSku">
+        <div class="close-overlay">&times;</div>
+        <div class="custom-modal__title">Search</div>
+        <form id="" method="get" action="">
+            <div class="error-title">Error messsage text comes from requirements.</div>
+            <div class="custom-modal__label">
+                <label for="carePakSku">CarePak SKU</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="carePakSku" name="carePakSku">
+            </div>
+            <div class="button-section">
+                <button class="button alert" onclick="closeModal()">Cancel</button>
+                <input class="button" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <!-- / Search Modal -->
 
   
     <!-- Edit SKU Modal -->

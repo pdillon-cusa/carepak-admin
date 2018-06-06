@@ -50,6 +50,10 @@ table.dataTable.display tbody tr.even {
     }
 }
 
+// ----------------------------------------------------
+// Remove search field
+.dataTables_filter, .dataTables_info { display: none; }
+// ----------------------------------------------------
 
 
 table.dataTable.stripe tbody tr.even {

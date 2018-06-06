@@ -22,6 +22,8 @@ $(document).ready(function() {
             loaded();
         },
        // retrieve: true,
+        bFilter: false, 
+        bInfo: false,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         columnDefs: [
@@ -103,10 +105,45 @@ $(document).ready(function() {
 
     //-------------------------------------------------
     // ----------- Init Date Pickers ------------------
-    $("#startDate").datepicker();
-    $("#newStartDate").datepicker('setDate', new Date());
-    $("#endDate").datepicker();
-    $("#newEndDate").datepicker('setDate', "+3m");
+    $(function() {
+        var today = new Date();
+        var currMonth = today.getMonth();
+        var currYear = today.getFullYear();
+        var currDay = today.getDay();
+        var startDate = new Date(currYear, currMonth - 2, currDay - 8);
+        var setEndDate = new Date(currYear, currMonth - 2, currDay - 8);
+        $("#startDate").datepicker({
+            'setDate': new Date(), 
+            startDate: new Date(),
+            maxDate: today,
+            defaultDate: today,
+            todayHighlight: true
+        }).datepicker('setDate',today );
+
+        $("#endDate").datepicker({
+            'setDate': new Date(), 
+            startDate: new Date(),
+            maxDate: today,
+            defaultDate: today,
+            todayHighlight: true
+        }).datepicker('setDate', setEndDate ); 
+
+        $("#newStartDate").datepicker({
+            'setDate': new Date(), 
+            startDate: new Date(),
+            maxDate: today,
+            defaultDate: today,
+            todayHighlight: true
+        }).datepicker('setDate', today ); 
+
+        $("#newEndDate").datepicker({
+            'setDate': new Date(), 
+            startDate: new Date(),
+            maxDate: today,
+            defaultDate: today,
+            todayHighlight: true
+        }).datepicker('setDate', setEndDate ); 
+    });
 
     //---------------------------------------------
 }); //  --------- / doc.ready ---------------------
@@ -129,7 +166,7 @@ function showEditPromotionModal(productSku, productName, productModel, carePakSk
     $("#startDate").val(startDate);
     $("#endDate").val(endDate);
     $("#registrationPeriod").val(registrationPeriod);
-    $("#rowId").val(productSku);
+
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#editPromotionModal").css('display', 'block');
@@ -142,7 +179,15 @@ function saveChanges() {
 }
 
 //-------------------------------------------------
-// ------------- Add Promotion Dialog -------------------
+// ------------- Search Modal -------------------
+function showSearchModal() {
+    // Show the overlay
+    $(".overlay").css('display', 'block');
+    $("#showSearchModal").css('display', 'block');
+}
+
+//-------------------------------------------------
+// ------------- Add Promotion Dialog -------------
 function showAddPromotionModal() {
     // Rest form of previous values
     $("#addPromotionInfo")[0].reset();
