@@ -39,14 +39,14 @@ table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
     font-size: 12px;
     &.activated {
-        animation: newRowOdd 3s ease-in-out !important;
+        animation: newRowOdd 2.5s ease-in-out !important;
     }
 }
 table.dataTable.stripe tbody tr.even, 
 table.dataTable.display tbody tr.even {
     font-size: 12px;
     &.activated {
-        animation: newRowEven 3s ease-in-out !important;
+        animation: newRowEven 2.5s ease-in-out !important;
     }
 }
 
