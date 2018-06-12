@@ -21,16 +21,15 @@ header {
     position: fixed;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: .5rem 1rem .5rem 1rem;
     top: 0;
     z-index: 1;
     box-shadow: 0 19px 15px -12px #ababab;
     .logo {
         float: left;
-        background: url('../img/logo.jpg') no-repeat;
-        background-size: 100px;
-        height: 2rem;
-        width: 7rem;
+        background: url('../img/canon-logo.png') no-repeat;
+        height: 3rem;
+        width: 11rem;
         display: block;
         h1 {
             position: absolute;
@@ -38,9 +37,9 @@ header {
         }
     }
     .app-name {
-        margin-left: 7rem;  
+        margin-left: 11rem;  
         color: $gray-dark;
-        padding-top: .3rem;
+        padding-top: 1rem;
     }
 }
 footer {
