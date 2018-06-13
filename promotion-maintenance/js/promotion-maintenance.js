@@ -21,9 +21,6 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
-       // retrieve: true,
-        bFilter: false, 
-        bInfo: false,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         columnDefs: [
@@ -42,6 +39,25 @@ $(document).ready(function() {
             targets: [4,5,6,8,9]
         },]
     });
+
+    //-------------------------------------------------
+    //-------------- Search By Column -----------------
+    var table = $('#promotionMaintenanceData').DataTable();
+    $('#searchProductSku').on('keyup', function() {
+        table
+            .column(0)
+            .search(this.value)
+            .draw();
+    });
+
+    $('#searchCarePakSku').on('keyup', function() {
+        table
+            .column(4)
+            .search(this.value)
+            .draw();            
+    });
+
+    
 
     //-------------------------------------------------
     //----------- Add Promotion Validation ------------

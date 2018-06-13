@@ -92,14 +92,12 @@
     </div>
   </footer>
 
-
-
     <!-- Search Modal -->
     <div class="custom-modal" id="showSearchModal">
         <div class="close-overlay">&times;</div>
         <div class="custom-modal__title">Search</div>
-        <form id="" method="get" action="">
-            <div class="error-title">Error messsage text comes from requirements.</div>
+        
+            <div class="error-title">Error messsage placeholder.</div>
             <div class="custom-modal__label">
                 <label for="searchProductSku">Product SKU</label>
             </div>
@@ -114,9 +112,9 @@
             </div>
             <div class="button-section">
                 <button class="button alert" onclick="closeModal()">Cancel</button>
-                <input class="button" type="submit" value="Search">
+                <button class="button" onclick="closeModal()">Search</button>
             </div>
-        </form>
+        
     </div>
     <!-- / Search Modal -->
 
@@ -235,6 +233,13 @@
         <div class="custom-modal__title">Add Promotion</div>
         <form id="addPromotionInfo" method="get" action="">
 
+            <div class="custom-modal__label">
+                <label for="newProductName">Product Name</label>
+            </div>
+            <div class="format-data">
+                <input class="form-control" id="newProductName" name="newProductName" value="New Product Name">
+            </div>
+            
             <div class="row">
                 <div class="col-sm-6">
                     <div class="custom-modal__label">
@@ -252,13 +257,6 @@
                         <input class="form-control" id="newProductModel" name="newProductModel" value="New Model">
                     </div>
                 </div>
-            </div>
-
-            <div class="custom-modal__label">
-                <label for="newProductName">Product Name</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="newProductName" name="newProductName" value="New Product Name">
             </div>
 
             <div class="row">

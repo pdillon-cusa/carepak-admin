@@ -97,8 +97,7 @@
   <div class="custom-modal" id="searchModalSku">
         <div class="close-overlay">&times;</div>
         <div class="custom-modal__title">Search</div>
-        <form id="" method="get" action="">
-            <div class="error-title">Error messsage text comes from requirements.</div>
+            <div class="error-title">Error messsage placeholder.</div>
             <div class="custom-modal__label">
                 <label for="carePakSku">CarePak SKU</label>
             </div>
@@ -107,9 +106,8 @@
             </div>
             <div class="button-section">
                 <button class="button alert" onclick="closeModal()">Cancel</button>
-                <input class="button" type="submit" value="Search">
+                <button class="button" onclick="closeModal()">Search</button>
             </div>
-        </form>
     </div>
     <!-- / Search Modal -->
 
@@ -267,77 +265,94 @@
                 </div>
             </div>
 
-            <div class="custom-modal__label">
-                <label for="newcpSkuName">CarePAK SKU Name</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="newcpSkuName" name="newcpSkuName" value="New CP Name" required>
-            </div>
 
-            <div class="custom-modal__label">
-                <label for="newProductGroup">Product Group</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="newProductGroup" name="newProductGroup" value="New Product Group" required>
-            </div>
-            <div class="custom-modal__label">
-                <label for="newProductCode">Product Code</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="newProductCode" name="newProductCode" value="New Product Code" required>
-            </div>
-
-            <div class="custom-modal__label">
-                <label for="newLevel2Code">Level 2 Code</label>
-            </div>
-            <div class="format-data">
-                <input class="form-control" id="newLevel2Code" name="newLevel2Code" value="New Level 2" required>
-            </div>
-
-            <div class="custom-modal__label">
-                <label for="newDataRecovery">Data Recovery</label>
-            </div>
-            <div class="format-data">
-                <select id="newDataRecovery" name="newDataRecovery" required>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                <select>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newcpSkuName">CarePAK SKU Name</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newcpSkuName" name="newcpSkuName" value="New CP Name" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newProductGroup">Product Group</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newProductGroup" name="newProductGroup" value="New Product Group" required>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newProductCode">Product Code</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newProductCode" name="newProductCode" value="New Product Code" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newLevel2Code">Level 2 Code</label>
+                    </div>
+                    <div class="format-data">
+                        <input class="form-control" id="newLevel2Code" name="newLevel2Code" value="New Level 2" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="custom-modal__label">
+                        <label for="newDataRecovery">Data Recovery</label>
+                    </div>
+                    <div class="format-data">
+                        <select id="newDataRecovery" name="newDataRecovery" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        <select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
                     <div class="custom-modal__label">
                         <label for="newPrefix">Prefix</label>
                     </div>
                     <div class="format-data">
-                        <input class="form-control" id="newPrefix" name="newPrefix" value="New Prefix" required>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="custom-modal__label">
-                        <label for="newTerm">Term (Months)</label>
-                    </div>
-                    <div class="format-data">
-                        <select id="newTerm" name="newTerm" required>
-                            <option>13</option>
-                            <option>24</option>
-                            <option>36</option>
-                            <option>37</option>
-                            <option>48</option>
-                            <option>49</option>
-                            <option>60</option>
-                        <select>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="custom-modal__label">
-                        <label for="newStartDate">Start Date</label>
-                    </div>
-                    <div class="format-data">
-                        <input type="text" class="form-control" name="newStartDate" id="newStartDate" value="10/21/2018" required>
+                            <input class="form-control" id="newPrefix" name="newPrefix" value="New Prefix" required>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                                <label for="newTerm">Term (Months)</label>
+                        </div>
+                        <div class="format-data">
+                            <select id="newTerm" name="newTerm" required>
+                                <option>13</option>
+                                <option>24</option>
+                                <option>36</option>
+                                <option>37</option>
+                                <option>48</option>
+                                <option>49</option>
+                                <option>60</option>
+                            <select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="custom-modal__label">
+                            <label for="newStartDate">Start Date</label>
+                        </div>
+                        <div class="format-data">
+                            <input type="text" class="form-control" name="newStartDate" id="newStartDate" value="10/21/2018" required>
+                        </div>
+                    </div>
+                </div>
+
 
             <div class="button-section">
                 <button class="button alert" onclick="closeModal()">Cancel</button>

@@ -23,7 +23,7 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
-        bInfo: false,
+       // bInfo: false,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         dom: 'lBfrtip',
@@ -47,6 +47,16 @@ $(document).ready(function() {
         { 
             className: "dt-center"
         }]
+    });
+
+    //-------------------------------------------------
+    //-------------- Search By Column -----------------
+    var table = $('#skuMaintenanceData').DataTable();
+    $('#carePakSku').on('keyup', function() {
+        table
+            .column(1)
+            .search(this.value)
+            .draw();
     });
 
     //-------------------------------------------------
@@ -160,7 +170,7 @@ $(document).ready(function() {
             "prefix": newPrefix.value,
             "term": newTerm.value,
             "startDate": newStartDate.value,
-            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , ' + `${newPrefix.value}` + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
+            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
         // ------ Remove Class So Only New Row Animates ------------
