@@ -173,12 +173,17 @@ $(document).ready(function() {
             "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
-        // ------ Remove Class So Only New Row Animates ------------
-        var newRow = document.getElementsByClassName('activated')[0];
-        newRow.addEventListener("animationend", removeAnimation, false);
+        removeAnimationClass();
+    }
+    
+    //-------------------------------------------------
+    // ---- Remove Class So Only New Row Animates -----
+    function removeAnimationClass() {
+        var active = document.querySelector('.activated');
+        active.addEventListener("animationend", removeAnimation, false);
         function removeAnimation() {
-            newRow.classList.remove('activated');
-          }
+            $('.activated').removeClass('activated');
+        }
     }
 
 
