@@ -40,6 +40,12 @@ $(document).ready(function() {
             order: []
         },
         {
+            render: function (data, type, row) {
+                return (data === true) ? 'Yes' : 'No';
+            },
+            targets: 7
+        },
+        {
             targets: [3],
             orderable: true,
             visible: false
@@ -175,7 +181,7 @@ $(document).ready(function() {
         
         removeAnimationClass();
     }
-    
+
     //-------------------------------------------------
     // ---- Remove Class So Only New Row Animates -----
     function removeAnimationClass() {
@@ -222,6 +228,7 @@ function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCo
 //-------------------------------------------------
 // ------------- Search Modal -------------------
 function showSearchModalSku() {
+    $('#carePakSku').val('');
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#searchModalSku").css('display', 'block');
@@ -235,3 +242,18 @@ function showAddSkuModal() {
    // $("#addSkuModal").data('validateAddSku').resetForm();
 }
 
+//-------------------------------------------------
+// ------------- Search Modal -------------------
+// function cancelSearch() {
+//     $('#carePakSku').val('hello');
+//     closeModal();
+// }
+
+function cancelSearch() {
+    var table = $('#skuMaintenanceData').DataTable();
+    table
+        .search( '' )
+        .columns().search( '' )
+        .draw();
+    closeModal();
+}

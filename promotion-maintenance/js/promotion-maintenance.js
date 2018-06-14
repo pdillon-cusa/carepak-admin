@@ -197,6 +197,8 @@ function saveChanges() {
 //-------------------------------------------------
 // ------------- Search Modal -------------------
 function showSearchModal() {
+    $('#searchProductSku').val('');
+    $('#searchCarePakSku').val('');
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#showSearchModal").css('display', 'block');
@@ -213,4 +215,15 @@ function showAddPromotionModal() {
     // Show the overlay
     $(".overlay").css('display', 'block');
     $("#addPromotionModal").css('display', 'block');
+}
+
+//-------------------------------------------------
+// ------------- Cancel Search -------------------
+function cancelSearch() {
+    var table = $('#promotionMaintenanceData').DataTable();
+    table
+        .search( '' )
+        .columns().search( '' )
+        .draw();
+    closeModal();
 }
