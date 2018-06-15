@@ -8,6 +8,11 @@ $primary: #EE1B22;
 $primary-hover: mix(black, $primary, 15%);
 $primary-x-lt: mix(white, #EE1B22, 85%);
 
+$link: #07C;
+$link-visited: mix(black, $link, 15%);
+$link-hover: $primary;
+$link-active: mix(black, $primary, 15%);
+
 $success: #5cb85c;
 $success-hover: mix(black, $success, 15%);
 
@@ -15,7 +20,7 @@ $warning: #E69500;
 $warning-hover: mix(black, $warning, 15%);
 
 $info: #17a2b8;
-$info-hover: mix(black, $warning, 15%);
+$info-hover: mix(black, $info, 15%);
 
 $button-standard: #1779ba;
 $button-standard-hover: mix(black, $button-standard, 15%);

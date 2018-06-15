@@ -56,6 +56,11 @@ p, p.lotusui30dojo { font-family: 'Lato', Arial, sans-serif; }
         width: 100%;
         padding: .4rem;
         font-size: 14px;
+        &:disabled {
+          border: 1px solid #ccc;
+          cursor: not-allowed;
+          background-color: #eee;
+        }
     }
     &__title {
       text-transform: uppercase;

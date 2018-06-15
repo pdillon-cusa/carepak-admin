@@ -47,11 +47,18 @@
             font-weight: 600;
         }
         span.date-label {
-            color: $warning;
+            color: $warning-hover;
             margin-left: 1rem;
         }
         i {
             font-size: 20px;
+            float: right;
+            margin-left: 3px;
+        }
+        .small {
+            margin-top: -5px;
+            color: $warning;
+            display: block;
         }
     }
     &__sub-item {
@@ -89,7 +96,7 @@
     color: $section-3C;
     width: 15rem;
     animation: move .4s ease 1;
-    transform: translate(-34px, -103px);
+    transform: translate(-255px, -81px);
     position: absolute;
     z-index: 5;
     p {
@@ -135,6 +142,6 @@
     }
 }
 @keyframes move {
-    0% { transform: translate(-44px, -103px); }
-    100% { transform: translate(-34px, -103px) }
+    0% { transform: translate(-265px, -81px); }
+    100% { transform: translate(-255px, -81px) }
 }

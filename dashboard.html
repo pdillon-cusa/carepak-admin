@@ -115,20 +115,28 @@
         <div class="custom-modal__title">Manage CarePAK Types</div>
         <form id="manageCarePaksInfo" method="get" action="">
 
-            <div class="custom-modal__label">
-                <label for="carePakType">CarePAK Type</label>
-            </div>
-            <div class="format-data">
-                <select id="carePakType" name="carePakType">
-                    <option>Plus</option>
-                <select>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="carePakType">CarePAK Type</label>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="format-data">
+                        <select id="carePakType" name="carePakType">
+                            <option>Plus</option>
+                        <select>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="productSku">Starts</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="carePakStarts" name="carePakStarts">
                             <option>On HW purchase date</option>
@@ -136,10 +144,15 @@
                         <select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="maxCoverage">Max Coverage <i class="icon-tooltip-help" id="showTooltip"></i></label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="maxCoverage" name="maxCoverage">
                             <option>3 years</option>
@@ -158,10 +171,12 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
-                        <label for="carePakPurchaseWindow">CarePAK Purchase Window</label>
+                        <label for="carePakPurchaseWindow">CP Purchase Window</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="carePakPurchaseWindow" name="carePakPurchaseWindow">
                             <option>90 days from HW purchase date</option>
@@ -169,10 +184,15 @@
                         <select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="registrationWindow">Registration Window</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="registrationWindow" name="registrationWindow">
                             <option>Up to last day of coverage</option>
@@ -182,25 +202,32 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="renewable">Renewable</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="renewable" name="renewable">
-                            <option>Yes</option>
                             <option>No</option>
+                            <option>Yes</option>
                         <select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="autoregister">Auto Register</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="autoregister" name="autoregister">
-                            <option>Yes</option>
                             <option>No</option>
+                            <option>Yes</option>
                         <select>
                     </div>
                 </div>
