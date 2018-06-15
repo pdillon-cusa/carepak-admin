@@ -21,6 +21,8 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
+        orderClasses: false,
+        iDisplayLength: 25,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         columnDefs: [

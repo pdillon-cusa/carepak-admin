@@ -23,7 +23,8 @@ $(document).ready(function() {
         initComplete: function( settings, json ) {
             loaded();
         },
-       // bInfo: false,
+        orderClasses: false,
+        iDisplayLength: 25,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
         dom: 'lBfrtip',
@@ -201,7 +202,6 @@ $(document).ready(function() {
 //-------------------------------------------------
 // ------------- Edit SKU Dialog ------------------
 function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCode, level2Code, dataRecovery, prefix, term, startDate) {
-    $('.custom-modal__title').text('Edit SKU Information');
 
     // Assign the json values to the fields -------------
     $("#carePakType").val(carePakType);
@@ -243,12 +243,7 @@ function showAddSkuModal() {
 }
 
 //-------------------------------------------------
-// ------------- Search Modal -------------------
-// function cancelSearch() {
-//     $('#carePakSku').val('hello');
-//     closeModal();
-// }
-
+// ------------- Cancel Search -------------------
 function cancelSearch() {
     var table = $('#skuMaintenanceData').DataTable();
     table

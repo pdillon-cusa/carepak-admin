@@ -77,7 +77,7 @@
                 <th>Data Recovery</th>
                 <th>Prefix</th>
                 <th>Term</th>
-                <th>Start Date</th>
+                <th>Start Date (Days)</th>
                 <th class="no-sort"></th>
             </tr>
         </thead>
@@ -102,7 +102,19 @@
                 <label for="carePakSku">CarePak SKU</label>
             </div>
             <div class="format-data">
-                <input class="form-control" id="carePakSku" name="carePakSku" autocomplete="off">
+                <!-- <input class="form-control" id="carePakSku" name="carePakSku" autocomplete="off"> -->
+                <input type="text" class="form-control" id="carePakSku" name="carePakSku" list="carePakSkuList" autocomplete="off">
+                <datalist id="carePakSkuList">
+                    <option value="1234567890">
+                    <option value="1855445359">
+                    <option value="2079652362">
+                    <option value="4150870057">
+                    <option value="8346145928">
+                    <option value="5154919561">
+                    <option value="5283704491">
+                    <option value="1539905291">
+                    <option value="3512105507">
+                </datalist>
             </div>
             <div class="button-section">
                 <button class="button alert" onclick="cancelSearch()">Cancel</button>
@@ -115,7 +127,7 @@
     <!-- Edit SKU Modal -->
     <div class="custom-modal" id="editSkuModal">
         <div class="close-overlay">&times;</div>
-        <div class="custom-modal__title"></div>
+        <div class="custom-modal__title">ADD SKU</div>
         <form id="editSkuInfo" method="get" action="">
 
             <div class="row">
@@ -244,71 +256,105 @@
         <form id="addSkuInfo" method="get" action="">
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newcpType">CarePAK Type</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="newcpType" name="newcpType" required>
                             <option value="CarePAK Plus">CarePAK Plus</option>
-                            <option value="">None</option>
+                            <option value="CarePAK Maxify">CarePak Maxify</option>
                         <select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newcpSku">CarePAK SKU</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
-                        <input class="form-control" id="newcpSku" name="newcpSku" value="123456" required title="Must be at lease six digits">
+                        <!-- <input class="form-control" id="newcpSku" name="newcpSku" value="2678276896" required title="Must be at lease six digits"> -->
+                        <input type="text" class="form-control" id="newcpSku" name="newcpSku" list="cpskulist" autocomplete="off">
+                        <datalist id="cpskulist">
+                            <option value="1234567890">
+                            <option value="1855445359">
+                            <option value="2079652362">
+                            <option value="4150870057">
+                            <option value="8346145928">
+                            <option value="5154919561">
+                            <option value="5283704491">
+                            <option value="1539905291">
+                            <option value="3512105507">
+                        </datalist>
                     </div>
                 </div>
             </div>
 
-
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newcpSkuName">CarePAK SKU Name</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
-                        <input class="form-control" id="newcpSkuName" name="newcpSkuName" value="New CP Name" required>
+                        <input class="form-control" id="newcpSkuName" name="newcpSkuName" value="CPPBINO_2894" disabled>
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newProductGroup">Product Group</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
-                        <input class="form-control" id="newProductGroup" name="newProductGroup" value="New Product Group" required>
+                        <input class="form-control" id="newProductGroup" name="newProductGroup" value="Camera" disabled>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newProductCode">Product Code</label>
                     </div>
-                    <div class="format-data">
-                        <input class="form-control" id="newProductCode" name="newProductCode" value="New Product Code" required>
-                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="custom-modal__label">
-                        <label for="newLevel2Code">Level 2 Code</label>
-                    </div>
+                <div class="col-sm-8">
                     <div class="format-data">
-                        <input class="form-control" id="newLevel2Code" name="newLevel2Code" value="New Level 2" required>
+                        <input class="form-control" id="newProductCode" name="newProductCode" value="CM" disabled>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="newLevel2Code">Level 2 Code</label>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="format-data">
+                        <input class="form-control" id="newLevel2Code" name="newLevel2Code" value="B3" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newDataRecovery">Data Recovery</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
                         <select id="newDataRecovery" name="newDataRecovery" required>
                             <option value="Yes">Yes</option>
@@ -316,43 +362,55 @@
                         <select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="custom-modal__label">
                         <label for="newPrefix">Prefix</label>
                     </div>
+                </div>
+                <div class="col-sm-8">
                     <div class="format-data">
-                            <input class="form-control" id="newPrefix" name="newPrefix" value="New Prefix" required>
+                        <input class="form-control" id="newPrefix" name="newPrefix" placeholder="E.g: ESPADR" required autocomplete="off">
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                                <label for="newTerm">Term (Months)</label>
-                        </div>
-                        <div class="format-data">
-                            <select id="newTerm" name="newTerm" required>
-                                <option>13</option>
-                                <option>24</option>
-                                <option>36</option>
-                                <option>37</option>
-                                <option>48</option>
-                                <option>49</option>
-                                <option>60</option>
-                            <select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="custom-modal__label">
-                            <label for="newStartDate">Start Date</label>
-                        </div>
-                        <div class="format-data">
-                            <input type="text" class="form-control" name="newStartDate" id="newStartDate" value="10/21/2018" required>
-                        </div>
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="newTerm">Term (Months)</label>
                     </div>
                 </div>
+                <div class="col-sm-8">
+                    <div class="format-data">
+                        <select id="newTerm" name="newTerm" required>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>24</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>48</option>
+                            <option>49</option>
+                            <option>60</option>
+                        <select>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="newStartDate">Start Date (Days)</label>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="format-data">
+                        <input type="text" class="form-control" name="newStartDate" id="newStartDate" value="" autocomplete="off" required>
+                    </div>
+                </div>
+            </div>
 
             <div class="button-section">
                 <button class="button alert" onclick="closeModal()">Cancel</button>
@@ -363,9 +421,6 @@
     </div>
     <!-- / ADD SKU Modal -->
 
-
-
-   
 
     <!-- Existing Canon JS Assets -->
     <script src="../js/canon-assets/jquery.include-min.js"></script>

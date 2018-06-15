@@ -33,14 +33,14 @@
         "carePakSku": 5445416149,
         "carePakSkuName": "CPPBINO_2894",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "AL",
         "level2Code": "B3",
         "dataRecovery": false,
         "prefix": "MSPDAR",
         "term": 24,
         "startDate": "06/14/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 5445416149, 'CPPBINO_2894', 'Boniculars', 'AL', 'B3', false, 'MSPDAR', 24, '06/14/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 5445416149, 'CPPBINO_2894', 'Binoculars', 'AL', 'B3', false, 'MSPDAR', 24, '06/14/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -61,14 +61,14 @@
         "carePakSku": 479724227,
         "carePakSkuName": "CRRLINO_0504",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "BN",
         "level2Code": "B3",
         "dataRecovery": true,
         "prefix": "ESPDAR",
         "term": 60,
         "startDate": "06/28/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 479724227, 'CRRLINO_0504', 'Boniculars', 'BN', 'B3', true, 'ESPDAR', 60, '06/28/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 479724227, 'CRRLINO_0504', 'Binoculars', 'BN', 'B3', true, 'ESPDAR', 60, '06/28/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -173,14 +173,14 @@
         "carePakSku": 4730788337,
         "carePakSkuName": "CPPBINO_2894",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "CM",
         "level2Code": "B3",
         "dataRecovery": true,
         "prefix": "OTHER",
         "term": 60,
         "startDate": "06/17/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 4730788337, 'CPPBINO_2894', 'Boniculars', 'CM', 'B3', true, 'OTHER', 60, '06/17/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 4730788337, 'CPPBINO_2894', 'Binoculars', 'CM', 'B3', true, 'OTHER', 60, '06/17/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -201,14 +201,14 @@
         "carePakSku": 958660066,
         "carePakSkuName": "CPPBINO_0504",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "CM",
         "level2Code": "A2",
         "dataRecovery": true,
         "prefix": "ESPDAR",
         "term": 60,
         "startDate": "06/17/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 958660066, 'CPPBINO_0504', 'Boniculars', 'CM', 'A2', true, 'ESPDAR', 60, '06/17/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 958660066, 'CPPBINO_0504', 'Binoculars', 'CM', 'A2', true, 'ESPDAR', 60, '06/17/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -257,28 +257,28 @@
         "carePakSku": 4030520700,
         "carePakSkuName": "CPPBINO_2894",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "AL",
         "level2Code": "B3",
         "dataRecovery": false,
         "prefix": "ESPDAR",
         "term": 37,
         "startDate": "06/24/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 4030520700, 'CPPBINO_2894', 'Boniculars', 'AL', 'B3', false, 'ESPDAR', 37, '06/24/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 4030520700, 'CPPBINO_2894', 'Binoculars', 'AL', 'B3', false, 'ESPDAR', 37, '06/24/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
         "carePakSku": 669413561,
         "carePakSkuName": "CRRLINO_0504",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "TS",
         "level2Code": "A2",
         "dataRecovery": false,
         "prefix": "ESPDA",
         "term": 49,
         "startDate": "06/22/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 669413561, 'CRRLINO_0504', 'Boniculars', 'TS', 'A2', false, 'ESPDA', 49, '06/22/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 669413561, 'CRRLINO_0504', 'Binoculars', 'TS', 'A2', false, 'ESPDA', 49, '06/22/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -313,14 +313,14 @@
         "carePakSku": 9878974158,
         "carePakSkuName": "CRRLINO_0504",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "AL",
         "level2Code": "C5",
         "dataRecovery": false,
         "prefix": "ESPDAR",
         "term": 36,
         "startDate": "06/17/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 9878974158, 'CRRLINO_0504', 'Boniculars', 'AL', 'C5', false, 'ESPDAR', 36, '06/17/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 9878974158, 'CRRLINO_0504', 'Binoculars', 'AL', 'C5', false, 'ESPDAR', 36, '06/17/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -383,14 +383,14 @@
         "carePakSku": 3980989602,
         "carePakSkuName": "CPPBINO_29845",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "CM",
         "level2Code": "A9",
         "dataRecovery": false,
         "prefix": "ESPDA",
         "term": 36,
         "startDate": "06/23/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 3980989602, 'CPPBINO_29845', 'Boniculars', 'CM', 'A9', false, 'ESPDA', 36, '06/23/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 3980989602, 'CPPBINO_29845', 'Binoculars', 'CM', 'A9', false, 'ESPDA', 36, '06/23/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -593,14 +593,14 @@
         "carePakSku": 5848921697,
         "carePakSkuName": "CPPBINO_29845",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "TS",
         "level2Code": "A2",
         "dataRecovery": false,
         "prefix": "MSPDAR",
         "term": 49,
         "startDate": "06/14/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 5848921697, 'CPPBINO_29845', 'Boniculars', 'TS', 'A2', false, 'MSPDAR', 49, '06/14/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 5848921697, 'CPPBINO_29845', 'Binoculars', 'TS', 'A2', false, 'MSPDAR', 49, '06/14/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -677,14 +677,14 @@
         "carePakSku": 5283704491,
         "carePakSkuName": "CPPBINO_9836",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "BN",
         "level2Code": "C5",
         "dataRecovery": false,
         "prefix": "OTHER",
         "term": 37,
         "startDate": "06/13/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 5283704491, 'CPPBINO_9836', 'Boniculars', 'BN', 'C5', false, 'OTHER', 37, '06/13/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 5283704491, 'CPPBINO_9836', 'Binoculars', 'BN', 'C5', false, 'OTHER', 37, '06/13/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -733,14 +733,14 @@
         "carePakSku": 6750818822,
         "carePakSkuName": "CPPBINO_9836",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "BN",
         "level2Code": "A9",
         "dataRecovery": false,
         "prefix": "OTHER",
         "term": 24,
         "startDate": "06/16/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 6750818822, 'CPPBINO_9836', 'Boniculars', 'BN', 'A9', false, 'OTHER', 24, '06/16/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 6750818822, 'CPPBINO_9836', 'Binoculars', 'BN', 'A9', false, 'OTHER', 24, '06/16/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -761,14 +761,14 @@
         "carePakSku": 4150870057,
         "carePakSkuName": "CPPBINO_0504",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "CM",
         "level2Code": "A9",
         "dataRecovery": false,
         "prefix": "ESPDAR",
         "term": 37,
         "startDate": "06/17/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 4150870057, 'CPPBINO_0504', 'Boniculars', 'CM', 'A9', false, 'ESPDAR', 37, '06/17/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 4150870057, 'CPPBINO_0504', 'Binoculars', 'CM', 'A9', false, 'ESPDAR', 37, '06/17/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
@@ -803,28 +803,28 @@
         "carePakSku": 2678276896,
         "carePakSkuName": "CPPBINO_2894",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "TS",
         "level2Code": "B3",
         "dataRecovery": true,
         "prefix": "MSPDA",
         "term": 13,
         "startDate": "06/28/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 2678276896, 'CPPBINO_2894', 'Boniculars', 'TS', 'B3', true, 'MSPDA', 13, '06/28/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 2678276896, 'CPPBINO_2894', 'Binoculars', 'TS', 'B3', true, 'MSPDA', 13, '06/28/2018')\">EDIT</a>"
       },
       {
         "carePakType": "CarePAK Plus",
         "carePakSku": 8202480429,
         "carePakSkuName": "CRRLINO_0504",
         "order": 0,
-        "productGroup": "Boniculars",
+        "productGroup": "Binoculars",
         "productCode": "AL",
         "level2Code": "B3",
         "dataRecovery": true,
         "prefix": "OTHER",
         "term": 60,
         "startDate": "06/26/2018",
-        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 8202480429, 'CRRLINO_0504', 'Boniculars', 'AL', 'B3', true, 'OTHER', 60, '06/26/2018')\">EDIT</a>"
+        "edit": "<a href=\"#\" onclick=\"showEditSkuModal('CarePAK Plus', 8202480429, 'CRRLINO_0504', 'Binoculars', 'AL', 'B3', true, 'OTHER', 60, '06/26/2018')\">EDIT</a>"
       }
     ]
 }

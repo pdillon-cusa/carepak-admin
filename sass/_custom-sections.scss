@@ -69,7 +69,6 @@
 }
 .button-section, .button-section-foot  {
     padding-top: .5rem;
-    margin-top: 1.5rem;
     text-align: right;
     bottom: 0;
     right: 0;
@@ -82,15 +81,15 @@
 // Tooltip
 .maxCoverageTooltip {
     display: none;
-    padding: 0.75rem;
+    padding: 0.95rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.5) -2px 2px 12px;
     background-color: $section-3B;
     border: 2px solid $section-3;
     color: $section-3C;
-    width: 12rem;
+    width: 15rem;
     animation: move .4s ease 1;
-    transform: translate(16px, -103px);
+    transform: translate(-34px, -103px);
     position: absolute;
     z-index: 5;
     p {
@@ -135,7 +134,7 @@
         color: $section-3C;
     }
 }
-  @keyframes move {
-      0% { transform: translate(5px, -103px); }
-     100% { transform: translate(16px, -103px) }
-  }
+@keyframes move {
+    0% { transform: translate(-44px, -103px); }
+    100% { transform: translate(-34px, -103px) }
+}
