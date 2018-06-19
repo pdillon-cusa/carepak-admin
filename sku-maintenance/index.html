@@ -72,12 +72,11 @@
                 <th>CarePak SKU Name</th>
                 <th>Order</th>
                 <th>Product Group</th>
-                <th>Product Code</th>
                 <th>Level 2 Code</th>
                 <th>Data Recovery</th>
                 <th>Prefix</th>
                 <th>Term</th>
-                <th>Start Date (Days)</th>
+                <th>Waiting Period (Days)</th>
                 <th class="no-sort"></th>
             </tr>
         </thead>
@@ -105,15 +104,9 @@
                 <!-- <input class="form-control" id="carePakSku" name="carePakSku" autocomplete="off"> -->
                 <input type="text" class="form-control" id="carePakSku" name="carePakSku" list="carePakSkuList" autocomplete="off">
                 <datalist id="carePakSkuList">
-                    <option value="1234567890">
-                    <option value="9094590287">
-                    <option value="968975359">
-                    <option value="6101261923">
-                    <option value="1852243019">
-                    <option value="345908143">
-                    <option value="6147099108">
-                    <option value="9632526456">
-                    <option value="5027462175">
+                    <option value="4051588982">
+                    <option value="9133865593">
+                    <option value="1133959661">
                 </datalist>
             </div>
             <div class="button-section">
@@ -201,19 +194,6 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="custom-modal__label">
-                        <label for="productCode">Product Code</label>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="format-data">
-                            <input class="form-control" id="productCode" name="productCode" disabled>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="custom-modal__label">
                         <label for="dataRecovery">Data Recovery</label>
                     </div>
                 </div>
@@ -264,12 +244,12 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="custom-modal__label">
-                        <label for="startDate">Start Date <span class="small">(Days)</span></label>
+                        <label for="waitingPeriod">Waiting Period <span class="small">(Days)</span></label>
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="format-data">
-                        <input type="text" name="startDate" id="startDate" class="form-control" >
+                        <input type="text" name="waitingPeriod" id="waitingPeriod" class="form-control" autocomplete="off" >
                     </div>
                 </div>
             </div>
@@ -360,19 +340,6 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="custom-modal__label">
-                        <label for="newProductCode">Product Code</label>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="format-data">
-                        <input class="form-control" id="newProductCode" name="newProductCode" value="CM" disabled>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="custom-modal__label">
                         <label for="newLevel2Code">Level 2 Code</label>
                     </div>
                 </div>
@@ -407,7 +374,7 @@
                 </div>
                 <div class="col-sm-8">
                     <div class="format-data">
-                        <input class="form-control" id="newPrefix" name="newPrefix" placeholder="E.g: ESPADR" required autocomplete="off">
+                        <input class="form-control" id="newPrefix" name="newPrefix" placeholder="E.g: ESPA or ESPADR" required autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -437,12 +404,12 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="custom-modal__label">
-                        <label for="newStartDate">Start Date <span class="small">(Day   s)</span></label>
+                        <label for="newWaitingPeriod">Waiting Period <span class="small">(Days)</span></label>
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="format-data">
-                        <input type="text" class="form-control" name="newStartDate" id="newStartDate" value="" autocomplete="off" required>
+                        <input type="text" class="form-control" name="newWaitingPeriod" id="newWaitingPeriod" value="" autocomplete="off" required>
                     </div>
                 </div>
             </div>

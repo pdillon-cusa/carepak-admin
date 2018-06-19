@@ -12,12 +12,11 @@ $(document).ready(function() {
             { data: 'carePakSkuName' },
             { data: 'order' },
             { data: 'productGroup' },
-            { data: 'productCode' },
             { data: 'level2Code' },
             { data: 'dataRecovery' },
             { data: 'prefix' },
             { data: 'term' },
-            { data: 'startDate' },
+            { data: 'waitingPeriod' },
             { data: 'edit' },
         ],
         initComplete: function( settings, json ) {
@@ -84,9 +83,6 @@ $(document).ready(function() {
             newProductGroup: {
                 required: true
             },
-            newProductCode: {
-                required: true
-            },
             newLevel2Code: {
                 required: true
             },
@@ -124,9 +120,6 @@ $(document).ready(function() {
             productGroup: {
                 required: true
             },
-            productCode: {
-                required: true
-            },
             level2Code: {
                 required: true
             },
@@ -139,7 +132,7 @@ $(document).ready(function() {
             term: {
                 required: true
             },
-            startDate: {
+            waitingPeriod: {
                 required: true
             }
         },
@@ -171,13 +164,12 @@ $(document).ready(function() {
             "carePakSkuName": newcpSkuName.value,
             "order": -1,
             "productGroup": newProductGroup.value,
-            "productCode": newProductCode.value,
             "level2Code": newLevel2Code.value,
             "dataRecovery": newDataRecovery.value,
             "prefix": newPrefix.value,
             "term": newTerm.value,
-            "startDate": newStartDate.value,
-            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newProductCode.value}` + '\''  + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newStartDate.value}` + '\'' + ')">EDIT</a>',
+            "waitingPeriod": newWaitingPeriod.value,
+            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newWaitingPeriod.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
         removeAnimationClass();
@@ -201,14 +193,13 @@ $(document).ready(function() {
 
 //-------------------------------------------------
 // ------------- Edit SKU Dialog ------------------
-function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCode, level2Code, dataRecovery, prefix, term, startDate) {
+function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, level2Code, dataRecovery, prefix, term, waitingPeriod) {
 
     // Assign the json values to the fields -------------
     $("#carePakType").val(carePakType);
     $("#cpSku").val(cpSku);
     $("#cpSkuName").val(cpSkuName);
     $("#productGroup").val(productGroup);
-    $("#productCode").val(productCode);
     $("#level2Code").val(level2Code);
     if(dataRecovery) {
         $("#dataRecovery").val("Yes");
@@ -217,7 +208,7 @@ function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, productCo
     }
     $("#prefix").val(prefix);
     $("#term").val(term);
-    $("#startDate").val(startDate);
+    $("#waitingPeriod").val(waitingPeriod);
     
     // Show the overlay ---------------------------------
     $(".overlay").css('display', 'block');
