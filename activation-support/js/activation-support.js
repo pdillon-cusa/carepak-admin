@@ -118,6 +118,8 @@ $(document).ready(function() {
         "ajax": '../activation-support/js/activationSupportData.json',
         columns: [
             { data: 'sellTo' },
+            { data: 'status' },
+            { data: 'source' },
             { data: 'hardwareSKU' },
             { data: 'serial' },
             { data: 'receipt' },
@@ -145,7 +147,7 @@ $(document).ready(function() {
             render: function (data, type, row) {
                 return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
             },
-            targets: 15
+            targets: 17
         },
         {
             targets  : 'no-sort',
@@ -154,7 +156,7 @@ $(document).ready(function() {
         },
         { 
             className: "dt-center", 
-            targets: [6, 13, 14, 15]
+            targets: [8, 15, 17]
         },]
     });
 
