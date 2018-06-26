@@ -175,37 +175,37 @@ $(document).ready(function() {
     });
     $('#lastNameSearch').on('keyup', function() {
         table
-            .columns(9)
+            .columns(11)
             .search(this.value)
             .draw();
     });
     $('#firstNameSearch').on('keyup', function() {
         table
-            .columns(8)
+            .columns(10)
             .search(this.value)
             .draw();
     });
     $('#emailSearch').on('keyup', function() {
         table
-            .columns(11)
+            .columns(13)
             .search(this.value)
             .draw();
     });
     $('#phoneSearch').on('keyup', function() {
         table
-            .columns(12)
+            .columns(14)
             .search(this.value)
             .draw();
     });
     $('#serialSearch').on('keyup', function() {
         table
-            .columns(2)
+            .columns(4)
             .search(this.value)
             .draw();
     });
     $('#receiptSearch').on('keyup', function() {
         table
-            .columns(3)
+            .columns(5)
             .search(this.value)
             .draw();
     });
