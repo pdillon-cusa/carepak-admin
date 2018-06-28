@@ -119,3 +119,13 @@ table.dataTable span.column_highlight {
 .custom-dt-button {
     position: relative;
 }
+
+
+// Specific to draggable columns for Activation Support
+// will confirm if all tables should use this feature:
+
+table#activationSupportData  thead tr th {
+    border-right: 1px solid #999;
+    text-align: left;
+    padding: 5px 20px 5px 5px !important;
+}

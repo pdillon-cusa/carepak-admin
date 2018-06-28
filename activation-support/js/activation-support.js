@@ -43,12 +43,13 @@ $(function() {
     var currDay = today.getDay();
     var startDate = new Date(currYear, currMonth - 2, currDay - 8);
     // alert(startDate);
-    $("#dateFrom").datepicker().datepicker('setDate',startDate );
+    $("#dateFrom").datepicker({
+        endDate: '+0d'
+    }).datepicker('setDate',startDate );
+    
     $("#dateTo").datepicker({
-        maxDate: today,
-        defaultDate: today,
-        todayHighlight: true
-    }).datepicker('setDate',today );
+        endDate: 'now'
+    }).datepicker('setDate','now' );
 });
 
 // ------------- Edit Info Dialog -------------------
@@ -59,7 +60,6 @@ function showEditCustomerModal(serialNumber, firstName, lastName, emailAddress, 
     $("#lastName").val(lastName);
     $("#emailAddress").val(emailAddress);
     $("#editPhone").val(editPhone);
-
 
     $(".overlay").css('display', 'block');
     $("#editInfoModal").css('display', 'block');
@@ -118,25 +118,31 @@ $(document).ready(function() {
         "ajax": '../activation-support/js/activationSupportData.json',
         columns: [
             { data: 'sellTo' },
-            { data: 'status' },
+            { data: 'orderReceivedDate' },
+            { data: 'purchaseDate' },
             { data: 'source' },
+            { data: 'status' },
+            { data: 'carePakSku' },
+            { data: 'carePakName' },
             { data: 'hardwareSKU' },
+            { data: 'hardwareModelName' },
             { data: 'serial' },
             { data: 'receipt' },
-            { data: 'purchaseDate' },
-            { data: 'carepakSKU' },
+            { data: 'picture' },
             { data: 'term' },
+            { data: 'expDate' },
             { data: 'activationCode' },
+            { data: 'canonCpo' },
+            { data: 'canonInvoice' },
             { data: 'firstName' },
             { data: 'lastName' },
-            { data: 'expDate' },
             { data: 'email' },
             { data: 'phone' },
-            { data: 'picture' },
             { data: 'edit' },
             { data: 'checked' }
         ],
         initComplete: function( settings, json ) {
+            $('#activationSupportData').colResizable({liveDrag:true});
             loaded();
         },
         orderClasses: false,
@@ -147,7 +153,7 @@ $(document).ready(function() {
             render: function (data, type, row) {
                 return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
             },
-            targets: 17
+            targets: 22
         },
         {
             targets  : 'no-sort',
@@ -156,7 +162,7 @@ $(document).ready(function() {
         },
         { 
             className: "dt-center", 
-            targets: [8, 15, 17]
+            targets: [11,12,21,22]
         },]
     });
 
@@ -175,37 +181,43 @@ $(document).ready(function() {
     });
     $('#lastNameSearch').on('keyup', function() {
         table
-            .columns(11)
+            .columns(18)
             .search(this.value)
             .draw();
     });
     $('#firstNameSearch').on('keyup', function() {
         table
-            .columns(10)
+            .columns(17)
+            .search(this.value)
+            .draw();
+    });
+    $('#carePakSkuSearch').on('keyup', function() {
+        table
+            .columns(5)
             .search(this.value)
             .draw();
     });
     $('#emailSearch').on('keyup', function() {
         table
-            .columns(13)
+            .columns(15)
             .search(this.value)
             .draw();
     });
     $('#phoneSearch').on('keyup', function() {
         table
-            .columns(14)
+            .columns(16)
             .search(this.value)
             .draw();
     });
     $('#serialSearch').on('keyup', function() {
         table
-            .columns(4)
+            .columns(6)
             .search(this.value)
             .draw();
     });
     $('#receiptSearch').on('keyup', function() {
         table
-            .columns(5)
+            .columns(7)
             .search(this.value)
             .draw();
     });

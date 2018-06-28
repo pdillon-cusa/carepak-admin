@@ -63,13 +63,48 @@
 
             <div class="search-filters clearfix">
 
-                <div class="col-3">
+                <div class="cols">
+                    <div class="received clearfix">
+                        <div class="search-filters__label"> Order Received Date <span class="date-label">(From / To)</span></div>
+                        <div class="search-filters__input">
+                            <div class="search-filters__sub-item">
+                                <input type="text" class="form-control" placeholder="From" id="dateFrom">
+                            </div>
+                            <div class="search-filters__sub-item">
+                                <input type="text" class="form-control" placeholder="To" id="dateTo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-filters__label">
+                        <label for="temp">Serial #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="serialSearch">
+                    </div>
                     <div class="search-filters__label">
                         <label for="temp">First Name</label>
                     </div>
                     <div class="search-filters__input">
                         <input type="text" class="form-control" id="firstNameSearch">
                     </div>
+                    <div class="search-filters__label">
+                        <label for="temp">CarePak SKU</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="carePakSkuSearch">
+                    </div>
+                </div>
+
+                <div class="cols">
+
+                    <div class="search-filters__label">
+                        <label for="temp">Receipt #</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="receiptSearch">
+                    </div>
+                    
                     <div class="search-filters__label">
                         <label for="temp">Last Name</label>
                     </div>
@@ -78,38 +113,8 @@
                     </div>
                 </div>
 
-                <div class="col-3">
-                    <div class="search-filters__label">
-                        <label for="temp">Email</label>
-                    </div>
-                    <div class="search-filters__input">
-                        <input type="text" class="form-control" id="emailSearch">
-                    </div>
-                    <div class="search-filters__label">
-                        <label for="temp">Phone #</label>
-                    </div>
-                    <div class="search-filters__input">
-                        <input type="tel" class="form-control" name="phone" id="phoneSearch" />
-                    </div>
-                </div>
+                <div class="cols">
 
-                <div class="col-3">
-                    <div class="search-filters__label">
-                        <label for="temp">Serial #</label>
-                    </div>
-                    <div class="search-filters__input">
-                        <input type="text" class="form-control" id="serialSearch">
-                    </div>
-
-                    <div class="search-filters__label">
-                        <label for="temp">Receipt #</label>
-                    </div>
-                    <div class="search-filters__input">
-                        <input type="text" class="form-control" id="receiptSearch">
-                    </div>
-                </div>
-
-                <div class="col-3">
                     <div class="search-filters__label">
                         <label for="temp">Registration #</label>
                     </div>
@@ -117,54 +122,61 @@
                         <input type="text" class="form-control" id="temp">
                     </div>
                     <div class="search-filters__label">
+                        <label for="temp">Email</label>
+                    </div>
+                    <div class="search-filters__input">
+                        <input type="text" class="form-control" id="emailSearch">
+                    </div>
+
+                </div>
+
+                <div class="cols">
+                    
+                    <div class="search-filters__label">
                         <label for="temp">Sell to Code</label>
                     </div>
                     <div class="search-filters__input">
                         <input type="text" class="form-control" id="sellToSearch">
                     </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="clearfix">
-                        <div class="search-filters__label"> Order Received Date <span class="date-label">(From / To)</span></div>
-                        <div class="search-filters__input">
-                            <div class="search-filters__sub-item">
-                                <!-- <label for="temp">From</label> -->
-                                <input type="text" class="form-control" placeholder="From" id="dateFrom">
-                            </div>
-                            <div class="search-filters__sub-item">
-                                <!-- <label for="temp">To</label> -->
-                                <input type="text" class="form-control" placeholder="To" id="dateTo">
-                            </div>
-                        </div>
+                    <div class="search-filters__label">
+                        <label for="temp">Phone #</label>
                     </div>
-                    <div class="button-section">
+                    <div class="search-filters__input">
+                        <input type="tel" class="form-control" name="phone" id="phoneSearch" />
+                    </div>
+                    <div class="button-section clearfix">
                         <button class="button alert" id="clearAll">Clear All</button>
                         <button class="button">Search</button>
                     </div>
                 </div>
             </form>
-            </div>
+
+        </div>
 
             <table id="activationSupportData" class="display stripe" style="width: 100%">
                 <thead>
                     <tr>
                         <th>Sell To</th>
+                        <th>Order Received Date</th>
+                        <th>Purchase Date</th>
+                        <th>Data Source</th>
                         <th>Status</th>
-                        <th>Source</th>
+                        <th>CarePAK SKU</th>
+                        <th>CarePAK Name</th>
                         <th>Hardware SKU</th>
+                        <th>Hardware Model Name</th>
                         <th>Serial #</th>
                         <th>Receipt #</th>
-                        <th>Purchase Date</th>
-                        <th>CarePAK SKU</th>
+                        <th class="no-sort">Receipt Image</th>
                         <th>Terms</th>
+                        <th>CarePAK Exp Date</th>
                         <th>Activation Code</th>
+                        <th>Canon CPO</th>
+                        <th>Canon Invoice</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>CarePAK Exp Date</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th class="no-sort">Receipt</th>
                         <th class="no-sort">&nbsp;</th>
                         <th class="no-sort">Send Email</th>
                     </tr>
@@ -350,6 +362,7 @@
         <script src="../js/vendor/jquery.maskedinput.js"></script>
         <script src="../js/vendor/dataTables.searchHighlight.min.js"></script>
         <script src="../js/vendor/jquery.highlight.js"></script>
+        <script src="../js/vendor/dataTables.colResizable-1.5.min.js"></script>
         <script src="../js/carepak-global.js"></script>
         <script src="js/activation-support.js"></script>
     </body>
