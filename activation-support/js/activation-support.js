@@ -145,6 +145,17 @@ $(document).ready(function() {
             $('#activationSupportData').colResizable({liveDrag:true});
             loaded();
         },
+        // createdRow: function (row, data, dataIndex) {
+        //     $.each($('td', row), function () {
+        //         console.log(dataIndex);
+        //         $(this).attr('title', data.cell);
+        //     });
+        // },
+        // createdCell: function (td, cellData, rowData, row, col) {
+        //     if ( cellData < 1 ) {
+        //       $(td).css('color', 'red')
+        //     }
+        // },
         orderClasses: false,
         iDisplayLength: 25,
         searchHighlight: true,
@@ -163,7 +174,15 @@ $(document).ready(function() {
         { 
             className: "dt-center", 
             targets: [11,12,21,22]
-        },]
+        },
+        { 
+            targets: [0,1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20],
+            createdCell: function (td, cellData, rowData, row, col) {
+                $.each($(td, row), function () {
+                    $(this).attr('title', cellData);
+                });
+            }
+        }]
     });
 
     //----------------------------------------------------

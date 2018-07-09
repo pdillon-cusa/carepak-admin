@@ -39,7 +39,15 @@ $(document).ready(function() {
         { 
             className: "dt-center", 
             targets: [4,5,6,8,9]
-        },]
+        },
+        { 
+            targets: [0,1,2,3,4,5,6,7,8,9],
+            createdCell: function (td, cellData, rowData, row, col) {
+                $.each($(td, row), function () {
+                    $(this).attr('title', cellData);
+                });
+            }
+        }]
     });
 
     //-------------------------------------------------
