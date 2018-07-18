@@ -218,25 +218,25 @@ $(document).ready(function() {
     });
     $('#emailSearch').on('keyup', function() {
         table
-            .columns(15)
+            .columns(19)
             .search(this.value)
             .draw();
     });
     $('#phoneSearch').on('keyup', function() {
         table
-            .columns(16)
+            .columns(20)
             .search(this.value)
             .draw();
     });
     $('#serialSearch').on('keyup', function() {
         table
-            .columns(6)
+            .columns(9)
             .search(this.value)
             .draw();
     });
     $('#receiptSearch').on('keyup', function() {
         table
-            .columns(7)
+            .columns(10)
             .search(this.value)
             .draw();
     });
