@@ -1,0 +1,32 @@
+#toggle-columns {
+    position: absolute;
+    background-color: #ddd;
+    width: 12rem;
+    right: 0;
+    margin-top: -5px;
+
+    a {
+        text-decoration: none;
+        display: block;
+        padding: .5rem;
+        color: #222;
+        &:hover {
+            color: mix(black, #0065ad, 20%);
+        }
+        .icon-ct {
+            float: left;
+            height: 25px;
+            padding-top: 3px;
+            margin-right: 8px;
+        }
+    }
+    #column-list {
+        position: absolute;
+        background-color: #ddd;
+        top: 2.2rem;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        box-shadow: rgba(0, 0, 0, 0.3) -3px 10px 15px;
+    }
+}

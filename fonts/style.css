@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'carepak';
-  src:  url('../fonts/carepak.eot?j7rh7z');
-  src:  url('../fonts/carepak.eot?j7rh7z#iefix') format('embedded-opentype'),
-    url('../fonts/carepak.ttf?j7rh7z') format('truetype'),
-    url('../fonts/carepak.woff?j7rh7z') format('woff'),
-    url('../fonts/carepak.svg?j7rh7z#carepak') format('svg');
+  src:  url('fonts/carepak.eot?4nn2a');
+  src:  url('fonts/carepak.eot?4nn2a#iefix') format('embedded-opentype'),
+    url('fonts/carepak.ttf?4nn2a') format('truetype'),
+    url('fonts/carepak.woff?4nn2a') format('woff'),
+    url('fonts/carepak.svg?4nn2a#carepak') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,15 +24,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-.icon-view-column:before {
-  content: "\e906";
-}
 .icon-dots-horizontal:before {
   content: "\e905";
 }
 .icon-dots-vertical:before {
   content: "\e904";
+}
+.icon-view-column:before {
+  content: "\e906";
+}
+.icon-checkmark:before {
+  content: "\e900";
 }
 .icon-check-square:before {
   content: "\e902";
@@ -55,10 +57,6 @@
 .icon-manage-types:before {
   content: "\e161";
 }
-.icon-checkmark:before {
-  content: "\e900";
-}
 .icon-receipt:before {
   content: "\e901";
-  font-size: 18px;
 }

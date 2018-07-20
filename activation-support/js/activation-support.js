@@ -118,6 +118,7 @@ $(document).ready(function() {
         "ajax": '../activation-support/js/activationSupportData.json',
         columns: [
             { data: 'sellTo' },
+            { data: 'dealerName' },
             { data: 'orderReceivedDate' },
             { data: 'purchaseDate' },
             { data: 'source' },
@@ -156,7 +157,10 @@ $(document).ready(function() {
         //       $(td).css('color', 'red')
         //     }
         // },
+        // scrollY: "200px",
+        // paging: false,
         orderClasses: false,
+       // bAutoWidth : false,
         iDisplayLength: 25,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
@@ -173,10 +177,10 @@ $(document).ready(function() {
         },
         { 
             className: "dt-center", 
-            targets: [11,12,21,22]
+            targets: [12,13,22,23]
         },
         { 
-            targets: [0,1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20],
+            targets: [0,1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21],
             createdCell: function (td, cellData, rowData, row, col) {
                 $.each($(td, row), function () {
                     $(this).attr('title', cellData);
@@ -184,6 +188,31 @@ $(document).ready(function() {
             }
         }]
     });
+
+
+    //----------------------------------------------------
+    //------------- Toggle Columns Visibility ------------
+    $(document).ready(function() {
+
+        let toggler = $("#toggle-columns").detach();
+        let tabler = $('#activationSupportData_wrapper');
+        tabler.prepend(toggler);
+
+
+        $('.toggle-vis').on( 'click', function (e) {
+            e.preventDefault();
+            $('#activationSupportData').colResizable({ disable: true });
+            var column = $('#activationSupportData').DataTable().column( $(this).attr('data-column') );
+            column.visible( ! column.visible() );
+            $(this).find('i').toggleClass('icon-check-square icon-square');
+            $('#activationSupportData').colResizable({ liveDrag: true });
+        });
+    });
+
+    //-------------------------------------------------
+    // --------- Move Column Picker Button ------------
+    
+    
 
     //----------------------------------------------------
     //--------------- Single Column Search ---------------
@@ -200,43 +229,43 @@ $(document).ready(function() {
     });
     $('#lastNameSearch').on('keyup', function() {
         table
-            .columns(18)
+            .columns(19)
             .search(this.value)
             .draw();
     });
     $('#firstNameSearch').on('keyup', function() {
         table
-            .columns(17)
+            .columns(18)
             .search(this.value)
             .draw();
     });
     $('#carePakSkuSearch').on('keyup', function() {
         table
-            .columns(5)
+            .columns(6)
             .search(this.value)
             .draw();
     });
     $('#emailSearch').on('keyup', function() {
         table
-            .columns(19)
+            .columns(20)
             .search(this.value)
             .draw();
     });
     $('#phoneSearch').on('keyup', function() {
         table
-            .columns(20)
+            .columns(21)
             .search(this.value)
             .draw();
     });
     $('#serialSearch').on('keyup', function() {
         table
-            .columns(9)
+            .columns(10)
             .search(this.value)
             .draw();
     });
     $('#receiptSearch').on('keyup', function() {
         table
-            .columns(10)
+            .columns(11)
             .search(this.value)
             .draw();
     });

@@ -148,49 +148,80 @@
                         <button class="button alert" id="clearAll">Clear All</button>
                         <button class="button">Search</button>
                     </div>
+
+                    <div id="toggle-columns">
+                        <a role="button" data-toggle="collapse" href="#column-list">
+                            <span class="icon-ct"><i class="icon-view-column"></i></span> Show/Hide Columns</a>
+                        <div id="column-list" class="collapse">
+                            <a class="toggle-vis" data-column="0"><i class="icon-check-square"></i> Sell To</a>
+                            <a class="toggle-vis" data-column="1"><i class="icon-check-square"></i> Dealer Name</a>
+                            <a class="toggle-vis" data-column="2"><i class="icon-check-square"></i> Order Received Date</a>
+                            <a class="toggle-vis" data-column="3"><i class="icon-check-square"></i> Purchase Date</a>
+                            <a class="toggle-vis" data-column="4"><i class="icon-check-square"></i> Data Source</a>
+                            <a class="toggle-vis" data-column="5"><i class="icon-check-square"></i> Status</a>
+                            <a class="toggle-vis" data-column="6"><i class="icon-check-square"></i> CarePAK SKU</a>
+                            <a class="toggle-vis" data-column="7"><i class="icon-check-square"></i> CarePAK Name</a>
+                            <a class="toggle-vis" data-column="8"><i class="icon-check-square"></i> Hardware SKU</a>
+                            <a class="toggle-vis" data-column="9"><i class="icon-check-square"></i> Hardware Model Name</a>
+                            <a class="toggle-vis" data-column="10"><i class="icon-check-square"></i> Serial #</a>
+                            <a class="toggle-vis" data-column="11"><i class="icon-check-square"></i> Receipt #</a>
+                            <a class="toggle-vis" data-column="12"><i class="icon-check-square"></i> Receipt Image</a>
+                            <a class="toggle-vis" data-column="13"><i class="icon-check-square"></i> Terms</a>
+                            <a class="toggle-vis" data-column="14"><i class="icon-check-square"></i> CarePAK Exp Date</a>
+                            <a class="toggle-vis" data-column="15"><i class="icon-check-square"></i> Activation Code</a>
+                            <a class="toggle-vis" data-column="16"><i class="icon-check-square"></i> Canon CPO</a>
+                            <a class="toggle-vis" data-column="17"><i class="icon-check-square"></i> Canon Invoice</a>
+                            <a class="toggle-vis" data-column="18"><i class="icon-check-square"></i> First Name</a>
+                            <a class="toggle-vis" data-column="19"><i class="icon-check-square"></i> Last Name</a>
+                            <a class="toggle-vis" data-column="20"><i class="icon-check-square"></i> Email</a>
+                            <a class="toggle-vis" data-column="21"><i class="icon-check-square"></i> Phone</a>
+                            <a class="toggle-vis" data-column="23"><i class="icon-check-square"></i> Send Email</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </form>
-
         </div>
 
-            <table id="activationSupportData" class="display stripe" style="width: 100%">
-                <thead>
-                    <tr>
-                        <th>Sell To</th>
-                        <th>Order Received Date</th>
-                        <th>Purchase Date</th>
-                        <th>Data Source</th>
-                        <th>Status</th>
-                        <th>CarePAK SKU</th>
-                        <th>CarePAK Name</th>
-                        <th>Hardware SKU</th>
-                        <th>Hardware Model Name</th>
-                        <th>Serial #</th>
-                        <th>Receipt #</th>
-                        <th class="no-sort">Receipt Image</th>
-                        <th>Terms</th>
-                        <th>CarePAK Exp Date</th>
-                        <th>Activation Code</th>
-                        <th>Canon CPO</th>
-                        <th>Canon Invoice</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th class="no-sort">&nbsp;</th>
-                        <th class="no-sort">Send Email</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <table id="activationSupportData" class="display stripe" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Sell To</th>
+                    <th>Dealer Name</th>
+                    <th>Order Received Date</th>
+                    <th>Purchase Date</th>
+                    <th>Data Source</th>
+                    <th>Status</th>
+                    <th>CarePAK SKU</th>
+                    <th>CarePAK Name</th>
+                    <th>Hardware SKU</th>
+                    <th>Hardware Model Name</th>
+                    <th>Serial #</th>
+                    <th>Receipt #</th>
+                    <th class="no-sort">Receipt Image</th>
+                    <th>Terms</th>
+                    <th>CarePAK Exp Date</th>
+                    <th>Activation Code</th>
+                    <th>Canon CPO</th>
+                    <th>Canon Invoice</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th class="no-sort">&nbsp;</th>
+                    <th class="no-sort">Send Email</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
 
-            <div class="button-section-foot pad-hrz-sm">
-                <input type="button" class="button warning" onclick="sendEmailDialog()" value="Send Email"></button>
-                <input type="button" class="button warning" onclick="failedEmailDialog()" value="Failed Email"></button>
-                <button class="button warning">Print</button>
-            </div>
+        <div class="button-section-foot pad-hrz-sm">
+            <input type="button" class="button warning" onclick="sendEmailDialog()" value="Send Email"></button>
+            <input type="button" class="button warning" onclick="failedEmailDialog()" value="Failed Email"></button>
+            <button class="button warning">Print</button>
+        </div>
 
-        </div> <!-- / container -->
+
 
     
 
