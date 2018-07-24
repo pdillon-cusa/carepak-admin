@@ -4,6 +4,7 @@
     width: 13rem;
     right: 0;
     margin-top: -5px;
+    z-index: 10;
 
     a {
         text-decoration: none;
@@ -26,6 +27,7 @@
         top: 2.2rem;
         left: 0;
         right: 0;
+        z-index: 10;
         box-shadow: rgba(0, 0, 0, 0.3) -3px 10px 15px;
     }
     .scroller {
@@ -33,3 +35,24 @@
         height: 320px;    
     }
 }
+.wave {
+    &:after {
+        content:'';
+        z-index: 5;
+        height: 1rem;
+        width: 1rem;
+        position: absolute;
+        border-radius: 50%;
+        animation: pulse 1s ease-out 1;
+        transform: scale(1.7);
+        opacity: 0;
+        background-color: #aaa;
+        left: 7px;
+        margin-top: 1px;
+    }
+  }
+ @keyframes pulse {
+    0%   { transform: scale(1); opacity: 1; }
+    70%  { transform: scale(1.6); opacity: 0; }
+    100% { opacity: 0; }
+ }
