@@ -196,19 +196,19 @@ $(document).ready(function() {
         let toggler = $("#toggle-columns").detach();
         let tabler = $('#activationSupportData_wrapper');
         tabler.prepend(toggler);
-        $('.toggle-vis').on( 'click', function (e) {
+        $('.toggle-vis').on( 'click', function (e) {    
             e.preventDefault();
             $('#activationSupportData').colResizable({ disable: true });
             var column = $('#activationSupportData').DataTable().column( $(this).attr('data-column'));
             column.visible( ! column.visible());
             $(this).find('i').toggleClass('icon-check-square icon-square');
-            $(this).toggleClass('wave');
+            $(this).removeClass('wave');
+            if( $(this).find('i').hasClass('icon-check-square') ) {
+                $(this).addClass('wave');
+            }
             $('#activationSupportData').colResizable({ liveDrag: true });
         });
-    });
-    //-------------------------------------------------
-    // ------------  Column Picker Button -------------
-    
+    });    
     
 
     //----------------------------------------------------

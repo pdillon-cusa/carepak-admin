@@ -6,7 +6,7 @@ $(".loading").css('display', 'block');
 
 function loaded() {
     $(".overlay").fadeOut(200);
-    $(".loading").fadeOut(200);
+	$(".loading").fadeOut(200);
     $(".custom-container").css('visibility','visible').hide().fadeIn(200);
 }
 
@@ -14,7 +14,8 @@ function loaded() {
 function closeModal() {
     $(".overlay").fadeOut(200);
     $(".custom-modal").fadeOut(200);
-    $("#maxTooltip").fadeOut(200);
+	$("#maxTooltip").fadeOut(200);
+	$('.collapse').removeClass('in');
 }
 $(document).keydown(function(e) {
     if (e.keyCode == 27) { closeModal() }
@@ -37,7 +38,7 @@ $(".close-overlay").on("click", function () {
 				//rand = Math.floor(Math.random()*amount),
 				// option = options[rand],
 				// value = option.getAttribute('value');
-			//input.setAttribute('placeholder',value);
+			    //input.setAttribute('placeholder',value);
 		}
 	}
 })(this,this.document);
