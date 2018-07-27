@@ -11,6 +11,7 @@ $(document).ready(function() {
             { data: 'carePakSku' },
             { data: 'carePakSkuName' },
             { data: 'order' },
+            { data: 'orderableInCPNet' },
             { data: 'productGroup' },
             { data: 'level2Code' },
             { data: 'dataRecovery' },
@@ -43,7 +44,7 @@ $(document).ready(function() {
             render: function (data, type, row) {
                 return (data === true) ? 'Yes' : 'No';
             },
-            targets: 7
+            targets: [4, 7]
         },
         {
             targets: [3],
@@ -51,7 +52,8 @@ $(document).ready(function() {
             visible: false
         },
         { 
-            className: "dt-center"
+            className: "dt-center",
+            targets: [4,6,7,9,10]
         },
         { 
             targets: [0,1,2,3,4,5,6,7,8,9],
@@ -171,13 +173,14 @@ $(document).ready(function() {
             "carePakSku": newcpSku.value,
             "carePakSkuName": newcpSkuName.value,
             "order": -1,
+            "orderableInCPNet": newOrderableInCPNet.value,
             "productGroup": newProductGroup.value,
             "level2Code": newLevel2Code.value,
             "dataRecovery": newDataRecovery.value,
             "prefix": newPrefix.value,
             "term": newTerm.value,
             "waitingPeriod": newWaitingPeriod.value,
-            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + '\'' + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newWaitingPeriod.value}` + '\'' + ')">EDIT</a>',
+            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + ', \'' + `${newOrderableInCPNet.value}` + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newWaitingPeriod.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
         removeAnimationClass();

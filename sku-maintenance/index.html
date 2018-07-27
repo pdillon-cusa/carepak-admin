@@ -71,6 +71,7 @@
                 <th>CarePAK SKU</th>
                 <th>CarePak SKU Name</th>
                 <th>Order</th>
+                <th>Orderable In CP Net</th>
                 <th>Product Group</th>
                 <th>Level 2 Code</th>
                 <th>Data Recovery</th>
@@ -161,6 +162,22 @@
                 <div class="col-sm-8">
                     <div class="format-data">
                             <input class="form-control" id="cpSkuName" name="cpSkuName" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="orderableInCPNet">Orderable In CP Net</label>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="format-data">
+                        <select id="orderableInCPNet" name="orderableInCPNet" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        <select>
                     </div>
                 </div>
             </div>
@@ -320,6 +337,22 @@
                 <div class="col-sm-8">
                     <div class="format-data">
                         <input class="form-control" id="newcpSkuName" name="newcpSkuName" value="CPPBINO_2894" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="custom-modal__label">
+                        <label for="newOrderableInCPNet">Orderable In CP Net</label>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="format-data">
+                        <select id="newOrderableInCPNet" name="newOrderableInCPNet" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        <select>
                     </div>
                 </div>
             </div>
