@@ -173,18 +173,19 @@ $(document).ready(function() {
             "carePakSku": newcpSku.value,
             "carePakSkuName": newcpSkuName.value,
             "order": -1,
-            "orderableInCPNet": newOrderableInCPNet.value,
+            "orderableInCPNet": 'Yes',
             "productGroup": newProductGroup.value,
             "level2Code": newLevel2Code.value,
             "dataRecovery": newDataRecovery.value,
             "prefix": newPrefix.value,
             "term": newTerm.value,
             "waitingPeriod": newWaitingPeriod.value,
-            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + ', \'' + `${newOrderableInCPNet.value}` + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newWaitingPeriod.value}` + '\'' + ')">EDIT</a>',
+            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newWaitingPeriod.value}` + '\'' + ')">EDIT</a>',
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
         
         removeAnimationClass();
     }
+
 
     //-------------------------------------------------
     // ---- Remove Class So Only New Row Animates -----
@@ -195,7 +196,6 @@ $(document).ready(function() {
             $('.activated').removeClass('activated');
         }
     }
-
 
     //---------------------------------------------
 }); //  --------- / doc.ready ---------------------
@@ -226,6 +226,7 @@ function showEditSkuModal(carePakType, cpSku, cpSkuName, productGroup, level2Cod
     $("#editSkuModal").css('display', 'block');
     // $("#editSkuInfo").data('').resetForm();
 }
+
 
 //-------------------------------------------------
 // ------------- Search Modal -------------------
