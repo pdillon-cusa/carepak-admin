@@ -146,19 +146,6 @@ $(document).ready(function() {
             $('#activationSupportData').colResizable({liveDrag:true});
             loaded();
         },
-        // createdRow: function (row, data, dataIndex) {
-        //     $.each($('td', row), function () {
-        //         console.log(dataIndex);
-        //         $(this).attr('title', data.cell);
-        //     });
-        // },
-        // createdCell: function (td, cellData, rowData, row, col) {
-        //     if ( cellData < 1 ) {
-        //       $(td).css('color', 'red')
-        //     }
-        // },
-        // scrollY: "200px",
-        // paging: false,
         orderClasses: false,
         bAutoWidth : false,
         iDisplayLength: 25,
