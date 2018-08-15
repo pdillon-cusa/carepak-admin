@@ -147,7 +147,7 @@ $(document).ready(function() {
             loaded();
         },
         orderClasses: false,
-        bAutoWidth : false,
+       // bAutoWidth : false,
         iDisplayLength: 25,
         searchHighlight: true,
         lengthMenu: [ 10, 25 ],
