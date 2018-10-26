@@ -14,13 +14,13 @@
     line-height: 1;
     text-align: center;
     cursor: pointer;
-    background-color: #1779ba;
+    background-color: #000;
     color: white;
     position: relative;
 }
 
 .button:hover, .button:focus {
-    background-color: #14679e;
+    background-color: #333;
 }
 //--------------
 .button.alert {
