@@ -100,24 +100,35 @@ $(document).ready(function() {
 
     //-------------------------------------------------
     // --------------- Add SKU Row --------------------
-    function addNewPromotionRow() {
-        var table = $('#promotionMaintenanceData').DataTable();
-        var rowNode = table.row.add({
-            "productName": newProductName.value,
-            "productSku": newProductSku.value,
-            "productModel": newProductModel.value,
-            "order": -1,
-            "carePakSku": newcpSku.value,
-            "carePakType": newcpType.value,
-            "carePakPeriod": newcpPeriod.value,
-            "startDate": newStartDate.value,
-            "endDate": newEndDate.value,
-            "registrationPeriod": newRegistrationPeriod.value,
-            "edit": '<a href="#"  onclick="showEditPromotionModal(' + '\'' + `${newProductSku.value}` + '\'' + ', \'' + `${newProductName.value}` + '\' , \'' + `${newProductModel.value}` + '\'' + ', \'' + `${newcpSku.value}` + '\'' + ', \'' +  `${newcpType.value}` + '\''  + ', \'' + `${newcpPeriod.value}` + '\'' + ', ' + '\'' +  `${newStartDate.value}` + '\' , \'' + `${newEndDate.value}` + '\', \'' + `${newRegistrationPeriod.value}` + '\'' + ')">EDIT</a>',
-        }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
-        
-        removeAnimationClass();
-    }
+
+    var newProductName = '',
+        newProductSku = '',
+        newProductModel = '',
+        newcpSku = '',
+        newcpType = '',
+        newcpPeriod = '',
+        newStartDate = '',
+        newEndDate = '',
+        newRegistrationPeriod = '';
+
+   function addNewPromotionRow() {
+    var table = $('#promotionMaintenanceData').DataTable();
+    var rowNode = table.row.add({
+        "productName": newProductName.value,
+        "productSku": newProductSku.value,
+        "productModel": newProductModel.value,
+        "order": -1,
+        "carePakSku": newcpSku.value,
+        "carePakType": newcpType.value,
+        "carePakPeriod": newcpPeriod.value,
+        "startDate": newStartDate.value,
+        "endDate": newEndDate.value,
+        "registrationPeriod": newRegistrationPeriod.value,
+        "edit": '<a href="#"  onclick="showEditPromotionModal(' + '\'' + ("" + newProductSku.value) + '\'' + ', \'' + ("" + newProductName.value) + '\' , \'' + ("" + newProductModel.value) + '\'' + ', \'' + ("" + newcpSku.value) + '\'' + ', \'' + ("" + newcpType.value) + '\'' + ', \'' + ("" + newcpPeriod.value) + '\'' + ', ' + '\'' + ("" + newStartDate.value) + '\' , \'' + ("" + newEndDate.value) + '\', \'' + ("" + newRegistrationPeriod.value) + '\'' + ')">EDIT</a>'
+    }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
+
+    removeAnimationClass();
+}
 
     //-------------------------------------------------
     // ---- Remove Class So Only New Row Animates -----

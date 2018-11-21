@@ -155,7 +155,7 @@ $(document).ready(function() {
             render: function (data, type, row) {
                 return (data === true) ? '<input type="checkbox" class="send-email" checked>' : '<input type="checkbox"  class="send-email">';
             },
-            targets: 22
+            targets: 23
         },
         {
             targets  : 'no-sort',

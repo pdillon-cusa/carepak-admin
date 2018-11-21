@@ -165,6 +165,17 @@ $(document).ready(function() {
 
     //-------------------------------------------------
     // --------------- Add SKU Row --------------------
+
+    var newcpType = '',
+        newcpSku = '',
+        newcpSkuName = '',
+        newProductGroup = '',
+        newLevel2Code = '',
+        newDataRecovery = '',
+        newPrefix = '',
+        newTerm = '',
+        newWaitingPeriod = '';
+
     function addNewSkuRow() {
 
         var table = $('#skuMaintenanceData').DataTable();
@@ -180,12 +191,11 @@ $(document).ready(function() {
             "prefix": newPrefix.value,
             "term": newTerm.value,
             "waitingPeriod": newWaitingPeriod.value,
-            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + `${newcpType.value}` + '\'' + ', ' + `${newcpSku.value}` + ', \'' + `${newcpSkuName.value}` + ', \'' + `${newProductGroup.value}` + '\'' + ', \'' + `${newLevel2Code.value}` + '\'' + ', ' + '\'' + `${newDataRecovery.value}` + '\' , \'' + `${newPrefix.value}` + '\'' + ', \'' + `${newTerm.value}` + '\'' + ', \'' + `${newWaitingPeriod.value}` + '\'' + ')">EDIT</a>',
+            "edit": '<a href="#" onclick="showEditSkuModal(' + '\'' + ("" + newcpType.value) + '\'' + ', ' + ("" + newcpSku.value) + ', \'' + ("" + newcpSkuName.value) + ', \'' + ("" + newProductGroup.value) + '\'' + ', \'' + ("" + newLevel2Code.value) + '\'' + ', ' + '\'' + ("" + newDataRecovery.value) + '\' , \'' + ("" + newPrefix.value) + '\'' + ', \'' + ("" + newTerm.value) + '\'' + ', \'' + ("" + newWaitingPeriod.value) + '\'' + ')">EDIT</a>'
         }).draw(false).order([3, 'asc']).draw().nodes().to$().addClass('activated');
-        
+    
         removeAnimationClass();
     }
-
 
     //-------------------------------------------------
     // ---- Remove Class So Only New Row Animates -----
@@ -243,6 +253,11 @@ function showAddSkuModal() {
     $(".overlay").css('display', 'block');
     $("#addSkuModal").css('display', 'block');
    // $("#addSkuModal").data('validateAddSku').resetForm();
+   var table = $('#skuMaintenanceData').DataTable();
+    table
+        .search( '' )
+        .columns().search( '' )
+        .draw();
 }
 
 //-------------------------------------------------
