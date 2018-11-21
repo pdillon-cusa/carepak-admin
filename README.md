@@ -1,6 +1,8 @@
 
-CAREPAK SASS PATH:
-sass --watch sass:css --style compressed
+Python Local Server:
 ------------
-PYTHON LOCAL SERVER:
-python -m http.server 8060
+` python -m http.server 8060 `
+
+Run SASS:
+------------
+` sass --watch sass:css --style compressed `
