@@ -1,0 +1,192 @@
+ body {
+    all: unset;
+    font-family:Apex,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.cc-info {
+    margin: 1rem 0 0 0;
+}
+.cc-info .row {
+    margin-left: 0;
+    margin-right: 0; 
+}
+label.cf-error {
+  color: #EE1B22;
+  width: 100%;
+  padding: .2rem .7rem;
+  background-color: #fbc6c8;
+}
+input[type='text'], select {
+    border: 1px solid #999 !important;
+}
+input, select {
+    border-radius: 0 !important;
+    border: 1px solid #999 !important;
+}
+.form-group {
+    margin-bottom: .5rem;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-group label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+}
+.form-group input, 
+.form-group select {
+    height: initial;
+    border: 1px solid #999;
+}
+
+.required::before {
+    content: ' * ';
+    color: #EE1B22;
+}
+/* Overrides canon-external css, which puts  
+asterisk after the label text */
+.required::after {
+content: '' !important;
+}
+a.cc-tooltip {
+    color: #EE1B22;
+    font-size: 16px;
+    position: absolute;
+    float: left;
+    margin: -2px 0 0 1rem;
+}
+a.cc-tooltip:hover,
+a.cc-tooltip:active {
+    cursor: pointer;
+    color: #EE1B22;
+    text-decoration: none
+}
+
+
+/* Fonts */
+@font-face {
+    font-family: 'OpticSans Light';
+    src: url("#{resource['ARS:css/fonts/OpticSans-101-Light.eot']}") format('woff');
+    src: url("#{resource['ARS:css/fonts/OpticSans-101-Light.woff']}") format('woff');
+  }
+  
+  @font-face{
+    font-family:apex;
+    src:url("#{resource['ARS:css/fonts/apex-book.woff']}") format("woff")
+  }
+  @font-face{
+    font-family:apex;
+    src:url("#{resource['ARS:css/fonts/apex-medium.woff']}") format("woff");
+    font-weight:600;
+  }
+  @font-face{
+    font-family:apex;
+    src:url("#{resource['ARS:css/fonts/apex-light.woff']}") format("woff");
+    font-weight:300;
+  }
+  
+  @font-face {
+    font-family: 'ars-admin';
+    src:  url("#{resource['ARS:css/fonts/ars-admin.eot?mskdgk']}");
+    src:  url("#{resource['ARS:css/fonts/ars-admin.eot?mskdgk#iefix']}") format('embedded-opentype'),
+      url("#{resource['ARS:css/fonts/ars-admin.ttf?mskdgk']}") format('truetype'),
+      url("#{resource['ARS:css/fonts/ars-admin.woff?mskdgk']}") format('woff'),
+      url("#{resource['ARS:css/fonts/ars-admin.svg?mskdgk#ars-admin']}") format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'ars-admin' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-circ-1:before {
+    content: "\e909";
+  }
+  .icon-circ-2:before {
+    content: "\e90a";
+  }
+  .icon-circ-3:before {
+    content: "\e90b";
+  }
+  .icon-circ-4:before {
+    content: "\e90c";
+  }
+  .icon-checkmark1:before {
+    content: "\e90d";
+  }
+  .icon-tool-tip:before {
+    content: "\f059";
+  }
+  .icon-arrow-down:before {
+    content: "\e313";
+  }
+  .icon-arrow-left:before {
+    content: "\e314";
+  }
+  .icon-arrow-right:before {
+    content: "\e315";
+  }
+  .icon-arrow-up:before {
+    content: "\e316";
+  }
+  .icon-cc-visa:before {
+    content: "\f1f0";
+  }
+  .icon-cc-mastercard:before {
+    content: "\f1f1";
+  }
+  .icon-cc-amex:before {
+    content: "\f1f3";
+  }
+  .icon-user-circle-o:before {
+    content: "\e900";
+  }
+  .icon-comment-stroke:before {
+    content: "\e901";
+  }
+  .icon-comment-fill:before {
+    content: "\e902";
+  }
+  .icon-checkmark:before {
+    content: "\e903";
+  }
+  .icon-check-circ:before {
+    content: "\e904";
+  }
+  .icon-x:before {
+    content: "\e905";
+  }
+  .icon-x-circ:before {
+    content: "\e906";
+  }
+  .icon-plus:before {
+    content: "\e907";
+  }
+  .icon-plus-circ:before {
+    content: "\e908";
+  }
+  

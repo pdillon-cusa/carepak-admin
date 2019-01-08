@@ -1,0 +1,144 @@
+
+<div class="containerWrapper">
+    <div class="ribbon header-ribbon blue-links">
+	    <div class="row "> 
+			<div class="row add-padding-bottom add-padding-top no-side-padding">
+				<div class="cf-dark-gray-1">
+<!-- WDM REMOVE SECOND WEB_DISPLAY_NAME <h1 style="margin-bottom:10px;!important">[Plugin:HTMLDecodePlugin String="[Element context='current' type='content' key='web_display_name']"]</h1> -->
+                        <div class="desc">
+                        <div [IfNotEditMode]class="truncate-text-500"[/IfNotEditMode]>
+                            [Plugin:HTMLDecodePlugin String="[Element context='current' type='content' key='long_desc']"]
+                            [InContext path="[Property context='current' type='content' field='name' format='path']/../Logos/"]
+                                [Component name="canon_newweb_design/products/product detail/product overview/nav - feature logos"]
+                            [/InContext]
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="containerWrapper">
+<div class="ribbon header-ribbon blue-links">
+	<div class="row ">
+			<div class="row add-padding-bottom add-padding-top no-side-padding">
+				<div class="cf-dark-gray-1">
+
+[Plugin:ifEmpty value="[Element context='current' type='content' key='WhyToBuy']"]
+<h1 style="margin-bottom:10px;!important">[Plugin:HTMLDecodePlugin String="[Element context='current' type='content' key='web_display_name']"]</h1>
+[/Plugin:ifEmpty]
+
+[Plugin:ifNotEmpty value="[Element context='current' type='content' key='WhyToBuy']"]
+<h1 style="margin-bottom:10px;!important">[Plugin:HTMLDecodePlugin String="[Element context='current' type='content' key='WhyToBuy']"]</h1>
+[/Plugin:ifNotEmpty]
+					
+                 <div class="desc">
+					<div [IfNotEditMode]class="truncate-text-500"[/IfNotEditMode]>
+						[Plugin:HTMLDecodePlugin String="[Element context='current' type='content' key='long_desc']"]
+						[InContext path="[Property context='current' type='content' field='name' format='path']/../Logos/"]
+							[Component name="canon_newweb_design/products/product detail/product overview/nav - feature logos"]
+						[/InContext]
+					</div>
+                   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+[Plugin:RequestAttribute key="productCurrentTabs" mode="set" value="productdetailtabs"]
+<a name="productdetailtabs"></a>
+<div class="containerWrapper">
+<div class="" role="tabpanel">
+	<ul id="[Property context="current" type="sitearea" field="id"]_OverviewTabs" role="tablist" class="nav nav-tabs product-tabs text-center">
+
+
+
+[Component name="canon_newweb_design/products/product detail/tab bar/nav - product detail tab bar" resultsPerPage="" startPage=""]
+
+
+
+	</ul>
+
+	[Component name="canon_newweb_design/products/product detail/tab bar/nav - product detail tab content" resultsPerPage="" startPage=""]
+[Component name="canon_newweb_design/products/product detail/tab bar/custom tabs/html - inline edit custom tabs"]
+[Component name="canon_newweb_design/products/html - common - open tab"]
+[IfEditMode]
+[Component name="canon_newweb_design/products/support product detail/tabs/nav - product support tab bar edit mode"]
+[/IfEditMode]
+[Component name="canon_newweb_design/products/product detail/tab bar/js - product tab content helper"]
+
+
+[Component name="canon_newweb_design/products/product detail/tab bar/html - detail tab enforcer"]
+<!-- empty tab removal start -->
+
+</div><!-- / containerWrapper -->
+
+<script type="text/javascript">
+
+
+$('#[Property context="current" type="sitearea" field="id"]_OverviewTabs li a').each(function() {
+	var id = $(this).attr('id'),
+        id_stripped = '#'+id.replace('_anchor',''),
+	$pane = $(id_stripped);
+	var $support_pane= $(id +" #supp_results");
+	if ($.trim($pane.text()) == "") {
+		console.log ("Removing tab " +$(this).text() + " due to no content in content pane");
+		$(this).parent().remove();
+	}
+	
+	else if ($support_pane.length){
+		//No header, no image, no accordians. Remove tab.
+		if($(".suppAccordian").length ==0){
+			$(this).parent().remove();
+                        $('#suppliesContainer').addClass('hidden');
+		}
+	}
+		
+	
+//	if ($.trim($pane.text()) == "") $(this).parent().addClass('hidden');
+});
+
+// Auto-open the first tab after empty tabs have been removed
+$('#[Property context="current" type="sitearea" field="id"]_OverviewTabs li a').first().each(function() {
+	$(this).click();
+});
+
+// Process tabs and open any tab specified as a the "tab" parameter
+selectTab('[Property context="current" type="sitearea" field="id"]_OverviewTabs', 'productdetailtabs');
+
+// Ensure all accordions are collapsed
+$('div.canon-accordion').find('.collapse').removeClass('in');
+$('div.canon-accordion').find('h4 a').addClass('collapsed').attr("aria-expanded","false");
+
+//Locate the first accordion in each set, and expand them
+$('div.canon-accordion').each(function() {
+  $(this).find('.panel').first().each(function() {
+	$(this).find('div.panel-collapse').addClass('in').attr("style", "");
+	$(this).find('div.panel-collapse').attr("aria-expanded","true");
+	$(this).find('h4 a').removeClass('collapsed').attr("aria-expanded","true");
+  });
+});
+
+</script>
+<!-- empty tab removal finish -->
+<!-- Product drop down tool start -->
+<script type="text/javascript">
+//var $target = $('.product-info-btn ul');
+var $target = $('#ProductGroups ul');
+$('#[Property context="current" type="sitearea" field="id"]_OverviewTabs li a').each(function() {
+	$target.append("<li><a tabrender='" + ($(this).attr('tabrender')).replace("HTML - ","") + "'>" + $(this).text() + "</a></li>");
+});
+$target.on('click','li a',function() {
+	selectTabByName($(this).attr('tabrender'), 'productdetailtabs');
+	$('.group-dropdown').toggle();
+});
+</script>
+
+<!--Product drop down tool end-->
+
+
+[Component name="canon_newweb_design/products/common products components/html - js - fix edit mode tab event handlers"]

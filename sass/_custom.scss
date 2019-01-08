@@ -1,14 +1,14 @@
 
 body {
   background: $body-bg;
-  font-family: Arial, sans-serif;
+  font-family: "OpticSans 201", "Helvetica Neue", sans-serif;
   margin: 4rem 0;
 }
 a:link, a:visited, a:hover, a:active {
     line-height: inherit;
     text-decoration: underline;
     cursor: pointer;
-    font-family: 'Lato', Arial, sans-serif;
+    font-family: "OpticSans 201", "Helvetica Neue", sans-serif;
     color: $link;
     &:visited { color: $link-visited; }
     &:hover { color: $link-hover; }
