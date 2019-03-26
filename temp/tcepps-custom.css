@@ -10,10 +10,10 @@
     margin-right: 0; 
 }
 label.cf-error {
-  color: #EE1B22;
   width: 100%;
-  padding: .2rem .7rem;
-  background-color: #fbc6c8;
+  padding: .5rem;
+  color: white;
+  background-color: #ff8080;
 }
 input[type='text'], select {
     border: 1px solid #999 !important;

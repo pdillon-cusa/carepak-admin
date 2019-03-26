@@ -41,7 +41,7 @@ $(function() {
     var currMonth = today.getMonth();
     var currYear = today.getFullYear();
     var currDay = today.getDay();
-    var startDate = new Date(currYear, currMonth - 2, currDay - 8);
+    var startDate = new Date(currYear, currMonth - 3, currDay + 6);
     // alert(startDate);
     $("#dateFrom").datepicker({
         endDate: '+0d'
